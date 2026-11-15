@@ -1,16 +1,19 @@
-## Hi there 👋
+# Aslı Portfolio — Blue Edition (v3)
 
-<!--
-**yardimciumay-source/yardimciumay-source** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+A free static portfolio for GitHub Pages. No dependencies or build step.
 
-Here are some ideas to get you started:
+## Upload
+Upload **all HTML files**, `styles.css`, and `script.js` to the **root** of your existing GitHub repository, replacing files with the same names. Do not upload the ZIP itself. Commit the changes. GitHub Pages should be configured to deploy from `main` / `(root)`.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Pages
+- `index.html` — Home
+- `about.html` — About
+- `research.html` — Research index
+- `writing.html` — Writing index
+- `contact.html` — Contact
+- Four research detail pages
+
+## Before sharing
+The research detail pages are summaries, **not full papers**. Replace the placeholder text with verified original content. Add your real email and/or LinkedIn to `contact.html` when desired.
+
+All internal links stay on the same site. No WordPress links are used.
