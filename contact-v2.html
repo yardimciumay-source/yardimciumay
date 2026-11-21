@@ -52,30 +52,31 @@ button {
   font: inherit;
 }
 
+
 /* STANDARD AUY HEADER */
 
 .site-header {
+  width: 100%;
   max-width: 1350px;
-  margin: auto;
+  margin: 0 auto;
   padding: 28px 6%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 25px;
+  gap: 32px;
   border-bottom: 1px solid var(--border);
 }
 
 .brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 14px;
-  white-space: nowrap;
-}
-
-.brand-name {
+  gap: 0;
+  flex-shrink: 0;
   font-size: 30px;
   font-weight: 900;
   letter-spacing: -2px;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .brand-dot {
@@ -83,11 +84,13 @@ button {
 }
 
 .brand-caption {
-  padding-left: 14px;
+  display: inline-block;
+  margin-left: 15px;
+  padding-left: 15px;
   border-left: 1px solid var(--border);
   color: var(--muted);
   font-size: 9px;
-  font-weight: 750;
+  font-weight: 700;
   line-height: 1.5;
   letter-spacing: 1.5px;
 }
@@ -95,28 +98,35 @@ button {
 .nav {
   display: flex;
   align-items: center;
-  gap: 30px;
+  justify-content: center;
+  gap: 32px;
+  margin-left: auto;
 }
 
 .nav a {
   color: var(--muted);
   font-size: 13px;
   font-weight: 600;
+  letter-spacing: 0;
   transition: color .2s;
 }
 
 .nav a:hover,
-.nav a.active {
+.nav a[aria-current="page"] {
   color: var(--cyan);
 }
 
 .header-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
   padding: 12px 18px;
   border: 1px solid rgba(88,173,255,.45);
   border-radius: 100px;
   color: var(--cyan);
   font-size: 12px;
-  font-weight: 750;
+  font-weight: 700;
   white-space: nowrap;
 }
 
@@ -124,7 +134,57 @@ button {
   background: rgba(88,173,255,.1);
 }
 
-/* HERO */
+.menu-toggle {
+  display: none;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+@media (max-width: 850px) {
+  .site-header {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .brand {
+    margin-right: auto;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav {
+    display: none;
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+    padding: 15px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .nav.is-open {
+    display: flex;
+  }
+
+  .header-cta {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .brand-caption {
+    display: none;
+  }
+}
 
 main {
   max-width: 1350px;
@@ -685,6 +745,20 @@ button:focus-visible {
 </script>
 
   
+<script>
+(function () {
+  const menuButton = document.querySelector(".menu-toggle");
+  const nav = document.getElementById("primary-nav");
+
+  if (!menuButton || !nav) return;
+
+  menuButton.addEventListener("click", function () {
+    const isOpen = nav.classList.toggle("is-open");
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+  });
+})();
+</script>
+
 <script>
 (function () {
   const menuButton = document.querySelector(".menu-toggle");
