@@ -1,2 +1,1321 @@
+
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="#080f1d" name="theme-color"/><meta content="Investigating how digital pricing practices intersect with consumer perceptions of fairness." name="description"/><title>Personalized Pricing &amp; Perceived Fairness — Aslı Umay Yardımcı</title><link href="styles-v2.css" rel="stylesheet"/><script defer="" src="script-v2.js"></script></head><body><div aria-hidden="true" class="ambient"></div><header class="site-header"><a aria-label="Home" class="brand" href="index-v2.html">AUY<span class="brand-dot">.</span><span class="brand-caption"> ECONOMICS / RESEARCH</span></a><button aria-controls="primary-nav" aria-expanded="false" class="menu-toggle" type="button">Menu <span aria-hidden="true">☰</span></button><nav aria-label="Main navigation" class="nav" id="primary-nav"><a href="research-v2.html">Work</a><a href="about-v2.html">About</a><a href="writing-v2.html">Writing</a><a href="contact-v2.html">Contact</a></nav><a class="header-cta" href="contact-v2.html">Let's connect ↗</a></header><main class="article-shell section-wrap"><a class="back-link" href="research-v2.html">← Back to selected work</a><div class="section-kicker">02 / DIGITAL ECONOMICS</div><h1>Personalized Pricing &amp; Perceived Fairness</h1><p class="article-lead">Investigating how digital pricing practices intersect with consumer perceptions of fairness.</p><div class="article-rule"></div><div class="article-layout"><aside class="article-aside">RESEARCH NOTES<br/><span>ASLI UMAY YARDIMCI</span></aside><div class="article-content"><h2>Overview</h2><p>Investigating how digital pricing practices intersect with consumer perceptions of fairness.</p><h2>Research question</h2><p>How do consumers assess prices that vary across individuals or contexts?</p><h2>Areas of interest</h2><p>Price discrimination, consumer behaviour, transparency, perceived fairness.</p><div class="article-notice"><strong>Full article coming soon</strong><p>This is a designed research overview, not the full original article. The complete text, methodology and findings can be added here without changing the site's design.</p></div><a class="back-link" href="research-v2.html">← Explore other research</a></div></div></main><footer class="footer section-wrap"><span>© <span id="year">2026</span> ASLI UMAY YARDIMCI</span><span>ECONOMICS / RESEARCH / IDEAS</span><a href="index-v2.html#home">BACK TO HOME ↑</a></footer></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080f1d">
+<meta name="description" content="The Fairness Playbook: Personalised Pricing in Digital Markets. An analysis of price discrimination, algorithmic fairness, consumer trust and digital market governance by Aslı Umay Yardımcı.">
+
+<title>The Fairness Playbook — Aslı Umay Yardımcı</title>
+
+<link href="styles-v2.css" rel="stylesheet">
+<script defer src="script-v2.js"></script>
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+.pricing-page {
+  color: #edf5ff;
+}
+
+.pricing-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  z-index: 9999;
+  background: linear-gradient(
+    90deg,
+    #5abfff,
+    #a996ff,
+    #4de0ce
+  );
+}
+
+.pricing-hero {
+  padding: 45px 0 60px;
+  border-bottom: 1px solid rgba(130,190,245,.2);
+}
+
+.pricing-hero h1 {
+  max-width: 1050px;
+  margin: 26px 0;
+  font-size: clamp(38px,6vw,78px);
+  line-height: 1.08;
+  letter-spacing: -.045em;
+  color: #f5f9ff;
+}
+
+.pricing-hero h1 em {
+  font-style: normal;
+  background: linear-gradient(
+    90deg,
+    #6ccaff,
+    #b5a0ff,
+    #66e1ce
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.pricing-lead {
+  max-width: 780px;
+  color: #b9cce3;
+  font-size: clamp(16px,2vw,19px);
+  line-height: 1.85;
+}
+
+.pricing-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 25px;
+  margin-top: 28px;
+  color: #91c6ee;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.pricing-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 27px;
+}
+
+.pricing-tags span {
+  padding: 9px 13px;
+  border-radius: 25px;
+  border: 1px solid rgba(110,186,255,.27);
+  background: rgba(65,143,226,.1);
+  color: #a8d9ff;
+  font-size: 11px;
+}
+
+.pricing-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 35px 0 65px;
+}
+
+.pricing-nav a {
+  padding: 10px 15px;
+  border: 1px solid rgba(120,190,255,.3);
+  border-radius: 30px;
+  color: #adddff;
+  text-decoration: none;
+  font-size: 12px;
+  transition: background .2s ease;
+}
+
+.pricing-nav a:hover {
+  background: rgba(65,143,226,.17);
+}
+
+.pricing-body {
+  max-width: 930px;
+  margin: 0 auto;
+  padding-bottom: 90px;
+}
+
+.pricing-section {
+  margin-bottom: 34px;
+  padding: clamp(24px,4vw,45px);
+  border: 1px solid rgba(110,180,245,.2);
+  border-radius: 22px;
+  background: linear-gradient(
+    145deg,
+    rgba(23,45,75,.87),
+    rgba(9,21,40,.93)
+  );
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity .7s ease,
+    transform .7s ease,
+    border-color .3s ease;
+}
+
+.pricing-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pricing-section:hover {
+  border-color: rgba(115,192,255,.4);
+}
+
+.pricing-kicker {
+  display: block;
+  margin-bottom: 18px;
+  color: #79caff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.pricing-section h2 {
+  margin: 0 0 25px;
+  color: #f5f9ff;
+  font-size: clamp(25px,3.5vw,37px);
+  line-height: 1.25;
+}
+
+.pricing-section h3 {
+  margin: 30px 0 15px;
+  color: #9fd9ff;
+  font-size: 21px;
+}
+
+.pricing-section p,
+.pricing-section li {
+  color: #c2d2e5;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.pricing-section p {
+  margin: 0 0 19px;
+}
+
+.pricing-section ul {
+  padding-left: 23px;
+  margin: 18px 0;
+}
+
+.pricing-section li {
+  margin-bottom: 13px;
+}
+
+.pricing-section strong {
+  color: #f2f8ff;
+}
+
+.pricing-section a {
+  color: #85d0ff;
+  overflow-wrap: anywhere;
+}
+
+.pricing-highlight {
+  padding: 24px;
+  margin: 26px 0;
+  border-left: 3px solid #74caff;
+  border-radius: 0 13px 13px 0;
+  background: rgba(65,145,230,.12);
+}
+
+.pricing-highlight p {
+  margin: 0;
+  font-size: 17px;
+  color: #e1f0ff;
+}
+
+.pricing-types {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 13px;
+  margin: 28px 0;
+}
+
+.pricing-type {
+  padding: 22px 17px;
+  border: 1px solid rgba(117,187,255,.25);
+  border-radius: 16px;
+  background: rgba(28,62,102,.36);
+}
+
+.pricing-type:nth-child(2) {
+  border-color: rgba(180,155,255,.35);
+}
+
+.pricing-type:nth-child(3) {
+  border-color: rgba(80,215,195,.35);
+}
+
+.pricing-type span {
+  color: #8bcfff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.pricing-type h3 {
+  margin: 13px 0;
+  color: #f4f8ff;
+  font-size: 18px;
+}
+
+.pricing-type p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.pricing-demo {
+  margin: 30px 0;
+  padding: 25px;
+  border: 1px solid rgba(111,187,255,.35);
+  border-radius: 18px;
+  background: #09182b;
+}
+
+.pricing-demo h3 {
+  margin-top: 0;
+}
+
+.pricing-demo label {
+  display: block;
+  margin-bottom: 12px;
+  color: #c7ddf2;
+  font-size: 13px;
+}
+
+.pricing-demo input[type="range"] {
+  width: 100%;
+  accent-color: #78caff;
+  cursor: pointer;
+}
+
+.pricing-demo-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.pricing-demo-stat {
+  padding: 16px 10px;
+  border-radius: 12px;
+  background: rgba(54,126,205,.16);
+  text-align: center;
+}
+
+.pricing-demo-stat strong {
+  display: block;
+  color: #8bd3ff;
+  font-size: 24px;
+}
+
+.pricing-demo-stat span {
+  display: block;
+  margin-top: 8px;
+  color: #9fb8d1;
+  font-size: 11px;
+}
+
+.pricing-bar-track {
+  height: 13px;
+  margin: 15px 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #223751;
+}
+
+.pricing-bar-fill {
+  height: 100%;
+  width: 50%;
+  background: linear-gradient(90deg,#5bbdff,#ae9aff);
+  transition: width .2s ease;
+}
+
+.pricing-note {
+  font-size: 12px !important;
+  color: #93aac4 !important;
+}
+
+.pricing-timeline {
+  position: relative;
+  padding-left: 27px;
+  border-left: 2px solid rgba(116,188,255,.35);
+  margin: 25px 0;
+}
+
+.pricing-timeline-item {
+  position: relative;
+  margin-bottom: 27px;
+}
+
+.pricing-timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -34px;
+  top: 7px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #83cfff;
+  box-shadow: 0 0 15px rgba(95,188,255,.5);
+}
+
+.pricing-timeline-item strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.pricing-timeline-item p {
+  margin: 0;
+}
+
+.pricing-solutions {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 14px;
+  margin: 28px 0;
+}
+
+.pricing-solution {
+  padding: 23px;
+  border: 1px solid rgba(112,185,251,.24);
+  border-radius: 16px;
+  background: rgba(26,60,101,.34);
+}
+
+.pricing-solution span {
+  color: #80cbff;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.pricing-solution h3 {
+  margin: 12px 0;
+  font-size: 18px;
+}
+
+.pricing-solution p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.pricing-ending {
+  padding: 35px 0 65px;
+  text-align: center;
+}
+
+.pricing-ending p {
+  color: #a9bfd8;
+  font-size: 13px;
+}
+
+@media(max-width:720px) {
+  .pricing-types,
+  .pricing-solutions {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-demo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-section {
+    padding: 24px 19px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .pricing-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .pricing-bar-fill {
+    transition: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="ambient" aria-hidden="true"></div>
+
+<div
+  class="pricing-progress"
+  id="pricingProgress"
+  aria-hidden="true">
+</div>
+
+<!-- HEADER -->
+
+<header class="site-header">
+
+  <a class="brand" href="index.html" aria-label="Home">
+    AUY<span class="brand-dot">.</span>
+    <span class="brand-caption">
+      ECONOMICS / RESEARCH
+    </span>
+  </a>
+
+  <button
+    class="menu-toggle"
+    type="button"
+    aria-controls="primary-nav"
+    aria-expanded="false">
+    Menu <span aria-hidden="true">☰</span>
+  </button>
+
+  <nav
+    class="nav"
+    id="primary-nav"
+    aria-label="Main navigation">
+    <a href="research-v2.html">Work</a>
+    <a href="about-v2.html">About</a>
+    <a href="writing-v2.html">Writing</a>
+    <a href="contact-v2.html">Contact</a>
+  </nav>
+
+  <a class="header-cta" href="contact-v2.html">
+    Let's connect ↗
+  </a>
+
+</header>
+
+<main class="article-shell section-wrap pricing-page">
+
+  <a class="back-link" href="research-v2.html">
+    ← Back to selected work
+  </a>
+
+  <!-- HERO -->
+
+  <header class="pricing-hero">
+
+    <div class="section-kicker">
+      02 / DIGITAL ECONOMICS
+    </div>
+
+    <h1>
+      The <em>Fairness Playbook.</em>
+    </h1>
+
+    <p class="pricing-lead">
+      Personalised Pricing in Digital Markets
+    </p>
+
+    <p class="pricing-lead">
+      How algorithmic price discrimination reshapes
+      consumer surplus, trust, market efficiency
+      and the governance of digital markets.
+    </p>
+
+    <div class="pricing-meta">
+      <span>ASLI UMAY YARDIMCI</span>
+      <span>DECEMBER 2, 2025</span>
+      <span>BEHAVIOURAL ECONOMICS / DIGITAL MARKETS</span>
+    </div>
+
+    <div class="pricing-tags">
+      <span>Price Discrimination</span>
+      <span>Algorithmic Fairness</span>
+      <span>Consumer Trust</span>
+      <span>Digital Regulation</span>
+    </div>
+
+  </header>
+
+  <nav
+    class="pricing-nav"
+    aria-label="Article sections">
+    <a href="#basics">The Basics</a>
+    <a href="#debate">The Debate</a>
+    <a href="#fairness">Fairness</a>
+    <a href="#trust">Consumer Trust</a>
+    <a href="#solutions">Solutions</a>
+  </nav>
+
+  <div class="pricing-body">
+
+    <!-- SECTION 1 -->
+
+    <section class="pricing-section" id="basics">
+
+      <span class="pricing-kicker">
+        01 / THE ECONOMICS
+      </span>
+
+      <h2>What is Personalised Pricing?</h2>
+
+      <p>
+        Have you ever noticed how the price of a
+        flight or a product changes every time
+        you check? That everyday experience
+        captures the essence of pricing
+        adjustments in digital markets.
+      </p>
+
+      <p>
+        <strong>Personalised pricing</strong> uses
+        consumer information and estimated
+        willingness to pay to differentiate
+        prices between customers.
+      </p>
+
+      <p>
+        It is important to distinguish personalised
+        pricing from dynamic pricing, where prices
+        change over time in response to demand,
+        capacity or other market conditions
+        without necessarily varying by consumer.
+      </p>
+
+      <h3>Three Forms of Price Discrimination</h3>
+
+      <div class="pricing-types">
+
+        <div class="pricing-type">
+          <span>FIRST DEGREE</span>
+          <h3>Individual Valuation</h3>
+          <p>
+            Each consumer is charged their maximum
+            willingness to pay. Under perfect
+            first-degree discrimination, the seller
+            captures the consumer surplus.
+          </p>
+        </div>
+
+        <div class="pricing-type">
+          <span>SECOND DEGREE</span>
+          <h3>Self-Selection</h3>
+          <p>
+            Consumers select among quantities,
+            product versions or pricing menus
+            according to their preferences.
+          </p>
+        </div>
+
+        <div class="pricing-type">
+          <span>THIRD DEGREE</span>
+          <h3>Group-Based Pricing</h3>
+          <p>
+            Different identifiable consumer
+            groups face different prices,
+            such as age-based or geographic
+            discounts.
+          </p>
+        </div>
+
+      </div>
+
+      <p class="pricing-note">
+        Note: Dynamic pricing is distinct from
+        third-degree price discrimination.
+        The categories above follow the
+        standard economic classification.
+      </p>
+
+      <!-- INTERACTIVE ECONOMIC DEMO -->
+
+      <div class="pricing-demo">
+
+        <h3>Interactive Pricing Lab</h3>
+
+        <p>
+          Imagine a consumer willing to pay
+          €100 for a product. Adjust the
+          price to see how much consumer
+          surplus remains.
+        </p>
+
+        <label for="priceSlider">
+          Retail price:
+          <strong id="priceLabel">€60</strong>
+        </label>
+
+        <input
+          type="range"
+          id="priceSlider"
+          min="0"
+          max="120"
+          step="5"
+          value="60">
+
+        <div class="pricing-demo-grid">
+
+          <div class="pricing-demo-stat">
+            <strong>€100</strong>
+            <span>WILLINGNESS TO PAY</span>
+          </div>
+
+          <div class="pricing-demo-stat">
+            <strong id="demoPrice">€60</strong>
+            <span>RETAIL PRICE</span>
+          </div>
+
+          <div class="pricing-demo-stat">
+            <strong id="demoSurplus">€40</strong>
+            <span>CONSUMER SURPLUS</span>
+          </div>
+
+        </div>
+
+        <div class="pricing-bar-track">
+          <div
+            class="pricing-bar-fill"
+            id="surplusBar">
+          </div>
+        </div>
+
+        <p
+          class="pricing-note"
+          id="demoExplanation"
+          aria-live="polite">
+          At a price of €60, the consumer
+          retains €40 of surplus.
+        </p>
+
+        <p class="pricing-note">
+          Simplified illustration for one consumer
+          and one product. It does not model
+          production costs, competition or
+          actual algorithmic pricing behaviour.
+        </p>
+
+      </div>
+
+      <p>
+        These distinctions help frame the
+        fairness questions emerging in
+        digital markets today.
+      </p>
+
+    </section>
+
+    <!-- SECTION 2 -->
+
+    <section class="pricing-section" id="debate">
+
+      <span class="pricing-kicker">
+        02 / DIGITAL TRANSFORMATION
+      </span>
+
+      <h2>
+        When Did the Debate Intensify,
+        and Why?
+      </h2>
+
+      <p>
+        The contemporary debate over personalised
+        pricing intensified as digital markets
+        underwent a structural transition
+        driven by three developments:
+        real-time algorithmic pricing,
+        increasingly granular consumer data,
+        and greater visibility of asymmetric
+        pricing outcomes.
+      </p>
+
+      <div class="pricing-timeline">
+
+        <div class="pricing-timeline-item">
+          <strong>Algorithmic Pricing</strong>
+          <p>
+            Automated systems enable prices
+            to respond rapidly to market
+            signals and predicted demand.
+          </p>
+        </div>
+
+        <div class="pricing-timeline-item">
+          <strong>Granular Consumer Data</strong>
+          <p>
+            Digital platforms can collect
+            increasingly detailed behavioural
+            information that may be used
+            to estimate willingness to pay.
+          </p>
+        </div>
+
+        <div class="pricing-timeline-item">
+          <strong>Asymmetric Price Outcomes</strong>
+          <p>
+            Consumers may encounter different
+            offers without fully understanding
+            why prices differ.
+          </p>
+        </div>
+
+      </div>
+
+      <p>
+        Between 2023 and 2025, public discussion
+        around algorithmic pricing practices
+        at major digital platforms and firms
+        brought these mechanisms into
+        greater focus.
+      </p>
+
+      <p>
+        This marked a shift from price
+        discrimination as a theoretical
+        construct to a practical governance
+        challenge within digital markets.
+      </p>
+
+      <div class="pricing-highlight">
+        <p>
+          The public debate is not only about
+          economic efficiency. It also concerns
+          whether consumers perceive pricing
+          decisions as legitimate and fair.
+        </p>
+      </div>
+
+      <p>
+        The resulting questions extend across
+        welfare economics, law, behavioural
+        science and market regulation:
+        How much differentiation can an
+        algorithm introduce before it
+        undermines consumer trust?
+      </p>
+
+    </section>
+
+    <!-- SECTION 3 -->
+
+    <section class="pricing-section" id="fairness">
+
+      <span class="pricing-kicker">
+        03 / ALGORITHMIC FAIRNESS
+      </span>
+
+      <h2>When Does a Price Become Unfair?</h2>
+
+      <p>
+        At the heart of the debate lies
+        a simple but powerful question:
+        <strong>
+          When does a price become unfair?
+        </strong>
+      </p>
+
+      <p>
+        Esposito and Grochowski (2024)
+        propose the concept of
+        <em>laesio algorithmica</em>,
+        exploring how legal fairness
+        principles might respond to
+        algorithmically determined prices.
+      </p>
+
+      <p>
+        In digital markets, price
+        differentiation can occur
+        silently, dynamically and
+        asymmetrically, making it
+        difficult for consumers to
+        understand or challenge
+        an individual offer.
+      </p>
+
+      <h3>Key Dimensions of Laesio Algorithmica</h3>
+
+      <ul>
+        <li>
+          <strong>Algorithmic fairness:</strong>
+          Prices may raise concerns when
+          they appear excessively high
+          or exploitative relative to
+          relevant benchmarks.
+        </li>
+
+        <li>
+          <strong>Technological context:</strong>
+          Automated decisions can be
+          opaque and difficult for
+          consumers to negotiate.
+        </li>
+
+        <li>
+          <strong>Legal accountability:</strong>
+          Updated standards may be needed
+          to assess unfair algorithmic
+          outcomes.
+        </li>
+
+        <li>
+          <strong>Consumer protection:</strong>
+          Individuals need meaningful
+          information and appropriate
+          ways to challenge harmful
+          pricing practices.
+        </li>
+      </ul>
+
+      <p>
+        Fairness is therefore not merely
+        an ethical consideration. It can
+        become an economic constraint
+        on firms' pricing strategies.
+      </p>
+
+      <div class="pricing-highlight">
+        <p>
+          Markets may optimise prices,
+          but consumers still expect
+          fairness, transparency and
+          legitimacy.
+        </p>
+      </div>
+
+      <p>
+        <a
+          href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4790672"
+          target="_blank"
+          rel="noopener noreferrer">
+          Read Esposito &amp; Grochowski (2024) ↗
+        </a>
+      </p>
+
+    </section>
+
+    <!-- SECTION 4 -->
+
+    <section class="pricing-section" id="trust">
+
+      <span class="pricing-kicker">
+        04 / BEHAVIOURAL ECONOMICS
+      </span>
+
+      <h2>
+        How Personalised Pricing
+        Can Undermine Consumer Trust
+      </h2>
+
+      <p>
+        According to Vomberg's (2024)
+        study of algorithmic dynamic
+        pricing, opaque data-driven
+        pricing mechanisms can have
+        substantial implications for
+        consumer trust and market
+        behaviour.
+      </p>
+
+      <p>
+        Experimental evidence discussed
+        in the study suggests that
+        non-transparent algorithmic
+        price adjustments may erode
+        trust, particularly when
+        prices appear personalised
+        or unpredictable.
+      </p>
+
+      <h3>Why Trust Matters Economically</h3>
+
+      <p>
+        Consumers who suspect unfair
+        pricing may respond in
+        different ways.
+      </p>
+
+      <ul>
+        <li>
+          <strong>More searching:</strong>
+          Consumers compare additional
+          sellers and prices to verify
+          whether an offer is fair.
+        </li>
+
+        <li>
+          <strong>Higher information costs:</strong>
+          Additional comparisons require
+          time and cognitive effort.
+        </li>
+
+        <li>
+          <strong>Market disengagement:</strong>
+          Some consumers may postpone
+          purchases or avoid platforms
+          they no longer trust.
+        </li>
+      </ul>
+
+      <p>
+        These responses illustrate how
+        perceived fairness can influence
+        market participation and the
+        effectiveness of pricing strategies.
+      </p>
+
+      <div class="pricing-highlight">
+        <p>
+          A pricing algorithm may improve
+          short-run revenue while creating
+          longer-run costs if consumers
+          lose trust in the platform.
+        </p>
+      </div>
+
+      <p>
+        From a governance perspective,
+        transparency, explainability
+        and consumer comprehension
+        are therefore important
+        design considerations.
+      </p>
+
+      <p>
+        <a
+          href="https://www.sciencedirect.com/science/article/pii/S0167811624000946"
+          target="_blank"
+          rel="noopener noreferrer">
+          Read Vomberg (2024) ↗
+        </a>
+      </p>
+
+    </section>
+
+    <!-- SECTION 5 -->
+
+    <section class="pricing-section" id="solutions">
+
+      <span class="pricing-kicker">
+        05 / POLICY &amp; GOVERNANCE
+      </span>
+
+      <h2>
+        A Playbook for Fair and
+        Trustworthy Algorithmic Pricing
+      </h2>
+
+      <p>
+        The literature points toward
+        several complementary approaches
+        for reducing fairness risks
+        while retaining the potential
+        benefits of algorithmic
+        pricing systems.
+      </p>
+
+      <div class="pricing-solutions">
+
+        <div class="pricing-solution">
+          <span>01 / TRANSPARENCY</span>
+          <h3>Explain Pricing Rules</h3>
+          <p>
+            Communicate meaningful
+            information about how
+            prices are determined.
+            Clearer disclosure can
+            help reduce uncertainty
+            and distrust.
+          </p>
+        </div>
+
+        <div class="pricing-solution">
+          <span>02 / NON-DISCRIMINATION</span>
+          <h3>Audit Pricing Outcomes</h3>
+          <p>
+            Examine protected attributes
+            and potentially discriminatory
+            proxies. Test for direct
+            and indirect adverse outcomes.
+          </p>
+        </div>
+
+        <div class="pricing-solution">
+          <span>03 / DATA ROBUSTNESS</span>
+          <h3>Monitor Model Drift</h3>
+          <p>
+            Assess changing data
+            distributions, covariate
+            shift and model performance
+            over time.
+          </p>
+        </div>
+
+        <div class="pricing-solution">
+          <span>04 / FAIR OPTIMISATION</span>
+          <h3>Design Fairness Constraints</h3>
+          <p>
+            Incorporate explicit
+            fairness objectives or
+            constraints into
+            algorithmic optimisation.
+          </p>
+        </div>
+
+        <div class="pricing-solution">
+          <span>05 / OVERSIGHT</span>
+          <h3>Build Accountability</h3>
+          <p>
+            Establish documentation,
+            internal review procedures,
+            monitoring and clear
+            responsibility for
+            pricing decisions.
+          </p>
+        </div>
+
+      </div>
+
+      <h3>Research Behind the Recommendations</h3>
+
+      <p>
+        <strong>Procedural transparency:</strong>
+        <a
+          href="https://www.sciencedirect.com/science/article/pii/S0167811624000946"
+          target="_blank"
+          rel="noopener noreferrer">
+          Vomberg (2024) ↗
+        </a>
+      </p>
+
+      <p>
+        <strong>Anti-discrimination safeguards:</strong>
+        <a
+          href="https://policyreview.info/articles/analysis/discrimination-grounds-and-personalised-pricing"
+          target="_blank"
+          rel="noopener noreferrer">
+          Heidary (2024) ↗
+        </a>
+      </p>
+
+      <p>
+        <strong>Distributional robustness:</strong>
+        <a
+          href="https://arxiv.org/abs/2202.04245"
+          target="_blank"
+          rel="noopener noreferrer">
+          Xu et al. (2022) ↗
+        </a>
+      </p>
+
+      <p>
+        <strong>Fairness-aware optimisation:</strong>
+        <a
+          href="https://arxiv.org/abs/1803.09967"
+          target="_blank"
+          rel="noopener noreferrer">
+          Maestre et al. (2018) ↗
+        </a>
+      </p>
+
+      <h3>Final Thoughts</h3>
+
+      <p>
+        The future of personalised
+        pricing will not be determined
+        by algorithmic capacity alone,
+        but by the institutional choices
+        that shape how algorithms operate.
+      </p>
+
+      <p>
+        Transparency, non-discrimination,
+        data robustness and fairness-aware
+        optimisation are central to
+        designing pricing systems
+        that consumers can trust.
+      </p>
+
+      <div class="pricing-highlight">
+        <p>
+          The challenge for digital markets
+          is to build pricing architectures
+          that can optimise efficiently
+          while sustaining the trust
+          on which market participation
+          depends.
+        </p>
+      </div>
+
+    </section>
+
+    <div class="pricing-ending">
+      <p>✦</p>
+      <p>
+        DIGITAL ECONOMICS / BEHAVIOURAL SCIENCE /
+        ALGORITHMIC FAIRNESS
+      </p>
+
+      <a class="back-link" href="research-v2.html">
+        ← Explore other research
+      </a>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="footer section-wrap">
+  <span>
+    © <span id="year">2026</span>
+    ASLI UMAY YARDIMCI
+  </span>
+
+  <span>ECONOMICS / RESEARCH / IDEAS</span>
+
+  <a href="index.html#home">
+    BACK TO HOME ↑
+  </a>
+</footer>
+
+<script>
+(function () {
+
+  // Reading progress
+
+  const progress = document.getElementById(
+    "pricingProgress"
+  );
+
+  function updateProgress() {
+    const page = document.documentElement;
+    const total = page.scrollHeight - page.clientHeight;
+
+    const percentage = total > 0
+      ? Math.max(
+          0,
+          Math.min(
+            100,
+            page.scrollTop / total * 100
+          )
+        )
+      : 0;
+
+    progress.style.width = percentage + "%";
+  }
+
+  window.addEventListener(
+    "scroll",
+    updateProgress,
+    { passive: true }
+  );
+
+  window.addEventListener(
+    "resize",
+    updateProgress
+  );
+
+  updateProgress();
+
+  // Scroll reveal animations
+
+  const sections = document.querySelectorAll(
+    ".pricing-section"
+  );
+
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  if (
+    reducedMotion ||
+    !("IntersectionObserver" in window)
+  ) {
+
+    sections.forEach(function (section) {
+      section.classList.add("visible");
+    });
+
+  } else {
+
+    const observer = new IntersectionObserver(
+      function (entries) {
+
+        entries.forEach(function (entry) {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+
+        });
+
+      },
+      { threshold: 0.06 }
+    );
+
+    sections.forEach(function (section) {
+      observer.observe(section);
+    });
+
+  }
+
+  // Interactive consumer surplus simulation
+
+  const slider = document.getElementById(
+    "priceSlider"
+  );
+
+  const priceLabel = document.getElementById(
+    "priceLabel"
+  );
+
+  const demoPrice = document.getElementById(
+    "demoPrice"
+  );
+
+  const demoSurplus = document.getElementById(
+    "demoSurplus"
+  );
+
+  const surplusBar = document.getElementById(
+    "surplusBar"
+  );
+
+  const explanation = document.getElementById(
+    "demoExplanation"
+  );
+
+  const willingnessToPay = 100;
+
+  function updateSimulation() {
+
+    const price = Number(slider.value);
+
+    const purchased = price <= willingnessToPay;
+
+    const surplus = purchased
+      ? willingnessToPay - price
+      : 0;
+
+    priceLabel.textContent = "€" + price;
+    demoPrice.textContent = "€" + price;
+    demoSurplus.textContent = "€" + surplus;
+
+    surplusBar.style.width = surplus + "%";
+
+    if (purchased) {
+
+      explanation.textContent =
+        "At a price of €" + price +
+        ", the consumer retains €" +
+        surplus + " of surplus.";
+
+    } else {
+
+      explanation.textContent =
+        "The price exceeds willingness to pay. " +
+        "In this simplified model, no purchase occurs.";
+
+    }
+
+  }
+
+  slider.addEventListener(
+    "input",
+    updateSimulation
+  );
+
+  updateSimulation();
+
+})();
+</script>
+
+</body>
+</html>
