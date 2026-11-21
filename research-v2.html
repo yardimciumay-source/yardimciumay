@@ -2,1123 +2,1039 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080f1d">
-  <meta name="description" content="Research and selected projects by Aslı Umay Yardımcı, exploring applied economics, digital markets, behavioural economics and consumer trends.">
-
-  <title>Research — Aslı Umay Yardımcı</title>
-
-  <style>
-    :root {
-      --bg: #080f1d;
-      --surface: #101e33;
-      --surface-2: #142741;
-      --text: #f0f6ff;
-      --muted: #a5b8d0;
-      --blue: #69baff;
-      --cyan: #a0dfff;
-      --border: rgba(128, 184, 240, .18);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      color: var(--text);
-      background: var(--bg);
-      font-family: Inter, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      background:
-        radial-gradient(
-          ellipse at 78% 12%,
-          rgba(40, 105, 214, .17),
-          transparent 43%
-        ),
-        radial-gradient(
-          ellipse at 12% 75%,
-          rgba(27, 84, 165, .11),
-          transparent 43%
-        );
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font: inherit;
-    }
-
-    /* STANDARD HEADER */
-
-    .site-header {
-      width: 100%;
-      max-width: 1360px;
-      margin: 0 auto;
-      padding: 28px 6%;
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      flex-shrink: 0;
-      white-space: nowrap;
-      font-size: 30px;
-      font-weight: 900;
-      line-height: 1;
-      letter-spacing: -2px;
-    }
-
-    .brand-dot {
-      color: var(--blue);
-    }
-
-    .brand-caption {
-      margin-left: 15px;
-      padding-left: 15px;
-      border-left: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 9px;
-      font-weight: 700;
-      line-height: 1.5;
-      letter-spacing: 1.4px;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 32px;
-      margin-left: auto;
-    }
-
-    .nav a {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 600;
-      transition: color .2s;
-    }
-
-    .nav a:hover,
-    .nav a[aria-current="page"] {
-      color: var(--cyan);
-    }
-
-    .header-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      flex-shrink: 0;
-      padding: 12px 18px;
-      border: 1px solid rgba(105, 186, 255, .42);
-      border-radius: 100px;
-      color: var(--cyan);
-      font-size: 12px;
-      font-weight: 700;
-      white-space: nowrap;
-      transition: background .2s;
-    }
-
-    .header-cta:hover {
-      background: rgba(105, 186, 255, .1);
-    }
-
-    .menu-toggle {
-      display: none;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: #12233b;
-      padding: 10px 13px;
-      color: var(--text);
-      cursor: pointer;
-    }
-
-    /* MAIN */
-
-    .container {
-      max-width: 1360px;
-      margin: 0 auto;
-      padding-left: 6%;
-      padding-right: 6%;
-    }
-
-    .research-hero {
-      padding-top: 105px;
-      padding-bottom: 85px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--cyan);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 2.3px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      flex-shrink: 0;
-      border-radius: 50%;
-      background: var(--blue);
-      box-shadow: 0 0 15px var(--blue);
-    }
-
-    h1 {
-      margin: 28px 0 25px;
-      font-size: clamp(62px, 10vw, 125px);
-      line-height: .98;
-      font-weight: 850;
-      letter-spacing: -.065em;
-    }
-
-    h1 span {
-      display: block;
-      color: var(--blue);
-    }
-
-    .hero-bottom {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .hero-description {
-      max-width: 650px;
-      margin: 0;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.85;
-    }
-
-    .hero-count {
-      color: #79bdf5;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      white-space: nowrap;
-    }
-
-    /* SECTION INTRO */
-
-    .projects-section {
-      padding-top: 80px;
-      padding-bottom: 100px;
-    }
-
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 25px;
-      margin-bottom: 32px;
-    }
-
-    .section-kicker {
-      color: var(--cyan);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 2px;
-    }
-
-    .section-heading h2 {
-      margin: 15px 0 0;
-      font-size: clamp(32px, 5vw, 52px);
-      letter-spacing: -.045em;
-    }
-
-    .section-heading h2 em {
-      color: var(--blue);
-      font-style: normal;
-    }
-
-    .section-note {
-      max-width: 270px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.7;
-      text-align: right;
-    }
-
-    /* RESEARCH GRID */
-
-    .research-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .research-card {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      min-height: 520px;
-      padding: 28px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      background: linear-gradient(
-        145deg,
-        rgba(20, 42, 70, .94),
-        rgba(10, 23, 42, .96)
-      );
-      transition:
-        transform .25s,
-        border-color .25s,
-        box-shadow .25s;
-    }
-
-    .research-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(105, 186, 255, .6);
-      box-shadow: 0 25px 65px rgba(0, 0, 0, .25);
-    }
-
-    .card-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-    }
-
-    .card-category {
-      color: #a4c9eb;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 1.6px;
-    }
-
-    .card-arrow {
-      color: var(--cyan);
-      font-size: 27px;
-      transition: transform .25s;
-    }
-
-    .research-card:hover .card-arrow {
-      transform: translate(3px, -3px);
-    }
-
-    /* VISUAL PANELS */
-
-    .card-visual {
-      position: relative;
-      height: 215px;
-      margin: 28px 0 30px;
-      border: 1px solid rgba(140, 193, 250, .13);
-      border-radius: 17px;
-      overflow: hidden;
-    }
-
-    .visual-label {
-      position: absolute;
-      left: 17px;
-      bottom: 15px;
-      z-index: 2;
-      color: #c5e7ff;
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-    }
-
-    /* MINIMUM WAGE */
-
-    .visual-wage {
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      gap: 12px;
-      padding: 35px 35px 48px;
-      background:
-        radial-gradient(
-          circle at 75% 20%,
-          rgba(94, 168, 255, .25),
-          transparent 45%
-        ),
-        #0b2341;
-    }
-
-    .wage-bar {
-      width: 12%;
-      max-width: 38px;
-      border-radius: 5px 5px 0 0;
-      background: linear-gradient(#8dd6ff, #256ac4);
-      box-shadow: 0 0 22px rgba(66, 151, 241, .12);
-    }
-
-    .wage-bar:nth-child(1) { height: 37%; }
-    .wage-bar:nth-child(2) { height: 51%; }
-    .wage-bar:nth-child(3) { height: 46%; }
-    .wage-bar:nth-child(4) { height: 66%; }
-    .wage-bar:nth-child(5) { height: 62%; }
-    .wage-bar:nth-child(6) { height: 82%; }
-    .wage-bar:nth-child(7) { height: 95%; }
-
-    /* PRICING */
-
-    .visual-pricing {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background:
-        radial-gradient(
-          circle at 50% 50%,
-          rgba(80, 119, 255, .22),
-          transparent 55%
-        ),
-        #111e40;
-    }
-
-    .price-orb {
-      position: absolute;
-      width: 160px;
-      height: 160px;
-      border: 1px solid rgba(144, 190, 255, .5);
-      border-radius: 50%;
-      transform: rotateX(65deg) rotate(-25deg);
-    }
-
-    .price-orb:nth-child(2) {
-      transform: rotateY(65deg) rotate(25deg);
-    }
-
-    .price-orb:nth-child(3) {
-      width: 105px;
-      height: 105px;
-      transform: none;
-      background: radial-gradient(
-        circle at 35% 30%,
-        #8ad4ff,
-        #2354a6 65%,
-        #14234b
-      );
-      box-shadow: 0 0 55px rgba(69, 141, 255, .3);
-    }
-
-    /* TENNIS */
-
-    .visual-tennis {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background:
-        linear-gradient(
-          135deg,
-          rgba(43, 117, 151, .4),
-          transparent
-        ),
-        #0c3041;
-    }
-
-    .tennis-court {
-      position: relative;
-      width: 75%;
-      height: 68%;
-      border: 2px solid rgba(200, 245, 255, .65);
-      transform: perspective(450px) rotateX(24deg);
-    }
-
-    .tennis-court::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      border-left: 2px solid rgba(200, 245, 255, .65);
-    }
-
-    .tennis-court::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      border-top: 2px solid rgba(200, 245, 255, .65);
-    }
-
-    .tennis-ball {
-      position: absolute;
-      top: 36%;
-      left: 61%;
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background: #d5f98a;
-      box-shadow: 0 0 28px rgba(213, 249, 138, .5);
-    }
-
-    /* CONSUMER TRENDS */
-
-    .visual-trends {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background:
-        radial-gradient(
-          circle at 50% 50%,
-          rgba(85, 155, 255, .22),
-          transparent 55%
-        ),
-        #152340;
-    }
-
-    .trend-ring {
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      border: 1px solid rgba(141, 204, 255, .45);
-      border-radius: 50%;
-      box-shadow:
-        0 0 0 22px rgba(91, 156, 255, .055),
-        0 0 0 48px rgba(91, 156, 255, .035);
-    }
-
-    .trend-year {
-      position: relative;
-      color: #c4eaff;
-      font-size: 63px;
-      font-weight: 850;
-      letter-spacing: -4px;
-    }
-
-    /* CARD CONTENT */
-
-    .card-content {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-
-    .card-content h3 {
-      margin: 0 0 14px;
-      color: var(--text);
-      font-size: clamp(24px, 2.8vw, 32px);
-      line-height: 1.2;
-      letter-spacing: -.9px;
-    }
-
-    .card-content p {
-      margin: 0 0 28px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .card-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      margin-top: auto;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-      color: var(--cyan);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1.2px;
-    }
-
-    /* ENDING */
-
-    .research-ending {
-      margin-top: 85px;
-      padding: 55px 0;
-      border-top: 1px solid var(--border);
-      text-align: center;
-    }
-
-    .research-ending h2 {
-      margin: 0 0 18px;
-      font-size: clamp(29px, 5vw, 48px);
-      letter-spacing: -1.5px;
-    }
-
-    .research-ending h2 span {
-      color: var(--blue);
-    }
-
-    .research-ending p {
-      margin: 0 auto 30px;
-      max-width: 570px;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.8;
-    }
-
-    .ending-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 15px 23px;
-      border: 1px solid rgba(105, 186, 255, .5);
-      border-radius: 100px;
-      color: var(--cyan);
-      font-size: 12px;
-      font-weight: 800;
-      transition: background .2s;
-    }
-
-    .ending-button:hover {
-      background: rgba(105, 186, 255, .12);
-    }
-
-    /* FOOTER */
-
-    .footer {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 18px;
-      max-width: 1360px;
-      margin: 0 auto;
-      padding: 30px 6% 45px;
-      border-top: 1px solid var(--border);
-      color: #849cb7;
-      font-size: 10px;
-      letter-spacing: 1px;
-    }
-
-    .footer a {
-      color: var(--cyan);
-    }
-
-    a:focus-visible,
-    button:focus-visible {
-      outline: 2px solid var(--cyan);
-      outline-offset: 5px;
-    }
-
-    /* TABLET & MOBILE */
-
-    @media (max-width: 900px) {
-      .site-header {
-        flex-wrap: wrap;
-        gap: 15px;
-      }
-
-      .brand {
-        margin-right: auto;
-      }
-
-      .menu-toggle {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .nav {
-        display: none;
-        order: 3;
-        width: 100%;
-        margin-left: 0;
-        padding: 18px 0;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 22px;
-      }
-
-      .nav.is-open {
-        display: flex;
-      }
-
-      .header-cta {
-        display: none;
-      }
-
-      .research-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .research-hero {
-        padding-top: 75px;
-      }
-
-      .section-heading {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .section-note {
-        text-align: left;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .brand-caption {
-        display: none;
-      }
-
-      .research-hero {
-        padding-top: 60px;
-        padding-bottom: 65px;
-      }
-
-      h1 {
-        font-size: clamp(57px, 15vw, 78px);
-      }
-
-      .hero-bottom {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .projects-section {
-        padding-top: 60px;
-      }
-
-      .research-card {
-        padding: 20px;
-        min-height: 490px;
-      }
-
-      .card-visual {
-        height: 185px;
-      }
-
-      .card-content h3 {
-        font-size: 25px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        transition: none !important;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080f1d">
+<title>Research — Aslı Umay Yardımcı</title>
+<meta name="description" content="Selected research and projects by Aslı Umay Yardımcı.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #080f1d;
+  --surface: #101e33;
+  --surface2: #142741;
+  --text: #eef6ff;
+  --muted: #a5b9d0;
+  --accent: #63b4ff;
+  --border: #263a54;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* SAME HEADER AS HOMEPAGE */
+
+.site-header {
+  width: 100%;
+  max-width: 1380px;
+  height: 88px;
+  margin: 0 auto;
+  padding: 0 6.4%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  margin-right: auto;
+  white-space: nowrap;
+  font-size: 23px;
+  font-weight: 850;
+  letter-spacing: -1.5px;
+  line-height: 1.2;
+}
+
+.brand-dot {
+  color: var(--accent);
+}
+
+.brand-caption {
+  margin-left: 10px;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: 1.5px;
+  line-height: 1.4;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.nav a {
+  color: #c6d9ed;
+  font-size: 12px;
+  font-weight: 600;
+  transition: color .2s;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--accent);
+}
+
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border: 1px solid #355473;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #c6d9ed;
+  white-space: nowrap;
+  transition: border-color .2s;
+}
+
+.header-cta:hover {
+  border-color: var(--accent);
+}
+
+.header-cta span {
+  margin-left: 9px;
+  color: var(--accent);
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* PAGE LAYOUT */
+
+.container {
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding-left: 6.4%;
+  padding-right: 6.4%;
+}
+
+/* RESEARCH HERO */
+
+.research-hero {
+  padding-top: 112px;
+  padding-bottom: 105px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.research-hero h1 {
+  margin: 35px 0 45px;
+  font-size: clamp(64px, 9vw, 132px);
+  line-height: .98;
+  font-weight: 800;
+  letter-spacing: -.075em;
+}
+
+.research-hero h1 span {
+  display: block;
+  color: var(--accent);
+}
+
+.hero-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 35px;
+}
+
+.hero-description {
+  max-width: 540px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.hero-count {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  white-space: nowrap;
+}
+
+/* PROJECT SECTION */
+
+.projects-section {
+  padding-top: 95px;
+  padding-bottom: 110px;
+  border-top: 1px solid var(--border);
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 35px;
+  margin-bottom: 52px;
+}
+
+.section-kicker {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.section-heading h2 {
+  margin: 20px 0 0;
+  font-size: clamp(32px, 4.5vw, 55px);
+  font-weight: 750;
+  line-height: 1.15;
+  letter-spacing: -2px;
+}
+
+.section-heading h2 em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+.section-note {
+  max-width: 275px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* RESEARCH CARDS */
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.research-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition:
+    transform .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+.research-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 18px 45px rgba(0,0,0,.18);
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 28px;
+}
+
+.card-category {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.card-arrow {
+  color: var(--accent);
+  font-size: 23px;
+}
+
+.card-visual {
+  position: relative;
+  height: 215px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at center,
+      rgba(54,135,225,.2),
+      transparent 65%),
+    #0b182a;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.visual-label {
+  position: absolute;
+  bottom: 18px;
+  left: 25px;
+  color: #a5b9d0;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+
+/* MINIMUM WAGE VISUAL */
+
+.visual-wage {
+  align-items: flex-end;
+  gap: 12px;
+  padding-bottom: 50px;
+}
+
+.wage-bar {
+  width: 28px;
+  background: linear-gradient(
+    180deg, #70c5ff, #2460aa
+  );
+  border-radius: 4px 4px 0 0;
+  opacity: .85;
+}
+
+.wage-bar:nth-child(1) { height: 45px; }
+.wage-bar:nth-child(2) { height: 65px; }
+.wage-bar:nth-child(3) { height: 82px; }
+.wage-bar:nth-child(4) { height: 105px; }
+.wage-bar:nth-child(5) { height: 125px; }
+.wage-bar:nth-child(6) { height: 145px; }
+.wage-bar:nth-child(7) { height: 155px; }
+
+/* PRICING VISUAL */
+
+.price-orb {
+  position: absolute;
+  border: 1px solid rgba(112,197,255,.65);
+  border-radius: 50%;
+  box-shadow: 0 0 35px rgba(65,151,240,.12);
+}
+
+.price-orb:nth-child(1) {
+  width: 170px;
+  height: 170px;
+}
+
+.price-orb:nth-child(2) {
+  width: 120px;
+  height: 120px;
+}
+
+.price-orb:nth-child(3) {
+  width: 65px;
+  height: 65px;
+  background: rgba(99,180,255,.28);
+}
+
+/* TENNIS VISUAL */
+
+.tennis-court {
+  width: 225px;
+  height: 125px;
+  border: 2px solid rgba(112,197,255,.65);
+  position: relative;
+  transform: perspective(400px) rotateX(18deg);
+}
+
+.tennis-court::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  border-left: 2px solid rgba(112,197,255,.65);
+}
+
+.tennis-court::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-top: 2px solid rgba(112,197,255,.65);
+}
+
+.tennis-ball {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #a0dfff;
+  box-shadow: 0 0 25px rgba(99,180,255,.7);
+  transform: translate(45px,-30px);
+}
+
+/* CONSUMER TRENDS VISUAL */
+
+.trend-ring {
+  width: 175px;
+  height: 175px;
+  border: 2px solid rgba(99,180,255,.45);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 20px rgba(99,180,255,.05),
+    0 0 0 40px rgba(99,180,255,.025);
+}
+
+.trend-year {
+  position: absolute;
+  color: #a0dfff;
+  font-size: 58px;
+  font-weight: 800;
+  letter-spacing: -4px;
+}
+
+/* CARD CONTENT */
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 30px 28px 25px;
+}
+
+.card-content h3 {
+  margin: 0 0 20px;
+  font-size: clamp(23px, 2.5vw, 31px);
+  font-weight: 750;
+  line-height: 1.3;
+  letter-spacing: -1px;
+}
+
+.card-content p {
+  margin: 0 0 35px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.card-footer span:last-child {
+  font-size: 19px;
+}
+
+/* ENDING SECTION */
+
+.research-ending {
+  margin-top: 125px;
+  padding: 75px 25px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(40,110,210,.12),
+    transparent 70%
+  );
+}
+
+.research-ending h2 {
+  margin: 0 0 22px;
+  font-size: clamp(35px, 5vw, 65px);
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.15;
+}
+
+.research-ending h2 span {
+  display: block;
+  color: var(--accent);
+}
+
+.research-ending p {
+  max-width: 540px;
+  margin: 0 auto 35px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.ending-button {
+  display: inline-flex;
+  padding: 15px 26px;
+  border: 1px solid var(--accent);
+  border-radius: 100px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  transition: background .2s;
+}
+
+.ending-button:hover {
+  background: rgba(99,180,255,.1);
+}
+
+/* FOOTER */
+
+.footer {
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 35px 6.4%;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.footer a {
+  color: var(--accent);
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 850px) {
+
+  .site-header {
+    height: 72px;
+    padding: 0 5%;
+    gap: 12px;
+  }
+
+  .brand-caption {
+    display: none;
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-left: auto;
+    padding: 9px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 71px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 20px 5%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+    background: #0d1a2c;
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+  }
+
+  .nav.is-open {
+    display: flex;
+  }
+
+  .research-hero {
+    padding-top: 80px;
+    padding-bottom: 75px;
+  }
+
+  .hero-bottom,
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .research-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-section {
+    padding-top: 65px;
+  }
+
+  .research-ending {
+    margin-top: 75px;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .research-hero h1 {
+    font-size: clamp(50px, 13vw, 72px);
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .card-visual {
+    height: 190px;
+  }
+
+  .card-content {
+    padding: 25px 22px;
+  }
+
+  .research-ending {
+    padding: 60px 10px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
+<!-- IDENTICAL HOMEPAGE BANNER -->
 
-  <header class="site-header">
+<header class="site-header">
 
-    <a
-      class="brand"
-      href="https://yardimciumay-source.github.io/yardimciumay-source/"
-      aria-label="Go to AUY homepage"
-    >
-      AUY<span class="brand-dot">.</span>
+  <a class="brand"
+     href="index.html"
+     aria-label="Go to homepage">
+    AUY<span class="brand-dot">.</span>
+    <span class="brand-caption">
+      ECONOMICS / RESEARCH
+    </span>
+  </a>
 
-      <span class="brand-caption">
-        ECONOMICS / RESEARCH
-      </span>
-    </a>
+  <button
+    class="menu-toggle"
+    type="button"
+    aria-controls="primary-nav"
+    aria-expanded="false">
+    Menu <span aria-hidden="true">☰</span>
+  </button>
 
-    <button
-      class="menu-toggle"
-      type="button"
-      aria-controls="primary-nav"
-      aria-expanded="false"
-    >
-      Menu <span aria-hidden="true">☰</span>
-    </button>
+  <nav class="nav"
+       id="primary-nav"
+       aria-label="Main navigation">
 
-    <nav
-      class="nav"
-      id="primary-nav"
-      aria-label="Main navigation"
-    >
-      <a
-        href="research-v2.html"
-        aria-current="page"
-      >
-        Work
-      </a>
+    <a href="research.html"
+       class="active"
+       aria-current="page">Work</a>
 
-      <a href="about-v2.html">About</a>
-      <a href="writing-v2.html">Writing</a>
-      <a href="contact-v2.html">Contact</a>
-    </nav>
+    <a href="about.html">About</a>
 
-    <a class="header-cta" href="contact-v2.html">
-      Let's connect <span aria-hidden="true">↗</span>
-    </a>
+    <a href="writing.html">Writing</a>
 
-  </header>
+    <a href="contact.html">Contact</a>
 
-  <main>
+  </nav>
 
-    <!-- HERO -->
+  <a class="header-cta"
+     href="contact.html">
+    Let's connect
+    <span aria-hidden="true">↗</span>
+  </a>
 
-    <section class="research-hero container">
+</header>
 
-      <div class="eyebrow">
-        01 / RESEARCH & PROJECTS
+<main>
+
+<!-- RESEARCH HERO -->
+
+<section class="research-hero container">
+
+  <div class="eyebrow">
+    01 / RESEARCH &amp; PROJECTS
+  </div>
+
+  <h1>
+    Selected
+    <span>research.</span>
+  </h1>
+
+  <div class="hero-bottom">
+
+    <p class="hero-description">
+      From labour markets and digital pricing
+      to behavioural insights and consumer trends.
+      A collection of economic questions explored
+      through data, research and curiosity.
+    </p>
+
+    <span class="hero-count">
+      FOUR PROJECTS / 001—004
+    </span>
+
+  </div>
+
+</section>
+
+<!-- RESEARCH PROJECTS -->
+
+<section class="projects-section container"
+         id="projects">
+
+  <div class="section-heading">
+
+    <div>
+      <div class="section-kicker">
+        THE RESEARCH ARCHIVE / 001
       </div>
 
-      <h1>
-        Selected
-        <span>research.</span>
-      </h1>
+      <h2>
+        Questions worth
+        <em>exploring.</em>
+      </h2>
+    </div>
 
-      <div class="hero-bottom">
+    <p class="section-note">
+      Select a project to read the full
+      research overview and explore its findings.
+    </p>
 
-        <p class="hero-description">
-          From labour markets and digital pricing
-          to behavioural insights and consumer trends.
-          A collection of economic questions explored
-          through data, research and curiosity.
+  </div>
+
+  <div class="research-grid">
+
+    <!-- PROJECT 01 -->
+
+    <a class="research-card"
+       href="minimum-wage.html"
+       aria-label="Read research on Germany's minimum wage reform">
+
+      <div class="card-top">
+        <span class="card-category">
+          01 / LABOUR ECONOMICS
+        </span>
+        <span class="card-arrow">↗</span>
+      </div>
+
+      <div class="card-visual visual-wage"
+           aria-hidden="true">
+        <span class="wage-bar"></span>
+        <span class="wage-bar"></span>
+        <span class="wage-bar"></span>
+        <span class="wage-bar"></span>
+        <span class="wage-bar"></span>
+        <span class="wage-bar"></span>
+        <span class="wage-bar"></span>
+
+        <span class="visual-label">
+          POLICY / CAUSAL INFERENCE
+        </span>
+      </div>
+
+      <div class="card-content">
+
+        <h3>
+          Germany's 2022<br>
+          Minimum Wage Reform
+        </h3>
+
+        <p>
+          An empirical investigation of the 2022
+          minimum wage increase and its effects
+          on regional wage inequality across
+          Germany's 16 federal states.
         </p>
 
-        <span class="hero-count">
-          FOUR PROJECTS / 001—004
+        <div class="card-footer">
+          <span>EXPLORE RESEARCH</span>
+          <span>↗</span>
+        </div>
+
+      </div>
+
+    </a>
+
+    <!-- PROJECT 02 -->
+
+    <a class="research-card"
+       href="personalized-pricing.html"
+       aria-label="Read research on personalized pricing">
+
+      <div class="card-top">
+        <span class="card-category">
+          02 / DIGITAL ECONOMICS
+        </span>
+        <span class="card-arrow">↗</span>
+      </div>
+
+      <div class="card-visual visual-pricing"
+           aria-hidden="true">
+
+        <span class="price-orb"></span>
+        <span class="price-orb"></span>
+        <span class="price-orb"></span>
+
+        <span class="visual-label">
+          DIGITAL MARKETS / FAIRNESS
         </span>
 
       </div>
 
-    </section>
-
-    <!-- PROJECTS -->
-
-    <section class="projects-section container" id="projects">
-
-      <div class="section-heading">
-
-        <div>
-          <div class="section-kicker">
-            THE RESEARCH ARCHIVE / 001
-          </div>
-
-          <h2>
-            Questions worth <em>exploring.</em>
-          </h2>
-        </div>
-
-        <p class="section-note">
-          Select a project to read the full research
-          overview and explore its findings.
-        </p>
-
-      </div>
-
-      <div class="research-grid">
-
-        <!-- 01 MINIMUM WAGE -->
-
-        <a
-          class="research-card"
-          href="minimum-wage-v2.html"
-          aria-label="Read research on Germany's 2022 minimum wage reform"
-        >
-
-          <div class="card-top">
-            <span class="card-category">
-              01 / LABOUR ECONOMICS
-            </span>
-
-            <span class="card-arrow">↗</span>
-          </div>
-
-          <div class="card-visual visual-wage" aria-hidden="true">
-
-            <span class="wage-bar"></span>
-            <span class="wage-bar"></span>
-            <span class="wage-bar"></span>
-            <span class="wage-bar"></span>
-            <span class="wage-bar"></span>
-            <span class="wage-bar"></span>
-            <span class="wage-bar"></span>
-
-            <span class="visual-label">
-              POLICY / CAUSAL INFERENCE
-            </span>
-
-          </div>
-
-          <div class="card-content">
-
-            <h3>
-              Germany's 2022<br>
-              Minimum Wage Reform
-            </h3>
-
-            <p>
-              An empirical investigation of the 2022
-              minimum wage increase and its effects on
-              regional wage inequality across Germany's
-              16 federal states.
-            </p>
-
-            <div class="card-footer">
-              <span>EXPLORE RESEARCH</span>
-              <span>↗</span>
-            </div>
-
-          </div>
-
-        </a>
-
-        <!-- 02 PERSONALIZED PRICING -->
-
-        <a
-          class="research-card"
-          href="personalized-pricing-v2.html"
-          aria-label="Read research on personalized pricing and fairness"
-        >
-
-          <div class="card-top">
-            <span class="card-category">
-              02 / DIGITAL ECONOMICS
-            </span>
-
-            <span class="card-arrow">↗</span>
-          </div>
-
-          <div class="card-visual visual-pricing" aria-hidden="true">
-
-            <span class="price-orb"></span>
-            <span class="price-orb"></span>
-            <span class="price-orb"></span>
-
-            <span class="visual-label">
-              DIGITAL MARKETS / FAIRNESS
-            </span>
-
-          </div>
-
-          <div class="card-content">
-
-            <h3>
-              Personalized Pricing<br>
-              & Perceived Fairness
-            </h3>
-
-            <p>
-              Exploring how personalized prices
-              intersect with consumer perceptions,
-              market behaviour and questions of fairness
-              in the digital economy.
-            </p>
-
-            <div class="card-footer">
-              <span>EXPLORE RESEARCH</span>
-              <span>↗</span>
-            </div>
-
-          </div>
-
-        </a>
-
-        <!-- 03 TENNIS MOMENTUM -->
-
-        <a
-          class="research-card"
-          href="tennis-momentum-v2.html"
-          aria-label="Read research on momentum in tennis"
-        >
-
-          <div class="card-top">
-            <span class="card-category">
-              03 / BEHAVIOURAL ECONOMICS
-            </span>
-
-            <span class="card-arrow">↗</span>
-          </div>
-
-          <div class="card-visual visual-tennis" aria-hidden="true">
-
-            <div class="tennis-court"></div>
-            <div class="tennis-ball"></div>
-
-            <span class="visual-label">
-              SPORT / DECISION-MAKING
-            </span>
-
-          </div>
-
-          <div class="card-content">
-
-            <h3>
-              Momentum<br>
-              in Tennis
-            </h3>
-
-            <p>
-              Examining the idea of momentum in sport
-              and the relationship between performance,
-              behaviour and decision-making under pressure.
-            </p>
-
-            <div class="card-footer">
-              <span>EXPLORE RESEARCH</span>
-              <span>↗</span>
-            </div>
-
-          </div>
-
-        </a>
-
-        <!-- 04 CONSUMER TRENDS -->
-
-        <a
-          class="research-card"
-          href="consumer-trends-v2.html"
-          aria-label="Read research on consumer trends and retail"
-        >
-
-          <div class="card-top">
-            <span class="card-category">
-              04 / MARKET INSIGHTS
-            </span>
-
-            <span class="card-arrow">↗</span>
-          </div>
-
-          <div class="card-visual visual-trends" aria-hidden="true">
-
-            <div class="trend-ring"></div>
-
-            <span class="trend-year">
-              2027
-            </span>
-
-            <span class="visual-label">
-              CONSUMERS / FUTURE OF RETAIL
-            </span>
-
-          </div>
-
-          <div class="card-content">
-
-            <h3>
-              Consumer Trends<br>
-              & the Future of Retail
-            </h3>
-
-            <p>
-              Exploring changing consumer preferences,
-              emerging retail dynamics and the forces
-              shaping markets toward 2027.
-            </p>
-
-            <div class="card-footer">
-              <span>EXPLORE RESEARCH</span>
-              <span>↗</span>
-            </div>
-
-          </div>
-
-        </a>
-
-      </div>
-
-      <!-- ENDING -->
-
-      <div class="research-ending">
-
-        <h2>
-          Research begins with
-          <span>curiosity.</span>
-        </h2>
+      <div class="card-content">
+
+        <h3>
+          Personalized Pricing<br>
+          &amp; Perceived Fairness
+        </h3>
 
         <p>
-          Behind every dataset is a question worth asking.
-          Interested in discussing an idea or exploring
-          a potential collaboration?
+          Exploring how personalized prices
+          intersect with consumer perceptions,
+          market behaviour and questions
+          of fairness in the digital economy.
         </p>
 
-        <a class="ending-button" href="contact-v2.html">
-          Let's connect ↗
-        </a>
+        <div class="card-footer">
+          <span>EXPLORE RESEARCH</span>
+          <span>↗</span>
+        </div>
 
       </div>
 
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-
-  <footer class="footer">
-
-    <span>
-      © <span id="year">2026</span>
-      ASLI UMAY YARDIMCI
-    </span>
-
-    <span>
-      ECONOMICS / RESEARCH / IDEAS
-    </span>
-
-    <a
-      href="https://yardimciumay-source.github.io/yardimciumay-source/"
-    >
-      BACK TO HOME ↑
     </a>
 
-  </footer>
+    <!-- PROJECT 03 -->
 
-  <!-- JAVASCRIPT -->
+    <a class="research-card"
+       href="tennis-momentum.html"
+       aria-label="Read research on momentum in tennis">
 
-  <script>
-    (function () {
-      "use strict";
+      <div class="card-top">
+        <span class="card-category">
+          03 / BEHAVIOURAL ECONOMICS
+        </span>
+        <span class="card-arrow">↗</span>
+      </div>
 
-      const year = document.getElementById("year");
+      <div class="card-visual visual-tennis"
+           aria-hidden="true">
 
-      if (year) {
-        year.textContent = new Date().getFullYear();
-      }
+        <div class="tennis-court"></div>
+        <div class="tennis-ball"></div>
 
-      const menuButton =
-        document.querySelector(".menu-toggle");
+        <span class="visual-label">
+          SPORT / DECISION-MAKING
+        </span>
 
-      const nav =
-        document.getElementById("primary-nav");
+      </div>
 
-      if (menuButton && nav) {
-        menuButton.addEventListener("click", function () {
-          const isOpen = nav.classList.toggle("is-open");
+      <div class="card-content">
 
-          menuButton.setAttribute(
-            "aria-expanded",
-            String(isOpen)
-          );
-        });
+        <h3>
+          Momentum<br>
+          in Tennis
+        </h3>
 
-        nav.querySelectorAll("a").forEach(function (link) {
-          link.addEventListener("click", function () {
-            nav.classList.remove("is-open");
-            menuButton.setAttribute(
-              "aria-expanded",
-              "false"
-            );
-          });
-        });
-      }
-    })();
-  </script>
+        <p>
+          Examining the idea of momentum in sport
+          and the relationship between performance,
+          behaviour and decision-making under pressure.
+        </p>
+
+        <div class="card-footer">
+          <span>EXPLORE RESEARCH</span>
+          <span>↗</span>
+        </div>
+
+      </div>
+
+    </a>
+
+    <!-- PROJECT 04 -->
+
+    <a class="research-card"
+       href="consumer-trends.html"
+       aria-label="Read research on consumer trends">
+
+      <div class="card-top">
+        <span class="card-category">
+          04 / MARKET INSIGHTS
+        </span>
+        <span class="card-arrow">↗</span>
+      </div>
+
+      <div class="card-visual visual-trends"
+           aria-hidden="true">
+
+        <div class="trend-ring"></div>
+
+        <span class="trend-year">
+          2027
+        </span>
+
+        <span class="visual-label">
+          CONSUMERS / FUTURE OF RETAIL
+        </span>
+
+      </div>
+
+      <div class="card-content">
+
+        <h3>
+          Consumer Trends<br>
+          &amp; the Future of Retail
+        </h3>
+
+        <p>
+          Exploring changing consumer preferences,
+          emerging retail dynamics and the forces
+          shaping markets toward 2027.
+        </p>
+
+        <div class="card-footer">
+          <span>EXPLORE RESEARCH</span>
+          <span>↗</span>
+        </div>
+
+      </div>
+
+    </a>
+
+  </div>
+
+  <!-- ENDING -->
+
+  <div class="research-ending">
+
+    <h2>
+      Research begins with
+      <span>curiosity.</span>
+    </h2>
+
+    <p>
+      Behind every dataset is a question worth asking.
+      Interested in discussing an idea or exploring
+      a potential collaboration?
+    </p>
+
+    <a class="ending-button"
+       href="contact.html">
+      Let's connect ↗
+    </a>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+  <span>
+    © <span id="year">2026</span>
+    ASLI UMAY YARDIMCI
+  </span>
+
+  <span>
+    ECONOMICS / RESEARCH / IDEAS
+  </span>
+
+  <a href="index.html">
+    BACK TO HOME ↑
+  </a>
+
+</footer>
+
+<!-- MOBILE NAVIGATION -->
+
+<script>
+(function () {
+  "use strict";
+
+  const year = document.getElementById("year");
+
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
+
+  const menuButton =
+    document.querySelector(".menu-toggle");
+
+  const nav =
+    document.getElementById("primary-nav");
+
+  if (menuButton && nav) {
+
+    menuButton.addEventListener("click", function () {
+
+      const isOpen =
+        nav.classList.toggle("is-open");
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+    });
+
+    nav.querySelectorAll("a").forEach(function (link) {
+
+      link.addEventListener("click", function () {
+
+        nav.classList.remove("is-open");
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      });
+
+    });
+
+  }
+})();
+</script>
 
 </body>
 </html>
