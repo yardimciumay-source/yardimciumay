@@ -1,20 +1,241 @@
+
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#080f1d"><meta name="description" content="Contact Aslı Umay Yardımcı for research and collaboration.">
-<title>Contact — Aslı Umay Yardımcı</title><link rel="stylesheet" href="styles-v2.css"><script src="script-v2.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080f1d">
+  <meta name="description" content="Contact Aslı Umay Yardımcı for research and collaboration.">
+
+  <title>Contact — Aslı Umay Yardımcı</title>
+
+  <link rel="stylesheet" href="styles-v2.css">
+  <script src="script-v2.js" defer></script>
+
+  <style>
+    /* Make the original V2 cards fully clickable */
+    a.contact-card {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    a.contact-card:hover {
+      transform: translateY(-4px);
+      border-color: #4da9ff;
+    }
+
+    .contact-action {
+      margin-top: auto;
+      color: #81caff;
+      font-weight: 650;
+      overflow-wrap: anywhere;
+    }
+
+    a.contact-card:focus-visible {
+      outline: 2px solid #81caff;
+      outline-offset: 4px;
+    }
+  </style>
 </head>
+
 <body>
-<div class="ambient" aria-hidden="true"></div>
-<header class="site-header"><a class="brand" href="index-v2.html" aria-label="Home">AUY<span class="brand-dot">.</span><span class="brand-caption"> ECONOMICS / RESEARCH</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu <span aria-hidden="true">☰</span></button><nav id="primary-nav" class="nav" aria-label="Main navigation"><a href="research-v2.html">Work</a><a href="about-v2.html">About</a><a href="writing-v2.html">Writing</a><a href="contact-v2.html" aria-current="page">Contact</a></nav><a class="header-cta" href="contact-v2.html">Let's connect ↗</a></header>
-<main>
-<section class="page-intro section-wrap contact-hero reveal"><div class="section-kicker">04 / LET'S CONNECT</div><h1>Have an idea?<br><span class="gradient-text">Let's talk.</span></h1><p>Research collaborations, interesting questions, new opportunities — or simply a conversation about economics. I'd love to hear from you.</p></section>
-<section class="page-section section-wrap"><div class="contact-grid">
-<div class="contact-card reveal"><div class="contact-icon" aria-hidden="true">✉</div><div class="section-kicker">01 / EMAIL</div><h2>Get in touch.</h2><p>For collaborations, opportunities and inquiries.</p><span class="pending">Email address to be added</span></div>
-<div class="contact-card reveal"><div class="contact-icon" aria-hidden="true">↗</div><div class="section-kicker">02 / LINKEDIN</div><h2>Let's connect.</h2><p>Connect professionally and exchange ideas.</p><span class="pending">Profile link to be added</span></div>
-<div class="contact-card reveal"><div class="contact-icon" aria-hidden="true">⌘</div><div class="section-kicker">03 / GITHUB</div><h2>Explore my code.</h2><p>Projects, experiments and technical work.</p><span class="pending">Profile link to be added</span></div>
-<div class="contact-card reveal"><div class="contact-icon" aria-hidden="true">◇</div><div class="section-kicker">04 / RESEARCH</div><h2>Explore my work.</h2><p>Research projects, analysis and ideas.</p><a href="research-v2.html">Read my research ↗</a></div>
-</div><p class="contact-note">Good conversations start with curiosity.</p></section>
-</main><footer class="footer section-wrap"><span>© <span id="year">2026</span> ASLI UMAY YARDIMCI</span><span>ECONOMICS / RESEARCH / IDEAS</span><a href="index-v2.html">BACK TO HOME ↑</a></footer>
-</body></html>
+
+  <div class="ambient" aria-hidden="true"></div>
+
+  <header class="site-header">
+
+    <a class="brand" href="index-v2.html" aria-label="Home">
+      AUY<span class="brand-dot">.</span>
+      <span class="brand-caption">
+        ECONOMICS / RESEARCH
+      </span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="primary-nav">
+      Menu <span aria-hidden="true">☰</span>
+    </button>
+
+    <nav
+      id="primary-nav"
+      class="nav"
+      aria-label="Main navigation">
+
+      <a href="research-v2.html">Work</a>
+      <a href="about-v2.html">About</a>
+      <a href="writing-v2.html">Writing</a>
+      <a href="contact-v2.html" aria-current="page">
+        Contact
+      </a>
+
+    </nav>
+
+    <a class="header-cta" href="contact-v2.html">
+      Let's connect ↗
+    </a>
+
+  </header>
+
+  <main>
+
+    <section class="page-intro section-wrap contact-hero reveal">
+
+      <div class="section-kicker">
+        04 / LET'S CONNECT
+      </div>
+
+      <h1>
+        Have an idea?<br>
+        <span class="gradient-text">Let's talk.</span>
+      </h1>
+
+      <p>
+        Research collaborations, interesting questions,
+        new opportunities — or simply a conversation
+        about economics. I'd love to hear from you.
+      </p>
+
+    </section>
+
+    <section class="page-section section-wrap">
+
+      <div class="contact-grid">
+
+        <!-- EMAIL: Entire card is clickable -->
+        <a
+          class="contact-card reveal"
+          href="mailto:yardimciumay@gmail.com">
+
+          <div class="contact-icon" aria-hidden="true">
+            ✉
+          </div>
+
+          <div class="section-kicker">
+            01 / EMAIL
+          </div>
+
+          <h2>Get in touch.</h2>
+
+          <p>
+            For collaborations, opportunities
+            and inquiries.
+          </p>
+
+          <span class="contact-action">
+            yardimciumay@gmail.com ↗
+          </span>
+
+        </a>
+
+        <!-- LINKEDIN -->
+        <a
+          class="contact-card reveal"
+          href="https://www.linkedin.com/"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          <div class="contact-icon" aria-hidden="true">
+            ↗
+          </div>
+
+          <div class="section-kicker">
+            02 / LINKEDIN
+          </div>
+
+          <h2>Let's connect.</h2>
+
+          <p>
+            Connect professionally and exchange ideas.
+          </p>
+
+          <span class="contact-action">
+            Open LinkedIn ↗
+          </span>
+
+        </a>
+
+        <!-- GITHUB -->
+        <a
+          class="contact-card reveal"
+          href="https://github.com/"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          <div class="contact-icon" aria-hidden="true">
+            ⌘
+          </div>
+
+          <div class="section-kicker">
+            03 / GITHUB
+          </div>
+
+          <h2>Explore my code.</h2>
+
+          <p>
+            Projects, experiments and technical work.
+          </p>
+
+          <span class="contact-action">
+            Open GitHub ↗
+          </span>
+
+        </a>
+
+        <!-- RESEARCH -->
+        <a
+          class="contact-card reveal"
+          href="research-v2.html">
+
+          <div class="contact-icon" aria-hidden="true">
+            ◇
+          </div>
+
+          <div class="section-kicker">
+            04 / RESEARCH
+          </div>
+
+          <h2>Explore my work.</h2>
+
+          <p>
+            Research projects, analysis and ideas.
+          </p>
+
+          <span class="contact-action">
+            Read my research ↗
+          </span>
+
+        </a>
+
+      </div>
+
+      <p class="contact-note">
+        Good conversations start with curiosity.
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer class="footer section-wrap">
+
+    <span>
+      © <span id="year">2026</span>
+      ASLI UMAY YARDIMCI
+    </span>
+
+    <span>
+      ECONOMICS / RESEARCH / IDEAS
+    </span>
+
+    <a href="index-v2.html">
+      BACK TO HOME ↑
+    </a>
+
+  </footer>
+
+</body>
+</html>
