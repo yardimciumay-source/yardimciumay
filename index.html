@@ -3,27 +3,29 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="#080f1d" name="theme-color"/>
-<meta content="Aslı Umay Yardımcı — Economics, research, data and ideas." name="description"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#080f1d"/>
+<meta name="description" content="Aslı Umay Yardımcı — Economics, research, data and ideas."/>
 <title>Aslı Umay Yardımcı — Economics &amp; Research</title>
 
 <link href="styles-v2.css" rel="stylesheet"/>
 <script defer src="script-v2.js"></script>
 
 <style>
-/* AUY 3D ID CARD — only affects the new section */
+/* ANIMATED IDENTITY CARD */
 
 .auy-id-section {
   padding: 100px 20px 110px;
   text-align: center;
-  background:
-    radial-gradient(ellipse at 50% 50%,
-      rgba(34, 108, 220, .18), transparent 65%);
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(34,108,220,.18),
+    transparent 65%
+  );
   overflow: hidden;
 }
 
-.-id-kicker {
+.auy-id-kicker {
   color: #70c5ff;
   font-size: 11px;
   font-weight: 700;
@@ -33,7 +35,7 @@
 .auy-id-section h2 {
   margin: 17px auto;
   color: #f4f8ff;
-  font-size: clamp(30px, 5vw, 52px);
+  font-size: clamp(30px,5vw,52px);
   line-height: 1.15;
   letter-spacing: -1px;
 }
@@ -76,11 +78,10 @@
   background: transparent;
   color: inherit;
   cursor: pointer;
-  perspective: 1200px;
+  transform-style: preserve-3d;
   transform-origin: center -30px;
   animation: auy-id-swing 5s ease-in-out infinite;
 }
-
 
 .auy-id-inner {
   position: relative;
@@ -92,47 +93,9 @@
   transition: transform .85s cubic-bezier(.2,.75,.2,1);
 }
 
-.auy-id-face {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 27px 22px 19px;
-  border-radius: 20px;
-  overflow: hidden;
-  box-sizing: border-box;
-
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-.auy-id-front {
-  background: #f1f6ff;
-  color: #173456;
-  transform: rotateY(0deg);
-  -webkit-transform: rotateY(0deg);
-}
-
-.auy-id-back {
-  color: #f5faff;
-  background: linear-gradient(145deg, #17365f, #081322);
-  border: 1px solid #4596e4;
-
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-}
-
-.auy-id-card:hover .auy-id-inner,
 .auy-id-card.is-flipped .auy-id-inner {
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
-}
-
-
-.auy-id-card:hover .auy-id-inner,
-.auy-id-card.is-flipped .auy-id-inner {
-  transform: rotateY(180deg);
 }
 
 .auy-id-face {
@@ -147,12 +110,14 @@
   box-sizing: border-box;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  transform-style: flat;
   box-shadow: 0 25px 65px rgba(0,0,0,.4);
 }
 
 .auy-id-front {
   background: #f1f6ff;
   color: #173456;
+  transform: rotateY(0deg);
 }
 
 .auy-id-hole {
@@ -245,11 +210,15 @@
 .auy-id-back {
   color: #f5faff;
   background:
-    radial-gradient(circle at 90% 85%,
-      rgba(67,155,255,.3), transparent 55%),
-    linear-gradient(145deg, #17365f, #081322);
+    radial-gradient(
+      circle at 90% 85%,
+      rgba(67,155,255,.3),
+      transparent 55%
+    ),
+    linear-gradient(145deg,#17365f,#081322);
   border: 1px solid #4596e4;
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
 
 .auy-id-back .auy-id-top {
@@ -311,7 +280,7 @@
   font-weight: 750;
   letter-spacing: 1px;
   text-decoration: none;
-  transition: background .2s, color .2s;
+  transition: background .2s,color .2s;
 }
 
 .auy-id-research:hover {
@@ -325,29 +294,28 @@
 }
 
 @keyframes auy-id-swing {
-  0%, 100% { transform: rotate(-2deg); }
-  50% { transform: rotate(2deg); }
-}
-
-@media (hover: none) {
-  .auy-id-card:hover .auy-id-inner {
-    transform: none;
+  0%,100% {
+    transform: rotate(-2deg);
   }
 
-  .auy-id-card.is-flipped .auy-id-inner {
-    transform: rotateY(180deg);
+  50% {
+    transform: rotate(2deg);
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .auy-id-card { animation: none; }
-  .auy-id-inner { transition: none; }
-}
-</style>
+@media (prefers-reduced-motion:reduce) {
+  .auy-id-card {
+    animation: none;
+  }
 
-<style>
-/* Put the floating ID badge beside the hero headline */
-@media (min-width: 1000px) {
+  .auy-id-inner {
+    transition: none;
+  }
+}
+
+/* ID CARD POSITION IN HERO */
+
+@media (min-width:1000px) {
   .hero {
     position: relative;
     min-height: 700px;
@@ -383,7 +351,7 @@
   }
 }
 
-@media (max-width: 999px) {
+@media (max-width:999px) {
   .hero .auy-id-section {
     padding: 35px 0 60px;
   }
@@ -393,16 +361,18 @@
   }
 }
 </style>
-
 </head>
 
 <body>
+
 <div aria-hidden="true" class="ambient"></div>
 
 <header class="site-header">
   <a aria-label="Home" class="brand" href="index.html">
     AUY<span class="brand-dot">.</span>
-    <span class="brand-caption">ECONOMICS / RESEARCH</span>
+    <span class="brand-caption">
+      ECONOMICS / RESEARCH
+    </span>
   </a>
 
   <button
@@ -413,7 +383,11 @@
     Menu <span aria-hidden="true">☰</span>
   </button>
 
-  <nav aria-label="Main navigation" class="nav" id="primary-nav">
+  <nav
+    aria-label="Main navigation"
+    class="nav"
+    id="primary-nav">
+
     <a href="research-v2.html">Work</a>
     <a href="about-v2.html">About</a>
     <a href="writing-v2.html">Writing</a>
@@ -421,38 +395,44 @@
   </nav>
 
   <a class="header-cta" href="contact-v2.html">
-    Let's connect <span aria-hidden="true">↗</span>
+    Let's connect
+    <span aria-hidden="true">↗</span>
   </a>
 </header>
 
 <main>
 
-  <!-- HERO -->
-  <section class="hero section-wrap" id="home">
-    <div class="eyebrow">
-      <span class="status-dot"></span>
-      AN INDEPENDENT SPACE FOR ECONOMIC THINKING
-      <span class="line"></span>
-      001 / 004
-    </div>
+<!-- HERO -->
 
-    <h1>
-      Curiosity meets<br/>
-      <span class="gradient-text">evidence.</span>
-    </h1>
+<section class="hero section-wrap" id="home">
 
-    <div class="hero-bottom">
-      <p>
-        Hi, I'm <strong>Aslı Umay Yardımcı.</strong>
-        I explore the economics of markets, decisions
-        and the forces shaping our world.
-      </p>
+  <div class="eyebrow">
+    <span class="status-dot"></span>
+    AN INDEPENDENT SPACE FOR ECONOMIC THINKING
+    <span class="line"></span>
+    001 / 004
+  </div>
 
-      <a aria-label="Explore selected work"
-         class="round-link" href="#work">↓</a>
-    </div>
+  <h1>
+    Curiosity meets<br/>
+    <span class="gradient-text">evidence.</span>
+  </h1>
 
-     <!-- NEW 3D IDENTITY CARD SECTION -->
+  <div class="hero-bottom">
+    <p>
+      Hi, I'm <strong>Aslı Umay Yardımcı.</strong>
+      I explore the economics of markets, decisions
+      and the forces shaping our world.
+    </p>
+
+    <a
+      aria-label="Explore selected work"
+      class="round-link"
+      href="#work">↓</a>
+  </div>
+
+  <!-- 3D IDENTITY CARD -->
+
   <section class="auy-id-section" id="identity">
 
     <div class="auy-id-kicker">
@@ -469,7 +449,11 @@
     </p>
 
     <div class="auy-id-stage">
-      <div class="auy-id-lanyard" aria-hidden="true"></div>
+
+      <div
+        class="auy-id-lanyard"
+        aria-hidden="true">
+      </div>
 
       <button
         class="auy-id-card"
@@ -480,12 +464,17 @@
 
         <span class="auy-id-inner">
 
-          <!-- CARD FRONT -->
+          <!-- FRONT -->
+
           <span class="auy-id-face auy-id-front">
+
             <span class="auy-id-hole"></span>
 
             <span class="auy-id-top">
-              <strong>AUY<span class="auy-id-dot">.</span></strong>
+              <strong>
+                AUY<span class="auy-id-dot">.</span>
+              </strong>
+
               <small>IDENTITY / 001</small>
             </span>
 
@@ -504,14 +493,23 @@
             </span>
 
             <span class="auy-id-bottom">
-              <span>PERSONAL RESEARCH<br/>PORTFOLIO</span>
-              <span class="auy-id-barcode"
-                    aria-hidden="true"></span>
+              <span>
+                PERSONAL RESEARCH<br/>
+                PORTFOLIO
+              </span>
+
+              <span
+                class="auy-id-barcode"
+                aria-hidden="true">
+              </span>
             </span>
+
           </span>
 
-          <!-- CARD BACK -->
+          <!-- BACK -->
+
           <span class="auy-id-face auy-id-back">
+
             <span class="auy-id-hole"></span>
 
             <span class="auy-id-top">
@@ -520,6 +518,7 @@
             </span>
 
             <span class="auy-id-back-content">
+
               <span class="auy-id-back-kicker">
                 BEYOND THE NUMBERS
               </span>
@@ -534,11 +533,13 @@
                 Exploring economics through research,
                 analysis and new questions.
               </span>
+
             </span>
 
             <span class="auy-id-back-footer">
               THE STORY CONTINUES ↗
             </span>
+
           </span>
 
         </span>
@@ -546,234 +547,328 @@
     </div>
 
     <p class="auy-id-hint">
-      ↻ HOVER OR TAP TO FLIP
+      ↻ CLICK OR TAP TO FLIP
     </p>
 
-    <a class="auy-id-research" href="research-v2.html">
+    <a
+      class="auy-id-research"
+      href="research-v2.html">
       EXPLORE MY RESEARCH ↗
     </a>
 
   </section>
-  <!-- END OF NEW IDENTITY CARD -->
-    <div class="hero-foot">
-      <span>ECONOMICS / DATA / BEHAVIOUR</span>
-      <span>SCROLL TO EXPLORE ↓</span>
-    </div>
-  </section>
 
-  <!-- RESEARCH -->
-  <section class="work section-wrap" id="work">
-    <div class="section-heading reveal">
-      <div>
-        <div class="section-kicker">
-          01 / RESEARCH &amp; PROJECTS
-        </div>
-        <h2>Selected <em>work.</em></h2>
+  <div class="hero-foot">
+    <span>ECONOMICS / DATA / BEHAVIOUR</span>
+    <span>SCROLL TO EXPLORE ↓</span>
+  </div>
+
+</section>
+
+<!-- RESEARCH -->
+
+<section class="work section-wrap" id="work">
+
+  <div class="section-heading reveal">
+
+    <div>
+      <div class="section-kicker">
+        01 / RESEARCH &amp; PROJECTS
       </div>
 
-      <p>
-        A collection of questions, explorations and
-        analyses at the intersection of economics
-        and everyday life.
-      </p>
+      <h2>Selected <em>work.</em></h2>
     </div>
 
-    <div class="project-grid">
-
-      <a class="project-card reveal"
-         href="minimum-wage-v2.html">
-        <div class="card-top">
-          <span>01 / LABOUR ECONOMICS</span>
-          <span class="arrow">↗</span>
-        </div>
-        <div aria-hidden="true"
-             class="project-visual visual-wage">
-          <div class="bars">
-            <i></i><i></i><i></i><i></i><i></i>
-            <i></i><i></i><i></i><i></i>
-          </div>
-          <span class="visual-label">
-            POLICY / EMPIRICAL ANALYSIS
-          </span>
-        </div>
-        <h3>Germany's 2022<br/>Minimum Wage Reform</h3>
-        <p>
-          Exploring labour-market policy
-          and economic outcomes.
-        </p>
-        <span class="card-footer">
-          EXPLORE RESEARCH <span>↗</span>
-        </span>
-      </a>
-
-      <a class="project-card reveal"
-         href="personalized-pricing-v2.html">
-        <div class="card-top">
-          <span>02 / DIGITAL ECONOMICS</span>
-          <span class="arrow">↗</span>
-        </div>
-        <div aria-hidden="true"
-             class="project-visual visual-pricing">
-          <div class="orb orb-one"></div>
-          <div class="orb orb-two"></div>
-          <div class="orb orb-three"></div>
-          <span class="visual-label">
-            MARKETS / FAIRNESS
-          </span>
-        </div>
-        <h3>Personalized Pricing<br/>&amp; Perceived Fairness</h3>
-        <p>
-          Thinking about pricing, technology
-          and consumer perceptions.
-        </p>
-        <span class="card-footer">
-          EXPLORE RESEARCH <span>↗</span>
-        </span>
-      </a>
-
-      <a class="project-card reveal"
-         href="tennis-momentum-v2.html">
-        <div class="card-top">
-          <span>03 / BEHAVIOURAL ECONOMICS</span>
-          <span class="arrow">↗</span>
-        </div>
-        <div aria-hidden="true"
-             class="project-visual visual-tennis">
-          <div class="court"><span></span></div>
-          <div class="ball"></div>
-          <span class="visual-label">
-            SPORT / DECISION-MAKING
-          </span>
-        </div>
-        <h3>Momentum<br/>in Tennis</h3>
-        <p>
-          Investigating behaviour and performance
-          under pressure.
-        </p>
-        <span class="card-footer">
-          EXPLORE RESEARCH <span>↗</span>
-        </span>
-      </a>
-
-      <a class="project-card reveal"
-         href="consumer-trends-v2.html">
-        <div class="card-top">
-          <span>04 / MARKET INSIGHTS</span>
-          <span class="arrow">↗</span>
-        </div>
-        <div aria-hidden="true"
-             class="project-visual visual-trends">
-          <div class="trend-ring"></div>
-          <div class="trend-text">2027</div>
-          <span class="visual-label">
-            CONSUMERS / RETAIL
-          </span>
-        </div>
-        <h3>Consumer Trends<br/>&amp; the Future of Retail</h3>
-        <p>
-          Observations on evolving markets
-          and consumer choices.
-        </p>
-        <span class="card-footer">
-          EXPLORE RESEARCH <span>↗</span>
-        </span>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about section-wrap" id="about">
-    <div class="section-kicker reveal">02 / ABOUT ME</div>
-
-    <div class="about-grid">
-      <h2 class="reveal">
-        Always asking<br/><em>why.</em>
-      </h2>
-
-      <div class="about-copy reveal">
-        <p class="lead">
-          I believe the most interesting economic
-          questions often begin with ordinary observations.
-        </p>
-
-        <p>
-          My work and interests bring together applied
-          economics, behavioural insights, digital markets
-          and public policy. I use this space to share
-          research, explore ideas and connect economic
-          theory with real-world questions.
-        </p>
-
-        <div class="tags">
-          <span>Applied economics</span>
-          <span>Behavioural insights</span>
-          <span>Digital markets</span>
-          <span>Public policy</span>
-        </div>
-
-        <a class="pill-link" href="about-v2.html">
-          More about me ↗
-        </a>
-      </div>
-    </div>
-  </section>
-
- 
-
-  <!-- WRITING -->
-  <section class="writing section-wrap" id="writing">
-    <div class="section-heading reveal">
-      <div>
-        <div class="section-kicker">
-          03 / NOTES &amp; IDEAS
-        </div>
-        <h2>Thinking <em>out loud.</em></h2>
-      </div>
-
-      <p>
-        Short observations, longer arguments
-        and ideas worth revisiting.
-      </p>
-    </div>
-
-    <a class="writing-link reveal"
-       href="writing-v2.html">
-      <span>
-        <span class="writing-label">
-          ESSAYS / ARTICLES / IDEAS
-        </span>
-        <strong>Explore my writing archive</strong>
-      </span>
-      <span class="writing-arrow">↗</span>
-    </a>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact section-wrap" id="contact">
-    <div class="section-kicker reveal">
-      04 / GET IN TOUCH
-    </div>
-
-    <h2 class="reveal">
-      Good ideas start<br/>
-      with a <em>conversation.</em>
-    </h2>
-
-    <p class="reveal">
-      Interested in economics, research or a
-      potential collaboration? I'd love to hear from you.
+    <p>
+      A collection of questions, explorations and
+      analyses at the intersection of economics
+      and everyday life.
     </p>
 
-    <a class="contact-link reveal"
-       href="contact-v2.html">
-      Get in touch ↗
+  </div>
+
+  <div class="project-grid">
+
+    <!-- PROJECT 01 -->
+
+    <a
+      class="project-card reveal"
+      href="minimum-wage-v2.html">
+
+      <div class="card-top">
+        <span>01 / LABOUR ECONOMICS</span>
+        <span class="arrow">↗</span>
+      </div>
+
+      <div
+        aria-hidden="true"
+        class="project-visual visual-wage">
+
+        <div class="bars">
+          <i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i>
+        </div>
+
+        <span class="visual-label">
+          POLICY / EMPIRICAL ANALYSIS
+        </span>
+      </div>
+
+      <h3>
+        Germany's 2022<br/>
+        Minimum Wage Reform
+      </h3>
+
+      <p>
+        Exploring labour-market policy
+        and economic outcomes.
+      </p>
+
+      <span class="card-footer">
+        EXPLORE RESEARCH <span>↗</span>
+      </span>
     </a>
-  </section>
+
+    <!-- PROJECT 02 -->
+
+    <a
+      class="project-card reveal"
+      href="personalized-pricing-v2.html">
+
+      <div class="card-top">
+        <span>02 / DIGITAL ECONOMICS</span>
+        <span class="arrow">↗</span>
+      </div>
+
+      <div
+        aria-hidden="true"
+        class="project-visual visual-pricing">
+
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="orb orb-three"></div>
+
+        <span class="visual-label">
+          MARKETS / FAIRNESS
+        </span>
+      </div>
+
+      <h3>
+        Personalized Pricing<br/>
+        &amp; Perceived Fairness
+      </h3>
+
+      <p>
+        Thinking about pricing, technology
+        and consumer perceptions.
+      </p>
+
+      <span class="card-footer">
+        EXPLORE RESEARCH <span>↗</span>
+      </span>
+    </a>
+
+    <!-- PROJECT 03 -->
+
+    <a
+      class="project-card reveal"
+      href="tennis-momentum-v2.html">
+
+      <div class="card-top">
+        <span>03 / BEHAVIOURAL ECONOMICS</span>
+        <span class="arrow">↗</span>
+      </div>
+
+      <div
+        aria-hidden="true"
+        class="project-visual visual-tennis">
+
+        <div class="court">
+          <span></span>
+        </div>
+
+        <div class="ball"></div>
+
+        <span class="visual-label">
+          SPORT / DECISION-MAKING
+        </span>
+      </div>
+
+      <h3>
+        Momentum<br/>
+        in Tennis
+      </h3>
+
+      <p>
+        Investigating behaviour and performance
+        under pressure.
+      </p>
+
+      <span class="card-footer">
+        EXPLORE RESEARCH <span>↗</span>
+      </span>
+    </a>
+
+    <!-- PROJECT 04 -->
+
+    <a
+      class="project-card reveal"
+      href="consumer-trends-v2.html">
+
+      <div class="card-top">
+        <span>04 / MARKET INSIGHTS</span>
+        <span class="arrow">↗</span>
+      </div>
+
+      <div
+        aria-hidden="true"
+        class="project-visual visual-trends">
+
+        <div class="trend-ring"></div>
+        <div class="trend-text">2027</div>
+
+        <span class="visual-label">
+          CONSUMERS / RETAIL
+        </span>
+      </div>
+
+      <h3>
+        Consumer Trends<br/>
+        &amp; the Future of Retail
+      </h3>
+
+      <p>
+        Observations on evolving markets
+        and consumer choices.
+      </p>
+
+      <span class="card-footer">
+        EXPLORE RESEARCH <span>↗</span>
+      </span>
+    </a>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="about section-wrap" id="about">
+
+  <div class="section-kicker reveal">
+    02 / ABOUT ME
+  </div>
+
+  <div class="about-grid">
+
+    <h2 class="reveal">
+      Always asking<br/>
+      <em>why.</em>
+    </h2>
+
+    <div class="about-copy reveal">
+
+      <p class="lead">
+        I believe the most interesting economic
+        questions often begin with ordinary observations.
+      </p>
+
+      <p>
+        My work and interests bring together applied
+        economics, behavioural insights, digital markets
+        and public policy. I use this space to share
+        research, explore ideas and connect economic
+        theory with real-world questions.
+      </p>
+
+      <div class="tags">
+        <span>Applied economics</span>
+        <span>Behavioural insights</span>
+        <span>Digital markets</span>
+        <span>Public policy</span>
+      </div>
+
+      <a
+        class="pill-link"
+        href="about-v2.html">
+        More about me ↗
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- WRITING -->
+
+<section class="writing section-wrap" id="writing">
+
+  <div class="section-heading reveal">
+
+    <div>
+      <div class="section-kicker">
+        03 / NOTES &amp; IDEAS
+      </div>
+
+      <h2>
+        Thinking <em>out loud.</em>
+      </h2>
+    </div>
+
+    <p>
+      Short observations, longer arguments
+      and ideas worth revisiting.
+    </p>
+
+  </div>
+
+  <a
+    class="writing-link reveal"
+    href="writing-v2.html">
+
+    <span>
+      <span class="writing-label">
+        ESSAYS / ARTICLES / IDEAS
+      </span>
+
+      <strong>
+        Explore my writing archive
+      </strong>
+    </span>
+
+    <span class="writing-arrow">↗</span>
+  </a>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact section-wrap" id="contact">
+
+  <div class="section-kicker reveal">
+    04 / GET IN TOUCH
+  </div>
+
+  <h2 class="reveal">
+    Good ideas start<br/>
+    with a <em>conversation.</em>
+  </h2>
+
+  <p class="reveal">
+    Interested in economics, research or a
+    potential collaboration? I'd love to hear from you.
+  </p>
+
+  <a
+    class="contact-link reveal"
+    href="contact-v2.html">
+    Get in touch ↗
+  </a>
+
+</section>
 
 </main>
 
 <footer class="footer section-wrap">
+
   <span>
     © <span id="year">2026</span>
     ASLI UMAY YARDIMCI
@@ -783,19 +878,28 @@
     BUILT WITH CURIOSITY · HOSTED ON GITHUB PAGES
   </span>
 
-  <a href="#home">BACK TO TOP ↑</a>
+  <a href="#home">
+    BACK TO TOP ↑
+  </a>
+
 </footer>
 
 <script>
 (function () {
+
   const card = document.getElementById("auyIdentityCard");
 
   if (!card) return;
 
   card.addEventListener("click", function () {
     const isFlipped = card.classList.toggle("is-flipped");
-    card.setAttribute("aria-pressed", String(isFlipped));
+
+    card.setAttribute(
+      "aria-pressed",
+      String(isFlipped)
+    );
   });
+
 })();
 </script>
 
