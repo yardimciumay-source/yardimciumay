@@ -2,401 +2,669 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="theme-color" content="#080f1d"/>
-<meta name="description" content="Aslı Umay Yardımcı — Economics, research, data and ideas."/>
-<title>Aslı Umay Yardımcı — Economics &amp; Research</title>
-
-<link href="styles-v2.css" rel="stylesheet"/>
-<script defer src="script-v2.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#070e1c">
+<meta name="description" content="Aslı Umay Yardımcı — Economics, research, consumer behaviour and data-driven thinking.">
+<title>Aslı Umay Yardımcı | Economics & Research</title>
 
 <style>
-/* ANIMATED IDENTITY CARD */
-
-.auy-id-section {
-  padding: 100px 20px 110px;
-  text-align: center;
-  background: radial-gradient(
-    ellipse at 50% 50%,
-    rgba(34,108,220,.18),
-    transparent 65%
-  );
-  overflow: hidden;
+:root {
+  --bg:#070e1c;
+  --bg2:#0c1729;
+  --panel:#101e34;
+  --blue:#69c8ff;
+  --purple:#ad9cff;
+  --mint:#6ce3d0;
+  --text:#f1f6ff;
+  --muted:#9eb2cb;
+  --line:rgba(126,186,246,.19);
 }
 
-.auy-id-kicker {
-  color: #70c5ff;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 3px;
-}
+* { box-sizing:border-box; }
 
-.auy-id-section h2 {
-  margin: 17px auto;
-  color: #f4f8ff;
-  font-size: clamp(30px,5vw,52px);
-  line-height: 1.15;
-  letter-spacing: -1px;
-}
+html { scroll-behavior:smooth; }
 
-.auy-id-description {
-  color: #a9bfd9;
-  font-size: 15px;
-}
-
-.auy-id-stage {
-  position: relative;
-  width: 290px;
-  padding-top: 90px;
-  margin: 55px auto 0;
-  perspective: 1200px;
-}
-
-.auy-id-lanyard {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  width: 82px;
-  height: 120px;
-  transform: translateX(-50%);
-  border: 7px solid #409df5;
-  border-top: none;
-  border-radius: 0 0 46px 46px;
-  box-sizing: border-box;
-  opacity: .9;
-}
-
-.auy-id-card {
-  position: relative;
-  display: block;
-  width: 290px;
-  height: 420px;
-  padding: 0;
-  border: 0;
-  border-radius: 20px;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-  transform-style: preserve-3d;
-  transform-origin: center -30px;
-  animation: auy-id-swing 5s ease-in-out infinite;
-}
-
-.auy-id-inner {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
-  transition: transform .85s cubic-bezier(.2,.75,.2,1);
-}
-
-.auy-id-card.is-flipped .auy-id-inner {
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-}
-
-.auy-id-face {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 27px 22px 19px;
-  border-radius: 20px;
-  overflow: hidden;
-  box-sizing: border-box;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform-style: flat;
-  box-shadow: 0 25px 65px rgba(0,0,0,.4);
-}
-
-.auy-id-front {
-  background: #f1f6ff;
-  color: #173456;
-  transform: rotateY(0deg);
-}
-
-.auy-id-hole {
-  position: absolute;
-  top: 9px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 8px;
-  border-radius: 10px;
-  background: #92a6c1;
-}
-
-.auy-id-top {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.auy-id-top strong {
-  font-size: 25px;
-  font-weight: 900;
-  letter-spacing: -1px;
-}
-
-.auy-id-top small {
-  font-size: 9px;
-  letter-spacing: 1.2px;
-}
-
-.auy-id-dot {
-  color: #268dff;
-}
-
-.auy-id-photo {
-  display: block;
-  width: 164px;
-  height: 183px;
-  margin-top: 23px;
-  border: 3px solid #d6e5f8;
-  border-radius: 12px;
-  object-fit: cover;
-  object-position: center 25%;
-}
-
-.auy-id-name {
-  margin-top: 16px;
-  font-size: 23px;
-  font-weight: 900;
-  line-height: 1.1;
-  letter-spacing: .6px;
-}
-
-.auy-id-role {
-  margin-top: 10px;
-  color: #3175bc;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1.7px;
-}
-
-.auy-id-bottom {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: end;
-  gap: 10px;
-  margin-top: auto;
-  text-align: left;
-  color: #6a7f99;
-  font-size: 8px;
-  letter-spacing: .8px;
-}
-
-.auy-id-barcode {
-  flex-shrink: 0;
-  width: 65px;
-  height: 23px;
-  background: repeating-linear-gradient(
-    90deg,
-    #183b61 0 2px,
-    transparent 2px 5px,
-    #183b61 5px 6px,
-    transparent 6px 9px
-  );
-}
-
-.auy-id-back {
-  color: #f5faff;
+body {
+  margin:0;
   background:
-    radial-gradient(
-      circle at 90% 85%,
-      rgba(67,155,255,.3),
-      transparent 55%
-    ),
-    linear-gradient(145deg,#17365f,#081322);
-  border: 1px solid #4596e4;
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
+    radial-gradient(ellipse at 78% 10%,rgba(38,95,176,.18),transparent 32%),
+    radial-gradient(ellipse at 15% 55%,rgba(73,53,147,.12),transparent 40%),
+    var(--bg);
+  color:var(--text);
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  -webkit-font-smoothing:antialiased;
 }
 
-.auy-id-back .auy-id-top {
-  color: #eaf5ff;
+a { color:inherit; text-decoration:none; }
+button { font:inherit; }
+button:focus-visible,a:focus-visible {
+  outline:2px solid var(--blue);
+  outline-offset:4px;
 }
 
-.auy-id-back-content {
-  display: flex;
-  flex: 1;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  gap: 19px;
-  text-align: left;
+.container {
+  width:min(1160px,calc(100% - 48px));
+  margin:auto;
 }
 
-.auy-id-back-kicker {
-  color: #79caff;
-  font-size: 10px;
-  letter-spacing: 2px;
+.site-header {
+  position:relative;
+  z-index:20;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  min-height:88px;
+  border-bottom:1px solid var(--line);
 }
 
-.auy-id-back-content strong {
-  font-size: 39px;
-  line-height: 1.12;
-  letter-spacing: -1px;
+.logo {
+  font-size:27px;
+  font-weight:900;
+  letter-spacing:-1.7px;
+  white-space:nowrap;
 }
 
-.auy-id-back-copy {
-  color: #b9d0e9;
-  font-size: 13px;
-  line-height: 1.65;
+.logo span { color:var(--blue); }
+
+.nav {
+  display:flex;
+  align-items:center;
+  gap:30px;
 }
 
-.auy-id-back-footer {
-  width: 100%;
-  padding-top: 15px;
-  border-top: 1px solid #47658a;
-  color: #85ceff;
-  font-size: 11px;
-  letter-spacing: 1px;
-  text-align: left;
+.nav a {
+  font-size:13px;
+  color:#b9cce1;
+  transition:color .2s;
 }
 
-.auy-id-hint {
-  margin: 28px 0 18px;
-  color: #9bb6d4;
-  font-size: 11px;
-  letter-spacing: 2px;
+.nav a:hover { color:var(--blue); }
+
+.header-contact {
+  border:1px solid rgba(110,190,255,.35);
+  border-radius:30px;
+  padding:12px 18px;
+  font-size:12px;
+  font-weight:700;
+  color:#b6e3ff;
 }
 
-.auy-id-research {
-  display: inline-block;
-  padding: 14px 23px;
-  border: 1px solid #4596e4;
-  border-radius: 999px;
-  color: #91d2ff;
-  font-size: 12px;
-  font-weight: 750;
-  letter-spacing: 1px;
-  text-decoration: none;
-  transition: background .2s,color .2s;
+.menu-button {
+  display:none;
+  border:1px solid var(--line);
+  background:#11223a;
+  color:white;
+  padding:10px 13px;
+  border-radius:10px;
+  cursor:pointer;
 }
 
-.auy-id-research:hover {
-  background: #4596e4;
-  color: #fff;
+.hero {
+  display:grid;
+  grid-template-columns:1.06fr .94fr;
+  align-items:center;
+  gap:48px;
+  min-height:660px;
+  padding:80px 0 90px;
 }
 
-.auy-id-card:focus-visible {
-  outline: 3px solid #85ceff;
-  outline-offset: 6px;
+.eyebrow {
+  display:inline-flex;
+  align-items:center;
+  gap:11px;
+  color:#8dcfff;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
 }
 
-@keyframes auy-id-swing {
-  0%,100% {
-    transform: rotate(-2deg);
-  }
-
-  50% {
-    transform: rotate(2deg);
-  }
+.eyebrow::before {
+  content:"";
+  width:23px;
+  height:1px;
+  background:var(--blue);
 }
 
-@media (prefers-reduced-motion:reduce) {
-  .auy-id-card {
-    animation: none;
-  }
-
-  .auy-id-inner {
-    transition: none;
-  }
+.hero h1 {
+  margin:24px 0;
+  font-size:clamp(49px,6vw,82px);
+  line-height:1.07;
+  letter-spacing:-.065em;
 }
 
-/* ID CARD POSITION IN HERO */
+.gradient-text {
+  background:linear-gradient(95deg,#66c8ff,#b6a2ff 75%,#79e3d2);
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+}
 
-@media (min-width:1000px) {
+.hero-description {
+  max-width:545px;
+  color:#b1c4db;
+  font-size:17px;
+  line-height:1.85;
+}
+
+.hero-buttons {
+  display:flex;
+  flex-wrap:wrap;
+  gap:13px;
+  margin-top:34px;
+}
+
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:49px;
+  padding:14px 21px;
+  border-radius:11px;
+  font-size:13px;
+  font-weight:750;
+  transition:transform .2s,background .2s;
+}
+
+.btn:hover { transform:translateY(-3px); }
+
+.btn-primary {
+  background:linear-gradient(100deg,#67c5ff,#8daaff);
+  color:#071527;
+}
+
+.btn-outline {
+  border:1px solid rgba(125,192,255,.35);
+  color:#d7eaff;
+  background:rgba(29,55,90,.22);
+}
+
+.hero-footnote {
+  margin-top:36px;
+  color:#748eaa;
+  font-size:11px;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+}
+
+/* 3D ID CARD */
+
+.id-scene {
+  perspective:1300px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:450px;
+}
+
+.id-card {
+  position:relative;
+  width:min(100%,420px);
+  min-height:480px;
+  border:1px solid rgba(142,203,255,.38);
+  border-radius:25px;
+  background:
+    radial-gradient(circle at 85% 15%,rgba(110,180,255,.18),transparent 38%),
+    linear-gradient(145deg,#162e4d,#0d1b32 70%,#17213d);
+  box-shadow:
+    0 35px 85px rgba(0,0,0,.48),
+    inset 0 1px 0 rgba(255,255,255,.13);
+  padding:26px;
+  overflow:hidden;
+  transform-style:preserve-3d;
+  animation:cardFloat 7s ease-in-out infinite;
+  transition:transform .2s ease;
+}
+
+@keyframes cardFloat {
+  0%,100% { transform:translateY(0) rotateY(-6deg) rotateX(4deg); }
+  50% { transform:translateY(-14px) rotateY(3deg) rotateX(-2deg); }
+}
+
+.id-card::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(115deg,transparent 25%,rgba(255,255,255,.055) 48%,transparent 70%);
+  pointer-events:none;
+}
+
+.id-top {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding-bottom:20px;
+  border-bottom:1px solid var(--line);
+}
+
+.id-top strong {
+  font-size:12px;
+  letter-spacing:1.8px;
+}
+
+.id-top span {
+  font-size:9px;
+  color:#91c9f3;
+  letter-spacing:1.2px;
+}
+
+.id-photo-wrap {
+  width:155px;
+  height:155px;
+  margin:25px auto 23px;
+  border-radius:50%;
+  border:3px solid rgba(127,204,255,.72);
+  padding:6px;
+  box-shadow:0 0 40px rgba(75,158,255,.16);
+}
+
+.id-photo {
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+  object-position:center 22%;
+  background:linear-gradient(135deg,#2e608c,#17243c);
+  display:block;
+}
+
+.id-fallback {
+  display:none;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  background:linear-gradient(135deg,#255783,#171f3b);
+  color:#bce7ff;
+  font-size:44px;
+  font-weight:800;
+}
+
+.id-main { text-align:center; }
+
+.id-main h2 {
+  margin:0;
+  font-size:27px;
+  letter-spacing:-1px;
+}
+
+.id-main p {
+  margin:9px 0 0;
+  color:#8fcfff;
+  font-size:11px;
+  letter-spacing:1.7px;
+}
+
+.id-divider {
+  height:1px;
+  margin:26px 0;
+  background:var(--line);
+}
+
+.id-details {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px 14px;
+}
+
+.id-details small {
+  display:block;
+  margin-bottom:7px;
+  color:#7e9cb9;
+  font-size:9px;
+  letter-spacing:1.1px;
+}
+
+.id-details strong {
+  font-size:12px;
+  font-weight:600;
+  line-height:1.5;
+}
+
+.id-bottom {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-top:28px;
+}
+
+.id-status {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#a4e9d9;
+  font-size:10px;
+}
+
+.id-status::before {
+  content:"";
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#6ee3c9;
+  box-shadow:0 0 12px #6ee3c9;
+}
+
+.id-number {
+  font-size:10px;
+  color:#7e9cb9;
+  letter-spacing:1px;
+}
+
+/* SECTIONS */
+
+.section {
+  padding:100px 0;
+  border-top:1px solid var(--line);
+}
+
+.section-heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:25px;
+  margin-bottom:35px;
+}
+
+.section-label {
+  color:#79caff;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+.section-title {
+  margin:13px 0 0;
+  font-size:clamp(32px,4vw,49px);
+  line-height:1.15;
+  letter-spacing:-.045em;
+}
+
+.section-intro {
+  max-width:480px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.8;
+}
+
+.section-link {
+  color:#9bd8ff;
+  font-size:13px;
+  white-space:nowrap;
+}
+
+.research-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+
+.research-card {
+  display:flex;
+  flex-direction:column;
+  min-height:285px;
+  padding:28px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:
+    radial-gradient(circle at 95% 0%,rgba(71,132,211,.12),transparent 45%),
+    linear-gradient(145deg,rgba(21,43,73,.9),rgba(12,25,44,.94));
+  transition:transform .25s,border-color .25s,box-shadow .25s;
+}
+
+.research-card:hover {
+  transform:translateY(-7px);
+  border-color:rgba(115,194,255,.5);
+  box-shadow:0 18px 45px rgba(0,0,0,.23);
+}
+
+.card-number {
+  color:#77c7ff;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1.5px;
+}
+
+.research-card h3 {
+  margin:23px 0 13px;
+  font-size:23px;
+  line-height:1.3;
+  letter-spacing:-.025em;
+}
+
+.research-card p {
+  margin:0;
+  color:#a8bdd6;
+  font-size:14px;
+  line-height:1.8;
+}
+
+.card-bottom {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-top:auto;
+  padding-top:25px;
+}
+
+.card-tag {
+  color:#7d9fbd;
+  font-size:10px;
+  letter-spacing:1px;
+}
+
+.card-arrow {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:35px;
+  height:35px;
+  border:1px solid rgba(120,192,255,.32);
+  border-radius:50%;
+  color:#9bd9ff;
+}
+
+.about-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:45px;
+  align-items:center;
+}
+
+.about-copy p {
+  color:#b5c8de;
+  font-size:15px;
+  line-height:1.95;
+}
+
+.about-points {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.about-point {
+  padding:22px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:rgba(23,45,76,.56);
+}
+
+.about-point strong {
+  display:block;
+  margin-bottom:8px;
+  color:#a4dbff;
+  font-size:13px;
+}
+
+.about-point span {
+  color:#9db3cc;
+  font-size:12px;
+  line-height:1.7;
+}
+
+.contact-panel {
+  padding:50px;
+  border:1px solid rgba(119,191,255,.28);
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 90% 10%,rgba(91,117,232,.16),transparent 45%),
+    linear-gradient(130deg,#152c4b,#0d1c32);
+}
+
+.contact-panel h2 {
+  margin:16px 0;
+  font-size:clamp(32px,4.5vw,55px);
+  letter-spacing:-.045em;
+}
+
+.contact-panel p {
+  max-width:600px;
+  color:#b5c9df;
+  line-height:1.8;
+}
+
+.footer {
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:18px;
+  padding:30px 0 45px;
+  border-top:1px solid var(--line);
+  color:#7892ae;
+  font-size:11px;
+  letter-spacing:1px;
+}
+
+.reveal {
+  opacity:0;
+  transform:translateY(25px);
+  transition:opacity .65s ease,transform .65s ease;
+}
+
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media(max-width:900px) {
   .hero {
-    position: relative;
-    min-height: 700px;
-    padding-right: 370px;
-    box-sizing: border-box;
+    grid-template-columns:1fr;
+    gap:30px;
+    padding-top:65px;
   }
 
-  .hero > h1 {
-    position: relative;
-    z-index: 2;
-  }
+  .id-scene { min-height:520px; }
 
-  .hero .auy-id-section {
-    position: absolute;
-    top: 55px;
-    right: 0;
-    width: 340px;
-    padding: 0;
-    background: transparent;
-    z-index: 1;
-  }
-
-  .hero .auy-id-section > .auy-id-kicker,
-  .hero .auy-id-section > h2,
-  .hero .auy-id-description,
-  .hero .auy-id-hint,
-  .hero .auy-id-research {
-    display: none;
-  }
-
-  .hero .auy-id-stage {
-    margin-top: 0;
-  }
+  .about-grid { grid-template-columns:1fr; }
 }
 
-@media (max-width:999px) {
-  .hero .auy-id-section {
-    padding: 35px 0 60px;
+@media(max-width:680px) {
+  .container {
+    width:min(100% - 32px,1160px);
   }
 
-  .hero .auy-id-section > h2 {
-    display: none;
+  .site-header { min-height:75px; }
+
+  .menu-button { display:block; }
+
+  .nav {
+    display:none;
+    position:absolute;
+    top:72px;
+    left:0;
+    right:0;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    padding:12px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:#101f35;
   }
+
+  .nav.open { display:flex; }
+
+  .nav a { padding:14px; }
+
+  .header-contact { display:none; }
+
+  .hero {
+    min-height:auto;
+    padding:65px 0;
+  }
+
+  .hero h1 { font-size:clamp(46px,12vw,68px); }
+
+  .id-scene { min-height:500px; }
+
+  .id-card {
+    max-width:390px;
+    min-height:470px;
+    animation:none;
+  }
+
+  .research-grid { grid-template-columns:1fr; }
+
+  .section { padding:75px 0; }
+
+  .section-heading {
+    align-items:start;
+    flex-direction:column;
+  }
+
+  .about-points { grid-template-columns:1fr; }
+
+  .contact-panel { padding:30px 23px; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+
+  .id-card { animation:none; }
+
+  .reveal {
+    opacity:1;
+    transform:none;
+    transition:none;
+  }
+
+  .btn,.research-card { transition:none; }
 }
 </style>
 </head>
 
 <body>
 
-<div aria-hidden="true" class="ambient"></div>
-
-<header class="site-header">
-  <a aria-label="Home" class="brand" href="index.html">
-    AUY<span class="brand-dot">.</span>
-    <span class="brand-caption">
-      ECONOMICS / RESEARCH
-    </span>
+<header class="site-header container">
+  <a class="logo" href="index.html" aria-label="Aslı Umay Yardımcı homepage">
+    AUY<span>.</span>
   </a>
 
   <button
-    aria-controls="primary-nav"
+    class="menu-button"
+    id="menuButton"
+    aria-controls="mainNav"
     aria-expanded="false"
-    class="menu-toggle"
     type="button">
-    Menu <span aria-hidden="true">☰</span>
+    ☰ Menu
   </button>
 
-  <nav
-    aria-label="Main navigation"
-    class="nav"
-    id="primary-nav">
-
+  <nav class="nav" id="mainNav" aria-label="Main navigation">
     <a href="research-v2.html">Work</a>
     <a href="about-v2.html">About</a>
     <a href="writing-v2.html">Writing</a>
     <a href="contact-v2.html">Contact</a>
   </nav>
 
-  <a class="header-cta" href="contact-v2.html">
-    Let's connect
-    <span aria-hidden="true">↗</span>
+  <a class="header-contact" href="contact-v2.html">
+    Let's connect ↗
   </a>
 </header>
 
@@ -404,478 +672,407 @@
 
 <!-- HERO -->
 
-<section class="hero section-wrap" id="home">
+<section class="hero container" id="home">
 
-  <div class="eyebrow">
-    <span class="status-dot"></span>
-    AN INDEPENDENT SPACE FOR ECONOMIC THINKING
-    <span class="line"></span>
-    001 / 004
-  </div>
+  <div class="hero-content">
 
-  <h1>
-    Curiosity meets<br/>
-    <span class="gradient-text">evidence.</span>
-  </h1>
+    <span class="eyebrow">
+      ECONOMICS · RESEARCH · CURIOSITY
+    </span>
 
-  <div class="hero-bottom">
-    <p>
-      Hi, I'm <strong>Aslı Umay Yardımcı.</strong>
-      I explore the economics of markets, decisions
-      and the forces shaping our world.
+    <h1>
+      Curiosity<br>
+      meets<br>
+      <span class="gradient-text">evidence.</span>
+    </h1>
+
+    <p class="hero-description">
+      I'm Aslı Umay Yardımcı — an economics graduate
+      interested in the intersection of data,
+      consumer behaviour, market dynamics and
+      real-world decision-making.
     </p>
 
-    <a
-      aria-label="Explore selected work"
-      class="round-link"
-      href="#work">↓</a>
-  </div>
+    <p class="hero-description">
+      I explore economic questions through research,
+      analytical thinking and a curiosity about
+      how people and markets behave.
+    </p>
 
-  <!-- 3D IDENTITY CARD -->
+    <div class="hero-buttons">
+      <a class="btn btn-primary" href="research-v2.html">
+        Explore my work ↗
+      </a>
 
-  <section class="auy-id-section" id="identity">
-
-    <div class="auy-id-kicker">
-      BEHIND THE RESEARCH / 001
+      <a class="btn btn-outline" href="about-v2.html">
+        More about me
+      </a>
     </div>
 
-    <h2>
-      Meet the mind<br/>
-      behind the numbers.
-    </h2>
-
-    <p class="auy-id-description">
-      A little introduction, beyond the research.
+    <p class="hero-footnote">
+      ECONOMICS / ANALYTICS / COMMERCIAL STRATEGY
     </p>
 
-    <div class="auy-id-stage">
+  </div>
 
-      <div
-        class="auy-id-lanyard"
-        aria-hidden="true">
+  <!-- ANIMATED ID CARD -->
+
+  <div class="id-scene" id="idScene">
+
+    <div class="id-card" id="idCard">
+
+      <div class="id-top">
+        <strong>AUY. / IDENTITY</strong>
+        <span>RESEARCH PROFILE · 2026</span>
       </div>
 
-      <button
-        class="auy-id-card"
-        id="auyIdentityCard"
-        type="button"
-        aria-label="Flip identity card"
-        aria-pressed="false">
+      <div class="id-photo-wrap">
 
-        <span class="auy-id-inner">
+        <!--
+        Fotoğrafının dosya adı auy-photo.jpg olmalı.
+        GitHub'da index.html ile aynı klasöre yükle.
+        -->
 
-          <!-- FRONT -->
+        <img
+          class="id-photo"
+          id="profilePhoto"
+          src="auy-photo.jpg"
+          alt="Portrait of Aslı Umay Yardımcı"
+          onerror="this.style.display='none';document.getElementById('photoFallback').style.display='flex';">
 
-          <span class="auy-id-face auy-id-front">
+        <div
+          class="id-fallback"
+          id="photoFallback"
+          aria-hidden="true">
+          AUY
+        </div>
 
-            <span class="auy-id-hole"></span>
+      </div>
 
-            <span class="auy-id-top">
-              <strong>
-                AUY<span class="auy-id-dot">.</span>
-              </strong>
+      <div class="id-main">
+        <h2>Aslı Umay Yardımcı</h2>
+        <p>ECONOMICS &amp; RESEARCH</p>
+      </div>
 
-              <small>IDENTITY / 001</small>
-            </span>
+      <div class="id-divider"></div>
 
-            <img
-              class="auy-id-photo"
-              src="auy.jpg"
-              alt="Portrait of Aslı Umay Yardımcı"
-            />
+      <div class="id-details">
 
-            <span class="auy-id-name">
-              ASLI UMAY<br/>YARDIMCI
-            </span>
+        <div>
+          <small>EDUCATION</small>
+          <strong>M.Sc. Economics</strong>
+        </div>
 
-            <span class="auy-id-role">
-              ECONOMICS &amp; RESEARCH
-            </span>
+        <div>
+          <small>UNIVERSITY</small>
+          <strong>University of Hohenheim</strong>
+        </div>
 
-            <span class="auy-id-bottom">
-              <span>
-                PERSONAL RESEARCH<br/>
-                PORTFOLIO
-              </span>
+        <div>
+          <small>FOCUS</small>
+          <strong>Behaviour · Markets · Data</strong>
+        </div>
 
-              <span
-                class="auy-id-barcode"
-                aria-hidden="true">
-              </span>
-            </span>
+        <div>
+          <small>PROFESSIONAL FIELD</small>
+          <strong>Category Management</strong>
+        </div>
 
-          </span>
+      </div>
 
-          <!-- BACK -->
-
-          <span class="auy-id-face auy-id-back">
-
-            <span class="auy-id-hole"></span>
-
-            <span class="auy-id-top">
-              <strong>AUY.</strong>
-              <small>THE OTHER SIDE</small>
-            </span>
-
-            <span class="auy-id-back-content">
-
-              <span class="auy-id-back-kicker">
-                BEYOND THE NUMBERS
-              </span>
-
-              <strong>
-                Curiosity.<br/>
-                Data.<br/>
-                Ideas.
-              </strong>
-
-              <span class="auy-id-back-copy">
-                Exploring economics through research,
-                analysis and new questions.
-              </span>
-
-            </span>
-
-            <span class="auy-id-back-footer">
-              THE STORY CONTINUES ↗
-            </span>
-
-          </span>
-
+      <div class="id-bottom">
+        <span class="id-status">
+          OPEN TO IDEAS &amp; COLLABORATION
         </span>
-      </button>
+
+        <span class="id-number">
+          AUY / 001
+        </span>
+      </div>
+
     </div>
-
-    <p class="auy-id-hint">
-      ↻ CLICK OR TAP TO FLIP
-    </p>
-
-    <a
-      class="auy-id-research"
-      href="research-v2.html">
-      EXPLORE MY RESEARCH ↗
-    </a>
-
-  </section>
-
-  <div class="hero-foot">
-    <span>ECONOMICS / DATA / BEHAVIOUR</span>
-    <span>SCROLL TO EXPLORE ↓</span>
   </div>
 
 </section>
 
 <!-- RESEARCH -->
 
-<section class="work section-wrap" id="work">
+<section class="section" id="research">
+  <div class="container">
 
-  <div class="section-heading reveal">
+    <div class="section-heading reveal">
+      <div>
+        <span class="section-label">
+          01 / SELECTED RESEARCH
+        </span>
 
-    <div>
-      <div class="section-kicker">
-        01 / RESEARCH &amp; PROJECTS
+        <h2 class="section-title">
+          Questions worth exploring.
+        </h2>
       </div>
 
-      <h2>Selected <em>work.</em></h2>
+      <a class="section-link" href="research-v2.html">
+        View all research ↗
+      </a>
     </div>
 
-    <p>
-      A collection of questions, explorations and
-      analyses at the intersection of economics
-      and everyday life.
-    </p>
+    <div class="research-grid">
 
-  </div>
+      <a
+        class="research-card reveal"
+        href="minimum-wage-v2.html">
 
-  <div class="project-grid">
+        <span class="card-number">
+          RESEARCH / 01
+        </span>
 
-    <!-- PROJECT 01 -->
+        <h3>
+          Germany's 2022 Minimum Wage Reform
+        </h3>
 
-    <a
-      class="project-card reveal"
-      href="minimum-wage-v2.html">
+        <p>
+          An empirical investigation of regional
+          wage inequality using panel data,
+          Difference-in-Differences and
+          fixed-effects methods.
+        </p>
 
-      <div class="card-top">
-        <span>01 / LABOUR ECONOMICS</span>
-        <span class="arrow">↗</span>
-      </div>
-
-      <div
-        aria-hidden="true"
-        class="project-visual visual-wage">
-
-        <div class="bars">
-          <i></i><i></i><i></i><i></i><i></i>
-          <i></i><i></i><i></i><i></i>
+        <div class="card-bottom">
+          <span class="card-tag">
+            LABOUR ECONOMICS · ECONOMETRICS
+          </span>
+          <span class="card-arrow">↗</span>
         </div>
 
-        <span class="visual-label">
-          POLICY / EMPIRICAL ANALYSIS
+      </a>
+
+      <a
+        class="research-card reveal"
+        href="personalized-pricing-v2.html">
+
+        <span class="card-number">
+          RESEARCH / 02
         </span>
-      </div>
 
-      <h3>
-        Germany's 2022<br/>
-        Minimum Wage Reform
-      </h3>
+        <h3>
+          The Fairness Playbook
+        </h3>
 
-      <p>
-        Exploring labour-market policy
-        and economic outcomes.
-      </p>
+        <p>
+          How personalised pricing, algorithmic
+          decisions and consumer perceptions
+          shape fairness and trust in
+          digital markets.
+        </p>
 
-      <span class="card-footer">
-        EXPLORE RESEARCH <span>↗</span>
-      </span>
-    </a>
-
-    <!-- PROJECT 02 -->
-
-    <a
-      class="project-card reveal"
-      href="personalized-pricing-v2.html">
-
-      <div class="card-top">
-        <span>02 / DIGITAL ECONOMICS</span>
-        <span class="arrow">↗</span>
-      </div>
-
-      <div
-        aria-hidden="true"
-        class="project-visual visual-pricing">
-
-        <div class="orb orb-one"></div>
-        <div class="orb orb-two"></div>
-        <div class="orb orb-three"></div>
-
-        <span class="visual-label">
-          MARKETS / FAIRNESS
-        </span>
-      </div>
-
-      <h3>
-        Personalized Pricing<br/>
-        &amp; Perceived Fairness
-      </h3>
-
-      <p>
-        Thinking about pricing, technology
-        and consumer perceptions.
-      </p>
-
-      <span class="card-footer">
-        EXPLORE RESEARCH <span>↗</span>
-      </span>
-    </a>
-
-    <!-- PROJECT 03 -->
-
-    <a
-      class="project-card reveal"
-      href="tennis-momentum-v2.html">
-
-      <div class="card-top">
-        <span>03 / BEHAVIOURAL ECONOMICS</span>
-        <span class="arrow">↗</span>
-      </div>
-
-      <div
-        aria-hidden="true"
-        class="project-visual visual-tennis">
-
-        <div class="court">
-          <span></span>
+        <div class="card-bottom">
+          <span class="card-tag">
+            DIGITAL ECONOMICS · BEHAVIOUR
+          </span>
+          <span class="card-arrow">↗</span>
         </div>
 
-        <div class="ball"></div>
+      </a>
 
-        <span class="visual-label">
-          SPORT / DECISION-MAKING
+      <a
+        class="research-card reveal"
+        href="tennis-momentum-v2.html">
+
+        <span class="card-number">
+          RESEARCH / 03
         </span>
-      </div>
 
-      <h3>
-        Momentum<br/>
-        in Tennis
-      </h3>
+        <h3>
+          The Psychology of Momentum in Tennis
+        </h3>
 
-      <p>
-        Investigating behaviour and performance
-        under pressure.
-      </p>
+        <p>
+          A behavioural-economic synthesis
+          connecting belief updating,
+          strategic incentives, pressure
+          and machine-learning evidence.
+        </p>
 
-      <span class="card-footer">
-        EXPLORE RESEARCH <span>↗</span>
-      </span>
-    </a>
+        <div class="card-bottom">
+          <span class="card-tag">
+            BEHAVIOURAL ECONOMICS · SPORTS
+          </span>
+          <span class="card-arrow">↗</span>
+        </div>
 
-    <!-- PROJECT 04 -->
+      </a>
 
-    <a
-      class="project-card reveal"
-      href="consumer-trends-v2.html">
+      <a
+        class="research-card reveal"
+        href="consumer-trends-v2.html">
 
-      <div class="card-top">
-        <span>04 / MARKET INSIGHTS</span>
-        <span class="arrow">↗</span>
-      </div>
-
-      <div
-        aria-hidden="true"
-        class="project-visual visual-trends">
-
-        <div class="trend-ring"></div>
-        <div class="trend-text">2027</div>
-
-        <span class="visual-label">
-          CONSUMERS / RETAIL
+        <span class="card-number">
+          RESEARCH / 04
         </span>
-      </div>
 
-      <h3>
-        Consumer Trends<br/>
-        &amp; the Future of Retail
-      </h3>
+        <h3>
+          Consumer Trends &amp; the Future of Retail
+        </h3>
 
-      <p>
-        Observations on evolving markets
-        and consumer choices.
-      </p>
+        <p>
+          Exploring how evolving consumer
+          preferences could reshape
+          retail strategies, pricing
+          and market competition in 2027.
+        </p>
 
-      <span class="card-footer">
-        EXPLORE RESEARCH <span>↗</span>
-      </span>
-    </a>
+        <div class="card-bottom">
+          <span class="card-tag">
+            RETAIL ECONOMICS · CONSUMER INSIGHTS
+          </span>
+          <span class="card-arrow">↗</span>
+        </div>
+
+      </a>
+
+    </div>
 
   </div>
 </section>
 
 <!-- ABOUT -->
 
-<section class="about section-wrap" id="about">
-
-  <div class="section-kicker reveal">
-    02 / ABOUT ME
-  </div>
-
-  <div class="about-grid">
-
-    <h2 class="reveal">
-      Always asking<br/>
-      <em>why.</em>
-    </h2>
+<section class="section" id="about">
+  <div class="container about-grid">
 
     <div class="about-copy reveal">
 
-      <p class="lead">
-        I believe the most interesting economic
-        questions often begin with ordinary observations.
+      <span class="section-label">
+        02 / ABOUT ME
+      </span>
+
+      <h2 class="section-title">
+        Economics beyond
+        the textbook.
+      </h2>
+
+      <p>
+        I hold an M.Sc. in Economics from
+        the University of Hohenheim and
+        a B.A. in Economics from
+        Bilkent University.
       </p>
 
       <p>
-        My work and interests bring together applied
-        economics, behavioural insights, digital markets
-        and public policy. I use this space to share
-        research, explore ideas and connect economic
-        theory with real-world questions.
+        My professional experience spans
+        strategy and analytics at Deloitte,
+        sales training support at Philips,
+        and category management in
+        the sporting goods industry.
       </p>
 
-      <div class="tags">
-        <span>Applied economics</span>
-        <span>Behavioural insights</span>
-        <span>Digital markets</span>
-        <span>Public policy</span>
-      </div>
+      <p>
+        Across research and business,
+        I am interested in transforming
+        complex questions into clear,
+        evidence-based insights.
+      </p>
 
-      <a
-        class="pill-link"
-        href="about-v2.html">
-        More about me ↗
+      <a class="btn btn-outline" href="about-v2.html">
+        Explore my journey ↗
       </a>
 
     </div>
-  </div>
-</section>
 
-<!-- WRITING -->
+    <div class="about-points reveal">
 
-<section class="writing section-wrap" id="writing">
-
-  <div class="section-heading reveal">
-
-    <div>
-      <div class="section-kicker">
-        03 / NOTES &amp; IDEAS
+      <div class="about-point">
+        <strong>Applied Economics</strong>
+        <span>
+          Connecting economic theory
+          with real-world outcomes.
+        </span>
       </div>
 
-      <h2>
-        Thinking <em>out loud.</em>
-      </h2>
+      <div class="about-point">
+        <strong>Consumer Behaviour</strong>
+        <span>
+          Understanding decisions,
+          incentives and preferences.
+        </span>
+      </div>
+
+      <div class="about-point">
+        <strong>Data &amp; Evidence</strong>
+        <span>
+          Using quantitative methods
+          to investigate questions.
+        </span>
+      </div>
+
+      <div class="about-point">
+        <strong>Commercial Strategy</strong>
+        <span>
+          Applying analytical thinking
+          to markets and business.
+        </span>
+      </div>
+
     </div>
 
-    <p>
-      Short observations, longer arguments
-      and ideas worth revisiting.
-    </p>
-
   </div>
-
-  <a
-    class="writing-link reveal"
-    href="writing-v2.html">
-
-    <span>
-      <span class="writing-label">
-        ESSAYS / ARTICLES / IDEAS
-      </span>
-
-      <strong>
-        Explore my writing archive
-      </strong>
-    </span>
-
-    <span class="writing-arrow">↗</span>
-  </a>
-
 </section>
 
 <!-- CONTACT -->
 
-<section class="contact section-wrap" id="contact">
+<section class="section" id="contact">
+  <div class="container">
 
-  <div class="section-kicker reveal">
-    04 / GET IN TOUCH
+    <div class="contact-panel reveal">
+
+      <span class="section-label">
+        03 / LET'S CONNECT
+      </span>
+
+      <h2>
+        Good questions start<br>
+        great conversations.
+      </h2>
+
+      <p>
+        Interested in economics, research,
+        consumer insights or commercial
+        strategy? I'm always happy
+        to exchange ideas.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a
+          class="btn btn-primary"
+          href="mailto:yardimciumay@gmail.com">
+          Send an email ↗
+        </a>
+
+        <a
+          class="btn btn-outline"
+          href="contact-v2.html">
+          Contact page
+        </a>
+
+      </div>
+
+    </div>
+
   </div>
-
-  <h2 class="reveal">
-    Good ideas start<br/>
-    with a <em>conversation.</em>
-  </h2>
-
-  <p class="reveal">
-    Interested in economics, research or a
-    potential collaboration? I'd love to hear from you.
-  </p>
-
-  <a
-    class="contact-link reveal"
-    href="contact-v2.html">
-    Get in touch ↗
-  </a>
-
 </section>
 
 </main>
 
-<footer class="footer section-wrap">
+<footer class="footer container">
 
   <span>
-    © <span id="year">2026</span>
+    © <span id="year"></span>
     ASLI UMAY YARDIMCI
   </span>
 
   <span>
-    BUILT WITH CURIOSITY · HOSTED ON GITHUB PAGES
+    CURIOSITY MEETS EVIDENCE.
   </span>
 
   <a href="#home">
@@ -887,18 +1084,82 @@
 <script>
 (function () {
 
-  const card = document.getElementById("auyIdentityCard");
+  // Current year
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
 
-  if (!card) return;
+  // Mobile menu
+  const menuButton = document.getElementById("menuButton");
+  const mainNav = document.getElementById("mainNav");
 
-  card.addEventListener("click", function () {
-    const isFlipped = card.classList.toggle("is-flipped");
-
-    card.setAttribute(
-      "aria-pressed",
-      String(isFlipped)
-    );
+  menuButton.addEventListener("click", function () {
+    const isOpen = mainNav.classList.toggle("open");
+    menuButton.setAttribute("aria-expanded", String(isOpen));
   });
+
+  mainNav.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      mainNav.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  // Reveal sections
+  const elements = document.querySelectorAll(".reveal");
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    elements.forEach(function (element) {
+      element.classList.add("visible");
+    });
+  } else {
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.08
+    });
+
+    elements.forEach(function (element) {
+      observer.observe(element);
+    });
+  }
+
+  // 3D card interaction
+  const card = document.getElementById("idCard");
+  const scene = document.getElementById("idScene");
+
+  const finePointer = window.matchMedia(
+    "(pointer: fine)"
+  ).matches;
+
+  if (!reducedMotion && finePointer) {
+
+    scene.addEventListener("pointermove", function (event) {
+      const rect = scene.getBoundingClientRect();
+
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+      card.style.animation = "none";
+
+      card.style.transform =
+        "rotateY(" + (x * 15) + "deg) " +
+        "rotateX(" + (-y * 12) + "deg)";
+    });
+
+    scene.addEventListener("pointerleave", function () {
+      card.style.transform = "";
+      card.style.animation = "";
+    });
+
+  }
 
 })();
 </script>
