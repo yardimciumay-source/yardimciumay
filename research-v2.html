@@ -720,11 +720,89 @@
         transition: none !important;
       }
     }
+
+/* HOMEPAGE-MATCHED HEADER: scoped to avoid altering research cards */
+.site-header {
+  width: 100%; max-width: 1380px; height: 88px; min-height: 88px;
+  margin: 0 auto; padding: 0 6.4%; display: flex; flex-wrap: nowrap;
+  align-items: center; justify-content: space-between; gap: 36px;
+  border-bottom: 1px solid #263a54; position: relative; z-index: 100;
+}
+.site-header .brand {
+  display: inline-flex; align-items: center; flex-shrink: 0;
+  margin: 0 auto 0 0; padding: 0; border: 0; white-space: nowrap;
+  color: #eef6ff; font-size: 23px; font-weight: 850;
+  letter-spacing: -1.5px; line-height: 1.2;
+}
+.site-header .brand-dot { color: #63b4ff; }
+.site-header .brand-caption {
+  display: inline; margin-left: 10px; padding: 0; border: 0;
+  color: #a5b9d0; font-size: 9px; font-weight: 650;
+  letter-spacing: 1.5px; line-height: 1.4;
+}
+.site-header .nav {
+  display: flex; align-items: center; flex-direction: row;
+  justify-content: initial; position: static; width: auto;
+  margin: 0; padding: 0; gap: 34px; background: transparent; border: 0;
+}
+.site-header .nav a {
+  color: #c6d9ed; font-size: 12px; font-weight: 600;
+  line-height: normal; letter-spacing: normal; white-space: nowrap;
+}
+.site-header .nav a:hover, .site-header .nav a[aria-current="page"] { color: #63b4ff; }
+.site-header .header-cta {
+  display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0; gap: 0; margin: 0; padding: 12px 18px;
+  border: 1px solid #355473; border-radius: 100px;
+  background: transparent; color: #c6d9ed;
+  font-size: 12px; font-weight: 600; line-height: normal;
+  letter-spacing: normal; white-space: nowrap;
+}
+.site-header .header-cta span { color: #63b4ff; margin-left: 9px; }
+.site-header .header-cta:hover { border-color: #63b4ff; }
+.site-header .menu-toggle { display: none; }
+@media (max-width: 900px) {
+  .site-header {
+    height: 72px; min-height: 72px; padding: 0 6.4%;
+    flex-wrap: nowrap; gap: 15px;
+  }
+  .site-header .brand { margin-right: auto; }
+  .site-header .menu-toggle {
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .site-header .header-cta { display: none; }
+  .site-header .nav {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    width: 100%; margin: 0; padding: 20px 6.4%;
+    flex-direction: column; align-items: flex-start; gap: 22px;
+    background: #101b2d; border-bottom: 1px solid #263a54;
+    z-index: 101;
+  }
+  .site-header .nav.is-open { display: flex; }
+}
+@media (max-width: 520px) {
+  .site-header .brand-caption { display: none; }
+}
   </style>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/><link href="v2-unified.css" rel="stylesheet"/></head>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/></head>
 <body>
 <!-- HEADER -->
-<header class="site-header"><a aria-label="Home" class="brand" href="index-v2.html">AUY<span class="brand-dot">.</span><span class="brand-caption"> ECONOMICS / RESEARCH</span></a><button aria-controls="primary-nav" aria-expanded="false" class="menu-toggle" type="button">Menu <span aria-hidden="true">☰</span></button><nav aria-label="Main navigation" class="nav" id="primary-nav"><a aria-current="page" class="active" href="research-v2.html">Work</a><a href="about-v2.html">About</a><a href="writing-v2.html">Writing</a><a href="contact-v2.html">Contact</a></nav><a class="header-cta" href="contact-v2.html">Let's connect <span aria-hidden="true">↗</span></a></header>
+<header class="site-header">
+  <a aria-label="Home" class="brand" href="index.html">
+    AUY<span class="brand-dot">.</span>
+    <span class="brand-caption">ECONOMICS / RESEARCH</span>
+  </a>
+  <button aria-controls="primary-nav" aria-expanded="false" class="menu-toggle" type="button">
+    Menu <span aria-hidden="true">☰</span>
+  </button>
+  <nav aria-label="Main navigation" class="nav" id="primary-nav">
+    <a aria-current="page" class="active" href="research-v2.html">Work</a>
+    <a href="about-v2.html">About</a>
+    <a href="writing-v2.html">Writing</a>
+    <a href="contact-v2.html">Contact</a>
+  </nav>
+  <a class="header-cta" href="contact-v2.html">Let's connect <span aria-hidden="true">↗</span></a>
+</header>
 <main>
 <!-- HERO -->
 <section class="research-hero container">
@@ -925,7 +1003,7 @@
 <span>
       ECONOMICS / RESEARCH / IDEAS
     </span>
-<a href="index-v2.html">
+<a href="index.html">
       BACK TO HOME ↑
     </a>
 </footer>
