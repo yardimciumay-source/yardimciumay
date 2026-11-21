@@ -9,7 +9,7 @@
 <title>Aslı Umay Yardımcı — Economics &amp; Research</title>
 
 <link href="styles-v2.css" rel="stylesheet"/>
-<script defer src="script-v2.js"></script>
+
 
 <style>
 /* ANIMATED IDENTITY CARD */
@@ -884,24 +884,93 @@
 
 </footer>
 
+
 <script>
 (function () {
+  "use strict";
 
+  // Show all sections, even if an animation fails.
+  function revealEverything() {
+    document.querySelectorAll(".reveal").forEach(function (el) {
+      el.classList.add("visible");
+      el.style.opacity = "1";
+      el.style.visibility = "visible";
+      el.style.transform = "none";
+    });
+  }
+
+  revealEverything();
+
+  // Current year
+  const year = document.getElementById("year");
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
+
+  // Mobile navigation
+  const menuButton = document.querySelector(".menu-toggle");
+  const nav = document.getElementById("primary-nav");
+
+  if (menuButton && nav) {
+    menuButton.addEventListener("click", function () {
+      const isOpen = nav.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+  }
+
+  // Identity card flip
   const card = document.getElementById("auyIdentityCard");
 
-  if (!card) return;
-
-  card.addEventListener("click", function () {
-    const isFlipped = card.classList.toggle("is-flipped");
-
-    card.setAttribute(
-      "aria-pressed",
-      String(isFlipped)
-    );
-  });
-
+  if (card) {
+    card.addEventListener("click", function () {
+      const flipped = card.classList.toggle("is-flipped");
+      card.setAttribute("aria-pressed", String(flipped));
+    });
+  }
 })();
 </script>
+```
+
+### 3. Aynı dosyada, ilk `<style>` bölümünün sonuna bu CSS kodunu ekle
+
+<CodeBlock language="css" editable>
+/* EMERGENCY VISIBILITY FIX */
+
+.reveal,
+.reveal.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+.hero,
+.work,
+.about,
+.writing,
+.contact {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.auy-id-section,
+.auy-id-stage,
+.auy-id-card {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Keep identity card visible while swinging */
+.auy-id-card {
+  animation: auy-id-swing 5s ease-in-out infinite;
+}
+
+/* Keep the mobile navigation usable */
+@media (max-width: 768px) {
+  .nav.open {
+    display: flex !important;
+  }
+}
+
 
 </body>
 </html>
