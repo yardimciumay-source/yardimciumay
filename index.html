@@ -304,6 +304,56 @@
   .auy-id-inner { transition: none; }
 }
 </style>
+
+<style>
+/* Put the floating ID badge beside the hero headline */
+@media (min-width: 1000px) {
+  .hero {
+    position: relative;
+    min-height: 700px;
+    padding-right: 370px;
+    box-sizing: border-box;
+  }
+
+  .hero > h1 {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero .auy-id-section {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    width: 340px;
+    padding: 0;
+    background: transparent;
+    z-index: 1;
+  }
+
+  .hero .auy-id-section > .auy-id-kicker,
+  .hero .auy-id-section > h2,
+  .hero .auy-id-description,
+  .hero .auy-id-hint,
+  .hero .auy-id-research {
+    display: none;
+  }
+
+  .hero .auy-id-stage {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 999px) {
+  .hero .auy-id-section {
+    padding: 35px 0 60px;
+  }
+
+  .hero .auy-id-section > h2 {
+    display: none;
+  }
+}
+</style>
+
 </head>
 
 <body>
@@ -362,6 +412,109 @@
          class="round-link" href="#work">↓</a>
     </div>
 
+     <!-- NEW 3D IDENTITY CARD SECTION -->
+  <section class="auy-id-section" id="identity">
+
+    <div class="auy-id-kicker">
+      BEHIND THE RESEARCH / 001
+    </div>
+
+    <h2>
+      Meet the mind<br/>
+      behind the numbers.
+    </h2>
+
+    <p class="auy-id-description">
+      A little introduction, beyond the research.
+    </p>
+
+    <div class="auy-id-stage">
+      <div class="auy-id-lanyard" aria-hidden="true"></div>
+
+      <button
+        class="auy-id-card"
+        id="auyIdentityCard"
+        type="button"
+        aria-label="Flip identity card"
+        aria-pressed="false">
+
+        <span class="auy-id-inner">
+
+          <!-- CARD FRONT -->
+          <span class="auy-id-face auy-id-front">
+            <span class="auy-id-hole"></span>
+
+            <span class="auy-id-top">
+              <strong>AUY<span class="auy-id-dot">.</span></strong>
+              <small>IDENTITY / 001</small>
+            </span>
+
+            <img
+              class="auy-id-photo"
+              src="auy-photo.jpg"
+              alt="Portrait of Aslı Umay Yardımcı"
+            />
+
+            <span class="auy-id-name">
+              ASLI UMAY<br/>YARDIMCI
+            </span>
+
+            <span class="auy-id-role">
+              ECONOMICS &amp; RESEARCH
+            </span>
+
+            <span class="auy-id-bottom">
+              <span>PERSONAL RESEARCH<br/>PORTFOLIO</span>
+              <span class="auy-id-barcode"
+                    aria-hidden="true"></span>
+            </span>
+          </span>
+
+          <!-- CARD BACK -->
+          <span class="auy-id-face auy-id-back">
+            <span class="auy-id-hole"></span>
+
+            <span class="auy-id-top">
+              <strong>AUY.</strong>
+              <small>THE OTHER SIDE</small>
+            </span>
+
+            <span class="auy-id-back-content">
+              <span class="auy-id-back-kicker">
+                BEYOND THE NUMBERS
+              </span>
+
+              <strong>
+                Curiosity.<br/>
+                Data.<br/>
+                Ideas.
+              </strong>
+
+              <span class="auy-id-back-copy">
+                Exploring economics through research,
+                analysis and new questions.
+              </span>
+            </span>
+
+            <span class="auy-id-back-footer">
+              THE STORY CONTINUES ↗
+            </span>
+          </span>
+
+        </span>
+      </button>
+    </div>
+
+    <p class="auy-id-hint">
+      ↻ HOVER OR TAP TO FLIP
+    </p>
+
+    <a class="auy-id-research" href="research-v2.html">
+      EXPLORE MY RESEARCH ↗
+    </a>
+
+  </section>
+  <!-- END OF NEW IDENTITY CARD -->
     <div class="hero-foot">
       <span>ECONOMICS / DATA / BEHAVIOUR</span>
       <span>SCROLL TO EXPLORE ↓</span>
@@ -526,109 +679,7 @@
     </div>
   </section>
 
-  <!-- NEW 3D IDENTITY CARD SECTION -->
-  <section class="auy-id-section" id="identity">
-
-    <div class="auy-id-kicker">
-      BEHIND THE RESEARCH / 001
-    </div>
-
-    <h2>
-      Meet the mind<br/>
-      behind the numbers.
-    </h2>
-
-    <p class="auy-id-description">
-      A little introduction, beyond the research.
-    </p>
-
-    <div class="auy-id-stage">
-      <div class="auy-id-lanyard" aria-hidden="true"></div>
-
-      <button
-        class="auy-id-card"
-        id="auyIdentityCard"
-        type="button"
-        aria-label="Flip identity card"
-        aria-pressed="false">
-
-        <span class="auy-id-inner">
-
-          <!-- CARD FRONT -->
-          <span class="auy-id-face auy-id-front">
-            <span class="auy-id-hole"></span>
-
-            <span class="auy-id-top">
-              <strong>AUY<span class="auy-id-dot">.</span></strong>
-              <small>IDENTITY / 001</small>
-            </span>
-
-            <img
-              class="auy-id-photo"
-              src="auy-photo.jpg"
-              alt="Portrait of Aslı Umay Yardımcı"
-            />
-
-            <span class="auy-id-name">
-              ASLI UMAY<br/>YARDIMCI
-            </span>
-
-            <span class="auy-id-role">
-              ECONOMICS &amp; RESEARCH
-            </span>
-
-            <span class="auy-id-bottom">
-              <span>PERSONAL RESEARCH<br/>PORTFOLIO</span>
-              <span class="auy-id-barcode"
-                    aria-hidden="true"></span>
-            </span>
-          </span>
-
-          <!-- CARD BACK -->
-          <span class="auy-id-face auy-id-back">
-            <span class="auy-id-hole"></span>
-
-            <span class="auy-id-top">
-              <strong>AUY.</strong>
-              <small>THE OTHER SIDE</small>
-            </span>
-
-            <span class="auy-id-back-content">
-              <span class="auy-id-back-kicker">
-                BEYOND THE NUMBERS
-              </span>
-
-              <strong>
-                Curiosity.<br/>
-                Data.<br/>
-                Ideas.
-              </strong>
-
-              <span class="auy-id-back-copy">
-                Exploring economics through research,
-                analysis and new questions.
-              </span>
-            </span>
-
-            <span class="auy-id-back-footer">
-              THE STORY CONTINUES ↗
-            </span>
-          </span>
-
-        </span>
-      </button>
-    </div>
-
-    <p class="auy-id-hint">
-      ↻ HOVER OR TAP TO FLIP
-    </p>
-
-    <a class="auy-id-research" href="research-v2.html">
-      EXPLORE MY RESEARCH ↗
-    </a>
-
-  </section>
-  <!-- END OF NEW IDENTITY CARD -->
+ 
 
   <!-- WRITING -->
   <section class="writing section-wrap" id="writing">
