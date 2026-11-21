@@ -5,16 +5,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#07111f">
+<meta name="description" content="Connect with Aslı Umay Yardımcı through email, LinkedIn, GitHub and research.">
 
-<title>Connect — Aslı Umay Yardımcı</title>
+<title>Contact — Aslı Umay Yardımcı</title>
 
 <style>
 :root {
   --bg: #07111f;
   --text: #f1f7ff;
-  --muted: #a7bdd5;
+  --muted: #a9bed6;
   --blue: #6dbaff;
-  --border: rgba(129,190,255,.2);
+  --cyan: #9cddff;
+  --border: rgba(129,190,255,.19);
 }
 
 * {
@@ -28,16 +30,17 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  color: var(--text);
   background:
     radial-gradient(
-      ellipse at 75% 25%,
+      ellipse at 76% 25%,
       rgba(32,107,210,.18),
-      transparent 45%
+      transparent 48%
     ),
-    var(--bg);
-  color: var(--text);
+    #07111f;
   font-family: Inter, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -45,43 +48,80 @@ a {
   text-decoration: none;
 }
 
-/* NAVIGATION */
+button {
+  font: inherit;
+}
 
-header {
+/* STANDARD AUY HEADER */
+
+.site-header {
   max-width: 1350px;
   margin: auto;
   padding: 28px 6%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   gap: 25px;
   border-bottom: 1px solid var(--border);
 }
 
-.logo {
-  font-size: 29px;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  white-space: nowrap;
+}
+
+.brand-name {
+  font-size: 30px;
   font-weight: 900;
   letter-spacing: -2px;
 }
 
-.logo span {
+.brand-dot {
   color: var(--blue);
 }
 
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 27px;
+.brand-caption {
+  padding-left: 14px;
+  border-left: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 750;
+  line-height: 1.5;
+  letter-spacing: 1.5px;
 }
 
-nav a {
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav a {
   color: var(--muted);
   font-size: 13px;
+  font-weight: 600;
+  transition: color .2s;
 }
 
-nav a:hover,
-nav a.active {
-  color: var(--blue);
+.nav a:hover,
+.nav a.active {
+  color: var(--cyan);
+}
+
+.header-cta {
+  padding: 12px 18px;
+  border: 1px solid rgba(88,173,255,.45);
+  border-radius: 100px;
+  color: var(--cyan);
+  font-size: 12px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.header-cta:hover {
+  background: rgba(88,173,255,.1);
 }
 
 /* HERO */
@@ -89,40 +129,53 @@ nav a.active {
 main {
   max-width: 1350px;
   margin: auto;
-  padding: 95px 6% 100px;
+  padding: 100px 6% 100px;
 }
 
 .kicker {
-  color: var(--blue);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--cyan);
   font-size: 11px;
   font-weight: 800;
-  letter-spacing: 2.5px;
+  letter-spacing: 2.2px;
+}
+
+.kicker::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 15px var(--blue);
 }
 
 h1 {
-  margin: 25px 0 18px;
-  font-size: clamp(58px, 9vw, 116px);
-  line-height: 1;
+  margin: 28px 0 18px;
+  font-size: clamp(55px, 9vw, 112px);
+  line-height: 1.02;
   letter-spacing: -5px;
+  font-weight: 850;
 }
 
-h1 em {
+h1 span {
   display: block;
   color: var(--blue);
-  font-style: normal;
 }
 
 .intro {
-  max-width: 600px;
+  max-width: 620px;
+  margin: 0;
   color: var(--muted);
   font-size: 17px;
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 /* CAROUSEL */
 
 .carousel-section {
-  margin-top: 70px;
+  margin-top: 75px;
 }
 
 .carousel-heading {
@@ -136,20 +189,21 @@ h1 em {
 .carousel-label {
   color: var(--muted);
   font-size: 11px;
-  letter-spacing: 2px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
 }
 
 .carousel-controls {
   display: flex;
-  gap: 9px;
+  gap: 10px;
 }
 
 .carousel-controls button {
-  width: 44px;
-  height: 44px;
+  width: 45px;
+  height: 45px;
   border: 1px solid var(--border);
   border-radius: 50%;
-  background: #10233b;
+  background: #10243c;
   color: white;
   font-size: 20px;
   cursor: pointer;
@@ -157,7 +211,7 @@ h1 em {
 }
 
 .carousel-controls button:hover {
-  background: #20568d;
+  background: #225b92;
   transform: translateY(-2px);
 }
 
@@ -174,8 +228,8 @@ h1 em {
 
 .connect-card {
   position: relative;
-  flex: 0 0 clamp(270px, 39%, 420px);
-  min-height: 370px;
+  flex: 0 0 clamp(275px, 39%, 420px);
+  min-height: 390px;
   padding: 32px;
   border: 1px solid var(--border);
   border-radius: 25px;
@@ -191,8 +245,8 @@ h1 em {
 }
 
 .connect-card:hover {
-  transform: translateY(-6px);
-  border-color: #69baff;
+  transform: translateY(-5px);
+  border-color: var(--blue);
   box-shadow: 0 20px 60px rgba(0,0,0,.25);
 }
 
@@ -201,88 +255,87 @@ h1 em {
   position: absolute;
   width: 240px;
   height: 240px;
-  right: -85px;
-  top: -85px;
+  top: -80px;
+  right: -80px;
   border-radius: 50%;
   background: rgba(122,197,255,.09);
   filter: blur(20px);
   pointer-events: none;
 }
 
-.linkedin {
-  background: linear-gradient(145deg,#123d69,#091a30);
+.card-email {
+  background: linear-gradient(145deg,#124459,#091d30);
 }
 
-.github {
+.card-linkedin {
+  background: linear-gradient(145deg,#123e6b,#091a30);
+}
+
+.card-github {
   background: linear-gradient(145deg,#27314c,#0c1425);
 }
 
-.email {
-  background: linear-gradient(145deg,#155064,#0a2134);
+.card-research {
+  background: linear-gradient(145deg,#1b426f,#0b1c35);
 }
 
 .card-top {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .card-number {
-  color: #a8c7e8;
+  color: #b7d4ee;
   font-size: 11px;
-  letter-spacing: 2px;
+  letter-spacing: 1.6px;
 }
 
 .card-arrow {
+  color: #b8e6ff;
   font-size: 26px;
-  color: #b3e2ff;
 }
 
 .card-icon {
-  width: 78px;
-  height: 78px;
-  border: 1px solid rgba(169,221,255,.28);
-  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
-  font-weight: 800;
-  color: #d3eeff;
+  width: 80px;
+  height: 80px;
+  border: 1px solid rgba(169,221,255,.3);
+  border-radius: 20px;
   background: rgba(255,255,255,.05);
+  color: #d7efff;
+  font-size: 30px;
+  font-weight: 850;
 }
 
 .card-bottom h2 {
   margin: 0 0 12px;
-  font-size: 35px;
+  font-size: 36px;
   letter-spacing: -1px;
 }
 
 .card-bottom p {
   margin: 0 0 22px;
-  color: #b1c7df;
+  color: #b5cce2;
   font-size: 14px;
   line-height: 1.7;
 }
 
 .card-link {
   display: inline-block;
-  color: #8fd0ff;
+  color: #9cddff;
   font-size: 12px;
   font-weight: 800;
-  letter-spacing: .8px;
+  letter-spacing: .7px;
   overflow-wrap: anywhere;
 }
 
-.email-direct {
-  display: inline-block;
-  margin-top: 26px;
-  color: #9bdcff;
-  font-size: clamp(15px, 2vw, 20px);
-  font-weight: 700;
-  overflow-wrap: anywhere;
-  border-bottom: 1px solid rgba(155,220,255,.5);
-  padding-bottom: 7px;
+.email-address {
+  font-size: 14px;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 /* FOOTER */
@@ -298,10 +351,15 @@ h1 em {
   font-size: 12px;
 }
 
+.bottom a {
+  color: var(--cyan);
+}
+
 footer {
-  padding: 25px 6% 40px;
   max-width: 1350px;
   margin: auto;
+  padding: 25px 6% 40px;
+  border-top: 1px solid var(--border);
   color: #7d98b4;
   font-size: 11px;
   letter-spacing: 1px;
@@ -309,19 +367,26 @@ footer {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #8fd0ff;
+  outline: 2px solid var(--cyan);
   outline-offset: 4px;
 }
 
-@media(max-width:700px) {
-  header {
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+  .site-header {
     flex-wrap: wrap;
   }
 
-  nav {
+  .nav {
+    order: 3;
     width: 100%;
-    justify-content: space-between;
-    gap: 12px;
+    justify-content: center;
+    gap: 22px;
+  }
+
+  .header-cta {
+    display: none;
   }
 
   main {
@@ -333,8 +398,8 @@ button:focus-visible {
   }
 
   .connect-card {
-    flex-basis: 85%;
-    min-height: 350px;
+    flex-basis: 82%;
+    min-height: 370px;
   }
 
   .bottom {
@@ -342,7 +407,21 @@ button:focus-visible {
   }
 }
 
-@media(prefers-reduced-motion:reduce) {
+@media (max-width: 420px) {
+  .brand-caption {
+    display: none;
+  }
+
+  .nav {
+    gap: 15px;
+  }
+
+  .nav a {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
@@ -355,43 +434,61 @@ button:focus-visible {
 
 <body>
 
-<header>
-  <a href="index.html" class="logo">
-    AUY<span>.</span>
+<!-- STANDARD NAVIGATION -->
+
+<header class="site-header">
+
+  <a class="brand" href="index.html" aria-label="AUY homepage">
+    <span class="brand-name">
+      AUY<span class="brand-dot">.</span>
+    </span>
+
+    <span class="brand-caption">
+      ECONOMICS<br>
+      RESEARCH
+    </span>
   </a>
 
-  <nav aria-label="Main navigation">
+  <nav class="nav" aria-label="Main navigation">
     <a href="research-v2.html">Work</a>
     <a href="about-v2.html">About</a>
     <a href="writing-v2.html">Writing</a>
-    <a href="contact-v2.html" class="active">Contact</a>
+    <a href="contact-v2.html" class="active" aria-current="page">
+      Contact
+    </a>
   </nav>
+
+  <a class="header-cta" href="index.html">
+    Back home ↗
+  </a>
+
 </header>
+
+<!-- MAIN -->
 
 <main>
 
   <div class="kicker">
-    04 / THE NETWORK
+    04 / CONTACT & CONNECTIONS
   </div>
 
   <h1>
-    Let's
-    <em>connect.</em>
+    Let's make
+    <span>connections.</span>
   </h1>
 
   <p class="intro">
-    Research, ideas and meaningful conversations
-    often begin with a simple connection.
-    Find me on these platforms, explore my work
-    or reach out directly.
+    Ideas, research and meaningful conversations
+    start here. Reach out directly, connect
+    professionally or explore what I've been working on.
   </p>
 
-  <section class="carousel-section" aria-label="Connect with me">
+  <section class="carousel-section" aria-label="Contact links">
 
     <div class="carousel-heading">
 
       <span class="carousel-label">
-        EXPLORE THE CONNECTIONS / 001—003
+        FIND ME HERE / 001—004
       </span>
 
       <div class="carousel-controls">
@@ -410,76 +507,15 @@ button:focus-visible {
 
     <div class="carousel" id="connectCarousel">
 
-      <!-- LINKEDIN -->
+      <!-- 01 EMAIL -->
 
       <a
-        class="connect-card linkedin"
-        href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Visit my LinkedIn profile"
-      >
-
-        <div class="card-top">
-          <span class="card-number">01 / LINKEDIN</span>
-          <span class="card-arrow">↗</span>
-        </div>
-
-        <div class="card-icon">in</div>
-
-        <div class="card-bottom">
-          <h2>LinkedIn.</h2>
-          <p>
-            Professional connections, research interests
-            and opportunities to collaborate.
-          </p>
-          <span class="card-link">
-            CONNECT ON LINKEDIN ↗
-          </span>
-        </div>
-
-      </a>
-
-      <!-- GITHUB -->
-
-      <a
-        class="connect-card github"
-        href="https://github.com/yardimciumay-source"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Visit my GitHub profile"
-      >
-
-        <div class="card-top">
-          <span class="card-number">02 / GITHUB</span>
-          <span class="card-arrow">↗</span>
-        </div>
-
-        <div class="card-icon">GH</div>
-
-        <div class="card-bottom">
-          <h2>GitHub.</h2>
-          <p>
-            Code, research projects, experiments
-            and work in progress.
-          </p>
-          <span class="card-link">
-            EXPLORE MY GITHUB ↗
-          </span>
-        </div>
-
-      </a>
-
-      <!-- EMAIL -->
-
-      <a
-        class="connect-card email"
+        class="connect-card card-email"
         href="mailto:yardimciumay@gmail.com"
-        aria-label="Send me an email"
+        aria-label="Send an email to Aslı Umay Yardımcı"
       >
-
         <div class="card-top">
-          <span class="card-number">03 / EMAIL</span>
+          <span class="card-number">01 / EMAIL</span>
           <span class="card-arrow">↗</span>
         </div>
 
@@ -487,25 +523,107 @@ button:focus-visible {
 
         <div class="card-bottom">
           <h2>Say hello.</h2>
+
           <p>
-            Have a research question, an idea
-            or something you'd like to discuss?
-            My inbox is open.
+            Questions, collaborations or interesting
+            ideas? Start a conversation directly.
           </p>
-          <span class="card-link">
-            SEND AN EMAIL ↗
+
+          <span class="card-link email-address">
+            yardimciumay@gmail.com ↗
           </span>
         </div>
+      </a>
 
+      <!-- 02 LINKEDIN -->
+
+      <a
+        class="connect-card card-linkedin"
+        href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit LinkedIn profile"
+      >
+        <div class="card-top">
+          <span class="card-number">02 / LINKEDIN</span>
+          <span class="card-arrow">↗</span>
+        </div>
+
+        <div class="card-icon">in</div>
+
+        <div class="card-bottom">
+          <h2>Connect.</h2>
+
+          <p>
+            Professional connections, economic
+            interests and opportunities to collaborate.
+          </p>
+
+          <span class="card-link">
+            VISIT LINKEDIN ↗
+          </span>
+        </div>
+      </a>
+
+      <!-- 03 GITHUB -->
+
+      <a
+        class="connect-card card-github"
+        href="https://github.com/yardimciumay-source"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit GitHub profile"
+      >
+        <div class="card-top">
+          <span class="card-number">03 / GITHUB</span>
+          <span class="card-arrow">↗</span>
+        </div>
+
+        <div class="card-icon">GH</div>
+
+        <div class="card-bottom">
+          <h2>Explore code.</h2>
+
+          <p>
+            Research projects, experiments,
+            data and work in progress.
+          </p>
+
+          <span class="card-link">
+            OPEN GITHUB ↗
+          </span>
+        </div>
+      </a>
+
+      <!-- 04 RESEARCH -->
+
+      <a
+        class="connect-card card-research"
+        href="research-v2.html"
+        aria-label="Explore my research projects"
+      >
+        <div class="card-top">
+          <span class="card-number">04 / RESEARCH</span>
+          <span class="card-arrow">↗</span>
+        </div>
+
+        <div class="card-icon">R.</div>
+
+        <div class="card-bottom">
+          <h2>Discover my work.</h2>
+
+          <p>
+            Explore questions, analyses and
+            projects across economics and behaviour.
+          </p>
+
+          <span class="card-link">
+            VIEW RESEARCH ↗
+          </span>
+        </div>
       </a>
 
     </div>
-
-    <a
-      class="email-direct"
-      href="mailto:yardimciumay@gmail.com">
-      yardimciumay@gmail.com ↗
-    </a>
 
   </section>
 
