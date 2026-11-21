@@ -2,686 +2,569 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="theme-color" content="#07111f">
-  <meta name="description" content="Get in touch with Aslı Umay Yardımcı about economics, research, ideas and collaboration.">
-
-  <title>Contact — Aslı Umay Yardımcı</title>
-
-  <style>
-    :root {
-      --bg: #07111f;
-      --surface: #0d1c30;
-      --surface-2: #11253f;
-      --border: rgba(116, 169, 231, 0.18);
-      --text: #edf6ff;
-      --muted: #9eb4cc;
-      --blue: #58adff;
-      --cyan: #8ddaff;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: var(--bg);
-      color: var(--text);
-      font-family: Inter, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      background:
-        radial-gradient(
-          ellipse at 80% 18%,
-          rgba(28, 105, 216, 0.19),
-          transparent 45%
-        ),
-        radial-gradient(
-          ellipse at 12% 85%,
-          rgba(14, 76, 153, 0.12),
-          transparent 45%
-        );
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font: inherit;
-    }
-
-    /* HEADER */
-
-    .site-header {
-      max-width: 1320px;
-      margin: 0 auto;
-      padding: 30px 6%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-size: 30px;
-      font-weight: 900;
-      letter-spacing: -2px;
-      white-space: nowrap;
-    }
-
-    .brand-dot {
-      color: var(--blue);
-    }
-
-    .brand-caption {
-      padding-left: 14px;
-      border-left: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 9px;
-      font-weight: 700;
-      line-height: 1.5;
-      letter-spacing: 1.5px;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-    }
-
-    .nav a {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-
-    .nav a:hover,
-    .nav a.active {
-      color: var(--cyan);
-    }
-
-    .header-cta {
-      padding: 12px 18px;
-      border: 1px solid rgba(88, 173, 255, 0.45);
-      border-radius: 100px;
-      color: var(--cyan);
-      font-size: 12px;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    /* MAIN */
-
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 100px 6% 110px;
-    }
-
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--cyan);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 2.2px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--blue);
-      box-shadow: 0 0 16px var(--blue);
-    }
-
-    h1 {
-      margin: 26px 0 20px;
-      font-size: clamp(55px, 8vw, 112px);
-      line-height: 1.02;
-      letter-spacing: -5px;
-      font-weight: 800;
-    }
-
-    h1 span {
-      display: block;
-      background: linear-gradient(
-        110deg,
-        #eaf6ff 0%,
-        #80c9ff 48%,
-        #347de9 100%
-      );
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .intro {
-      max-width: 600px;
-      margin: 0 0 65px;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.9;
-    }
-
-    /* CONTACT GRID */
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 24px;
-    }
-
-    .contact-card {
-      position: relative;
-      padding: 45px;
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      background: linear-gradient(
-        145deg,
-        rgba(20, 48, 82, 0.85),
-        rgba(9, 24, 43, 0.95)
-      );
-      overflow: hidden;
-    }
-
-    .contact-card::after {
-      content: "";
-      position: absolute;
-      right: -90px;
-      bottom: -120px;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: rgba(49, 131, 235, 0.11);
-      filter: blur(45px);
-      pointer-events: none;
-    }
-
-    .card-label {
-      position: relative;
-      z-index: 1;
-      margin: 0 0 42px;
-      color: var(--cyan);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 2px;
-    }
-
-    .contact-card h2 {
-      position: relative;
-      z-index: 1;
-      margin: 0 0 15px;
-      font-size: clamp(28px, 4vw, 43px);
-      letter-spacing: -1.5px;
-      line-height: 1.2;
-    }
-
-    .card-description {
-      position: relative;
-      z-index: 1;
-      max-width: 420px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .email-link {
-      position: relative;
-      z-index: 1;
-      display: inline-block;
-      margin: 32px 0 20px;
-      color: var(--cyan);
-      font-size: clamp(16px, 2.4vw, 27px);
-      font-weight: 700;
-      overflow-wrap: anywhere;
-      border-bottom: 1px solid rgba(141, 218, 255, 0.5);
-      padding-bottom: 7px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-
-    .email-link:hover {
-      color: white;
-      border-color: white;
-    }
-
-    .actions {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 14px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      padding: 14px 22px;
-      border: 1px solid transparent;
-      border-radius: 100px;
-      cursor: pointer;
-      font-size: 12px;
-      font-weight: 800;
-      transition: transform 0.2s, background 0.2s;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-    }
-
-    .button-primary {
-      background: #69baff;
-      color: #061426;
-    }
-
-    .button-primary:hover {
-      background: #9bd4ff;
-    }
-
-    .button-outline {
-      border-color: rgba(141, 218, 255, 0.4);
-      background: transparent;
-      color: var(--text);
-    }
-
-    .button-outline:hover {
-      background: rgba(141, 218, 255, 0.1);
-    }
-
-    .copy-status {
-      position: relative;
-      z-index: 1;
-      min-height: 22px;
-      margin-top: 14px;
-      color: #9fe6c0;
-      font-size: 12px;
-    }
-
-    /* SIDE CARD */
-
-    .side-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 60px;
-    }
-
-    .side-card h3 {
-      margin: 0 0 18px;
-      font-size: 26px;
-      letter-spacing: -0.7px;
-    }
-
-    .side-card p {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.85;
-    }
-
-    .topic-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 25px;
-    }
-
-    .topic-list span {
-      padding: 10px 13px;
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      color: #bed9f4;
-      font-size: 11px;
-    }
-
-    .side-footer {
-      padding-top: 25px;
-      border-top: 1px solid var(--border);
-      color: var(--cyan);
-      font-size: 11px;
-      letter-spacing: 1.5px;
-    }
-
-    /* BOTTOM NOTE */
-
-    .bottom-note {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      margin-top: 65px;
-      padding-top: 25px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .bottom-note a {
-      color: var(--cyan);
-    }
-
-    footer {
-      max-width: 1320px;
-      margin: 0 auto;
-      padding: 25px 6% 40px;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      color: #718ca8;
-      font-size: 10px;
-      letter-spacing: 1px;
-    }
-
-    a:focus-visible,
-    button:focus-visible {
-      outline: 2px solid var(--cyan);
-      outline-offset: 4px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 850px) {
-      .site-header {
-        flex-wrap: wrap;
-      }
-
-      .nav {
-        order: 3;
-        width: 100%;
-        justify-content: center;
-        gap: 22px;
-      }
-
-      .header-cta {
-        display: none;
-      }
-
-      main {
-        padding-top: 65px;
-      }
-
-      h1 {
-        letter-spacing: -3px;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-card {
-        padding: 30px 25px;
-      }
-
-      .side-card {
-        gap: 35px;
-      }
-
-      .bottom-note,
-      footer {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (max-width: 420px) {
-      .brand-caption {
-        display: none;
-      }
-
-      .nav {
-        gap: 15px;
-      }
-
-      .nav a {
-        font-size: 12px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        transition: none !important;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07111f">
+
+<title>Connect — Aslı Umay Yardımcı</title>
+
+<style>
+:root {
+  --bg: #07111f;
+  --text: #f1f7ff;
+  --muted: #a7bdd5;
+  --blue: #6dbaff;
+  --border: rgba(129,190,255,.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      ellipse at 75% 25%,
+      rgba(32,107,210,.18),
+      transparent 45%
+    ),
+    var(--bg);
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* NAVIGATION */
+
+header {
+  max-width: 1350px;
+  margin: auto;
+  padding: 28px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-size: 29px;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+.logo span {
+  color: var(--blue);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 27px;
+}
+
+nav a {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--blue);
+}
+
+/* HERO */
+
+main {
+  max-width: 1350px;
+  margin: auto;
+  padding: 95px 6% 100px;
+}
+
+.kicker {
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+h1 {
+  margin: 25px 0 18px;
+  font-size: clamp(58px, 9vw, 116px);
+  line-height: 1;
+  letter-spacing: -5px;
+}
+
+h1 em {
+  display: block;
+  color: var(--blue);
+  font-style: normal;
+}
+
+.intro {
+  max-width: 600px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* CAROUSEL */
+
+.carousel-section {
+  margin-top: 70px;
+}
+
+.carousel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 23px;
+}
+
+.carousel-label {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.carousel-controls {
+  display: flex;
+  gap: 9px;
+}
+
+.carousel-controls button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: #10233b;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+
+.carousel-controls button:hover {
+  background: #20568d;
+  transform: translateY(-2px);
+}
+
+.carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #3678b8 transparent;
+  padding: 10px 3px 30px;
+}
+
+.connect-card {
+  position: relative;
+  flex: 0 0 clamp(270px, 39%, 420px);
+  min-height: 370px;
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  scroll-snap-align: start;
+  transition:
+    transform .25s,
+    border-color .25s,
+    box-shadow .25s;
+}
+
+.connect-card:hover {
+  transform: translateY(-6px);
+  border-color: #69baff;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+
+.connect-card::after {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  right: -85px;
+  top: -85px;
+  border-radius: 50%;
+  background: rgba(122,197,255,.09);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.linkedin {
+  background: linear-gradient(145deg,#123d69,#091a30);
+}
+
+.github {
+  background: linear-gradient(145deg,#27314c,#0c1425);
+}
+
+.email {
+  background: linear-gradient(145deg,#155064,#0a2134);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-number {
+  color: #a8c7e8;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.card-arrow {
+  font-size: 26px;
+  color: #b3e2ff;
+}
+
+.card-icon {
+  width: 78px;
+  height: 78px;
+  border: 1px solid rgba(169,221,255,.28);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 800;
+  color: #d3eeff;
+  background: rgba(255,255,255,.05);
+}
+
+.card-bottom h2 {
+  margin: 0 0 12px;
+  font-size: 35px;
+  letter-spacing: -1px;
+}
+
+.card-bottom p {
+  margin: 0 0 22px;
+  color: #b1c7df;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.card-link {
+  display: inline-block;
+  color: #8fd0ff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .8px;
+  overflow-wrap: anywhere;
+}
+
+.email-direct {
+  display: inline-block;
+  margin-top: 26px;
+  color: #9bdcff;
+  font-size: clamp(15px, 2vw, 20px);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid rgba(155,220,255,.5);
+  padding-bottom: 7px;
+}
+
+/* FOOTER */
+
+.bottom {
+  margin-top: 65px;
+  padding-top: 25px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+footer {
+  padding: 25px 6% 40px;
+  max-width: 1350px;
+  margin: auto;
+  color: #7d98b4;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #8fd0ff;
+  outline-offset: 4px;
+}
+
+@media(max-width:700px) {
+  header {
+    flex-wrap: wrap;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  main {
+    padding-top: 65px;
+  }
+
+  h1 {
+    letter-spacing: -3px;
+  }
+
+  .connect-card {
+    flex-basis: 85%;
+    min-height: 350px;
+  }
+
+  .bottom {
+    flex-direction: column;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAVIGATION -->
+<header>
+  <a href="index.html" class="logo">
+    AUY<span>.</span>
+  </a>
 
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="AUY homepage">
-      <span>AUY<span class="brand-dot">.</span></span>
-      <span class="brand-caption">
-        ECONOMICS<br>
-        RESEARCH
+  <nav aria-label="Main navigation">
+    <a href="research-v2.html">Work</a>
+    <a href="about-v2.html">About</a>
+    <a href="writing-v2.html">Writing</a>
+    <a href="contact-v2.html" class="active">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <div class="kicker">
+    04 / THE NETWORK
+  </div>
+
+  <h1>
+    Let's
+    <em>connect.</em>
+  </h1>
+
+  <p class="intro">
+    Research, ideas and meaningful conversations
+    often begin with a simple connection.
+    Find me on these platforms, explore my work
+    or reach out directly.
+  </p>
+
+  <section class="carousel-section" aria-label="Connect with me">
+
+    <div class="carousel-heading">
+
+      <span class="carousel-label">
+        EXPLORE THE CONNECTIONS / 001—003
       </span>
-    </a>
 
-    <nav class="nav" aria-label="Main navigation">
-      <a href="research-v2.html">Work</a>
-      <a href="about-v2.html">About</a>
-      <a href="writing-v2.html">Writing</a>
-      <a href="contact-v2.html" class="active" aria-current="page">
-        Contact
-      </a>
-    </nav>
+      <div class="carousel-controls">
+        <button
+          id="prev"
+          type="button"
+          aria-label="Previous card">←</button>
 
-    <a class="header-cta" href="index.html">
-      Back home ↗
-    </a>
-  </header>
+        <button
+          id="next"
+          type="button"
+          aria-label="Next card">→</button>
+      </div>
 
-  <!-- MAIN -->
-
-  <main>
-
-    <div class="eyebrow">
-      04 / LET'S CONNECT
     </div>
 
-    <h1>
-      Let's start a
-      <span>conversation.</span>
-    </h1>
+    <div class="carousel" id="connectCarousel">
 
-    <p class="intro">
-      Economics is about more than numbers.
-      It's about people, ideas and the questions
-      that connect them. Whether you'd like to
-      discuss research, share an interesting idea
-      or explore a potential collaboration,
-      I'd love to hear from you.
-    </p>
+      <!-- LINKEDIN -->
 
-    <div class="contact-grid">
+      <a
+        class="connect-card linkedin"
+        href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit my LinkedIn profile"
+      >
 
-      <!-- EMAIL CARD -->
-
-      <section class="contact-card">
-
-        <p class="card-label">
-          01 / DIRECT CONTACT
-        </p>
-
-        <h2>
-          Have something<br>
-          on your mind?
-        </h2>
-
-        <p class="card-description">
-          The easiest way to reach me is by email.
-          Click the address below to open your
-          preferred email application, or copy it
-          to your clipboard.
-        </p>
-
-        <!-- CLICKABLE EMAIL -->
-
-        <a
-          class="email-link"
-          href="mailto:yardimciumay@gmail.com?subject=Hello%20Asli%20-%20From%20your%20portfolio"
-          aria-label="Email Aslı Umay Yardımcı"
-        >
-          yardimciumay@gmail.com ↗
-        </a>
-
-        <div class="actions">
-
-          <a
-            class="button button-primary"
-            href="mailto:yardimciumay@gmail.com?subject=Hello%20Asli%20-%20From%20your%20portfolio"
-          >
-            Send an email ↗
-          </a>
-
-          <button
-            class="button button-outline"
-            type="button"
-            id="copyEmail"
-          >
-            Copy email ⧉
-          </button>
-
+        <div class="card-top">
+          <span class="card-number">01 / LINKEDIN</span>
+          <span class="card-arrow">↗</span>
         </div>
 
-        <div
-          class="copy-status"
-          id="copyStatus"
-          role="status"
-          aria-live="polite"
-        ></div>
+        <div class="card-icon">in</div>
 
-      </section>
-
-      <!-- INTERESTS CARD -->
-
-      <aside class="contact-card side-card">
-
-        <div>
-          <p class="card-label">
-            02 / WHAT WE CAN TALK ABOUT
-          </p>
-
-          <h3>
-            Ideas worth<br>
-            exploring.
-          </h3>
-
+        <div class="card-bottom">
+          <h2>LinkedIn.</h2>
           <p>
-            I'm always interested in thoughtful
-            conversations around economics,
-            research and the ways data can help
-            us understand the world.
+            Professional connections, research interests
+            and opportunities to collaborate.
           </p>
-
-          <div class="topic-list">
-            <span>Economic research</span>
-            <span>Behavioural economics</span>
-            <span>Data &amp; analysis</span>
-            <span>Digital markets</span>
-            <span>Public policy</span>
-            <span>Collaborations</span>
-          </div>
+          <span class="card-link">
+            CONNECT ON LINKEDIN ↗
+          </span>
         </div>
 
-        <div class="side-footer">
-          CURIOSITY MEETS EVIDENCE. ↗
-        </div>
-
-      </aside>
-
-    </div>
-
-    <div class="bottom-note">
-      <span>
-        A good conversation can be the beginning
-        of a great idea.
-      </span>
-
-      <a href="research-v2.html">
-        Explore my research ↗
       </a>
+
+      <!-- GITHUB -->
+
+      <a
+        class="connect-card github"
+        href="https://github.com/yardimciumay-source"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit my GitHub profile"
+      >
+
+        <div class="card-top">
+          <span class="card-number">02 / GITHUB</span>
+          <span class="card-arrow">↗</span>
+        </div>
+
+        <div class="card-icon">GH</div>
+
+        <div class="card-bottom">
+          <h2>GitHub.</h2>
+          <p>
+            Code, research projects, experiments
+            and work in progress.
+          </p>
+          <span class="card-link">
+            EXPLORE MY GITHUB ↗
+          </span>
+        </div>
+
+      </a>
+
+      <!-- EMAIL -->
+
+      <a
+        class="connect-card email"
+        href="mailto:yardimciumay@gmail.com"
+        aria-label="Send me an email"
+      >
+
+        <div class="card-top">
+          <span class="card-number">03 / EMAIL</span>
+          <span class="card-arrow">↗</span>
+        </div>
+
+        <div class="card-icon">@</div>
+
+        <div class="card-bottom">
+          <h2>Say hello.</h2>
+          <p>
+            Have a research question, an idea
+            or something you'd like to discuss?
+            My inbox is open.
+          </p>
+          <span class="card-link">
+            SEND AN EMAIL ↗
+          </span>
+        </div>
+
+      </a>
+
     </div>
 
-  </main>
+    <a
+      class="email-direct"
+      href="mailto:yardimciumay@gmail.com">
+      yardimciumay@gmail.com ↗
+    </a>
 
-  <!-- FOOTER -->
+  </section>
 
-  <footer>
+  <div class="bottom">
     <span>
-      © <span id="year">2026</span>
-      ASLI UMAY YARDIMCI
+      GOOD CONVERSATIONS START WITH CURIOSITY.
     </span>
 
-    <span>
-      BUILT WITH CURIOSITY · AUY.
-    </span>
-  </footer>
+    <a href="index.html">
+      BACK TO HOME ↗
+    </a>
+  </div>
 
-  <!-- JAVASCRIPT -->
+</main>
 
-  <script>
-    (function () {
-      "use strict";
+<footer>
+  © <span id="year">2026</span>
+  ASLI UMAY YARDIMCI · AUY.
+</footer>
 
-      const email = "yardimciumay@gmail.com";
-      const copyButton = document.getElementById("copyEmail");
-      const copyStatus = document.getElementById("copyStatus");
-      const year = document.getElementById("year");
+<script>
+(function () {
+  "use strict";
 
-      if (year) {
-        year.textContent = new Date().getFullYear();
-      }
+  const carousel = document.getElementById("connectCarousel");
+  const prev = document.getElementById("prev");
+  const next = document.getElementById("next");
+  const year = document.getElementById("year");
 
-      if (!copyButton) return;
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
 
-      copyButton.addEventListener("click", async function () {
-        try {
-          if (!navigator.clipboard) {
-            throw new Error("Clipboard unavailable");
-          }
+  if (!carousel || !prev || !next) return;
 
-          await navigator.clipboard.writeText(email);
-          copyStatus.textContent = "Email copied!";
-        } catch (error) {
-          copyStatus.textContent =
-            "Copy unavailable. Please select the email address above.";
-        }
-      });
-    })();
-  </script>
+  function moveCarousel(direction) {
+    const card = carousel.querySelector(".connect-card");
+    if (!card) return;
+
+    const gap = parseFloat(getComputedStyle(carousel).gap) || 20;
+    const distance = card.getBoundingClientRect().width + gap;
+
+    carousel.scrollBy({
+      left: distance * direction,
+      behavior: window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches ? "auto" : "smooth"
+    });
+  }
+
+  prev.addEventListener("click", function () {
+    moveCarousel(-1);
+  });
+
+  next.addEventListener("click", function () {
+    moveCarousel(1);
+  });
+})();
+</script>
 
 </body>
 </html>
