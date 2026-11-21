@@ -8,6 +8,9 @@
 <meta name="description" content="Connect with Aslı Umay Yardımcı through email, LinkedIn, GitHub and research.">
 
 <title>Contact — Aslı Umay Yardımcı</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -489,6 +492,68 @@ button:focus-visible {
     transition: none !important;
   }
 }
+
+/* UNIFIED HEADER — MATCH INDEX HOMEPAGE */
+.site-header {
+  width: 100%; max-width: 1380px; height: 88px; min-height: 88px;
+  margin: 0 auto; padding: 0 6.4%; display: flex;
+  align-items: center; justify-content: space-between; gap: 36px;
+  flex-wrap: nowrap; border-bottom: 1px solid #263a54;
+  position: relative; z-index: 100;
+}
+.site-header, .site-header a, .site-header button {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.site-header .brand {
+  display: inline-flex; align-items: center; flex-shrink: 0;
+  margin: 0 auto 0 0; padding: 0; gap: 0;
+  color: #eef6ff; font-size: 23px; font-weight: 850;
+  letter-spacing: -1.5px; line-height: 1.2; white-space: nowrap;
+}
+.site-header .brand-dot { color: #63b4ff; }
+.site-header .brand-caption {
+  display: inline; margin-left: 10px; padding: 0; border: 0;
+  color: #a5b9d0; font-size: 9px; font-weight: 650;
+  letter-spacing: 1.5px; line-height: 1.4; white-space: nowrap;
+}
+.site-header .nav {
+  display: flex; position: static; width: auto; margin: 0; padding: 0;
+  flex-direction: row; align-items: center; justify-content: initial;
+  gap: 34px; background: transparent; border: 0;
+}
+.site-header .nav a {
+  color: #c6d9ed; font-size: 12px; font-weight: 600;
+  letter-spacing: normal; line-height: normal; white-space: nowrap;
+}
+.site-header .nav a:hover,
+.site-header .nav a[aria-current="page"] { color: #63b4ff; }
+.site-header .header-cta {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 9px; flex-shrink: 0; margin: 0; padding: 12px 18px;
+  border: 1px solid #355473; border-radius: 100px;
+  background: transparent; color: #c6d9ed;
+  font-size: 12px; font-weight: 600; letter-spacing: normal;
+  line-height: normal; white-space: nowrap;
+}
+.site-header .header-cta span { color: #63b4ff; }
+.site-header .header-cta:hover { color: #63b4ff; border-color: #63b4ff; }
+.site-header .menu-toggle { display: none; }
+@media (max-width: 900px) {
+  .site-header { height: 72px; min-height: 72px; padding: 0 6.4%; gap: 15px; }
+  .site-header .brand { margin-right: auto; }
+  .site-header .header-cta { display: none; }
+  .site-header .menu-toggle { display: inline-flex; align-items: center; gap: 8px; }
+  .site-header .nav {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    width: 100%; margin: 0; padding: 20px 6.4%;
+    flex-direction: column; align-items: flex-start; gap: 22px;
+    background: #101b2d; border-bottom: 1px solid #263a54; z-index: 101;
+  }
+  .site-header .nav.is-open { display: flex; }
+}
+@media (max-width: 520px) {
+  .site-header .brand-caption { display: none; }
+}
 </style>
 </head>
 
@@ -497,31 +562,20 @@ button:focus-visible {
 <!-- STANDARD NAVIGATION -->
 
 <header class="site-header">
-
-  <a class="brand" href="index.html" aria-label="AUY homepage">
-    <span class="brand-name">
-      AUY<span class="brand-dot">.</span>
-    </span>
-
-    <span class="brand-caption">
-      ECONOMICS<br>
-      RESEARCH
-    </span>
+  <a class="brand" href="index.html" aria-label="Home">
+    AUY<span class="brand-dot">.</span>
+    <span class="brand-caption">ECONOMICS / RESEARCH</span>
   </a>
-
-  <nav class="nav" aria-label="Main navigation">
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+    Menu <span aria-hidden="true">☰</span>
+  </button>
+  <nav class="nav" id="primary-nav" aria-label="Main navigation">
     <a href="research-v2.html">Work</a>
     <a href="about-v2.html">About</a>
     <a href="writing-v2.html">Writing</a>
-    <a href="contact-v2.html" class="active" aria-current="page">
-      Contact
-    </a>
+    <a href="contact-v2.html" class="active" aria-current="page">Contact</a>
   </nav>
-
-  <a class="header-cta" href="index.html">
-    Back home ↗
-  </a>
-
+  <a class="header-cta" href="contact-v2.html">Let's connect <span aria-hidden="true">↗</span></a>
 </header>
 
 <!-- MAIN -->
@@ -745,33 +799,26 @@ button:focus-visible {
 </script>
 
   
-<script>
-(function () {
-  const menuButton = document.querySelector(".menu-toggle");
-  const nav = document.getElementById("primary-nav");
 
-  if (!menuButton || !nav) return;
 
-  menuButton.addEventListener("click", function () {
-    const isOpen = nav.classList.toggle("is-open");
-    menuButton.setAttribute("aria-expanded", String(isOpen));
-  });
-})();
-</script>
+
 
 <script>
 (function () {
   const menuButton = document.querySelector(".menu-toggle");
   const nav = document.getElementById("primary-nav");
-
   if (!menuButton || !nav) return;
-
   menuButton.addEventListener("click", function () {
     const isOpen = nav.classList.toggle("is-open");
     menuButton.setAttribute("aria-expanded", String(isOpen));
   });
+  nav.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      nav.classList.remove("is-open");
+      menuButton.setAttribute("aria-expanded", "false");
+    });
+  });
 })();
 </script>
-
 </body>
 </html>
