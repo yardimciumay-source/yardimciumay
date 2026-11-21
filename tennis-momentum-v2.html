@@ -1,2 +1,1185 @@
+
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="#080f1d" name="theme-color"/><meta content="Exploring behavioural explanations for patterns in sporting performance." name="description"/><title>Momentum in Tennis — Aslı Umay Yardımcı</title><link href="styles-v2.css" rel="stylesheet"/><script defer="" src="script-v2.js"></script></head><body><div aria-hidden="true" class="ambient"></div><header class="site-header"><a aria-label="Home" class="brand" href="index-v2.html">AUY<span class="brand-dot">.</span><span class="brand-caption"> ECONOMICS / RESEARCH</span></a><button aria-controls="primary-nav" aria-expanded="false" class="menu-toggle" type="button">Menu <span aria-hidden="true">☰</span></button><nav aria-label="Main navigation" class="nav" id="primary-nav"><a href="research-v2.html">Work</a><a href="about-v2.html">About</a><a href="writing-v2.html">Writing</a><a href="contact-v2.html">Contact</a></nav><a class="header-cta" href="contact-v2.html">Let's connect ↗</a></header><main class="article-shell section-wrap"><a class="back-link" href="research-v2.html">← Back to selected work</a><div class="section-kicker">03 / BEHAVIOURAL ECONOMICS</div><h1>Momentum in Tennis</h1><p class="article-lead">Exploring behavioural explanations for patterns in sporting performance.</p><div class="article-rule"></div><div class="article-layout"><aside class="article-aside">RESEARCH NOTES<br/><span>ASLI UMAY YARDIMCI</span></aside><div class="article-content"><h2>Overview</h2><p>Exploring behavioural explanations for patterns in sporting performance.</p><h2>Research question</h2><p>What does “momentum” mean in competitive tennis, and how might it be evaluated?</p><h2>Areas of interest</h2><p>Behavioural economics, performance dynamics, interpretation of observed streaks.</p><div class="article-notice"><strong>Full article coming soon</strong><p>This is a designed research overview, not the full original article. The complete text, methodology and findings can be added here without changing the site's design.</p></div><a class="back-link" href="research-v2.html">← Explore other research</a></div></div></main><footer class="footer section-wrap"><span>© <span id="year">2026</span> ASLI UMAY YARDIMCI</span><span>ECONOMICS / RESEARCH / IDEAS</span><a href="index-v2.html#home">BACK TO HOME ↑</a></footer></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080f1d">
+<meta name="description" content="The Psychology of Momentum in Tennis: A Behavioural-Economic Synthesis by Aslı Umay Yardımcı.">
+
+<title>Momentum in Tennis — Aslı Umay Yardımcı</title>
+
+<link href="styles-v2.css" rel="stylesheet">
+<script defer src="script-v2.js"></script>
+
+<style>
+html { scroll-behavior: smooth; }
+
+.tennis-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  z-index: 9999;
+  background: linear-gradient(90deg,#5dc1ff,#a69bff,#59e0cc);
+}
+
+.tennis-page { color: #f0f6ff; }
+
+.tennis-hero {
+  padding: 45px 0 60px;
+  border-bottom: 1px solid rgba(125,185,245,.2);
+}
+
+.tennis-hero h1 {
+  max-width: 1050px;
+  margin: 26px 0;
+  font-size: clamp(37px,5.7vw,76px);
+  line-height: 1.1;
+  letter-spacing: -.045em;
+  color: #f4f8ff;
+}
+
+.tennis-hero h1 em {
+  font-style: normal;
+  background: linear-gradient(90deg,#6bc9ff,#b7a4ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tennis-lead {
+  max-width: 780px;
+  color: #b8cce4;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.tennis-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 25px;
+  margin-top: 28px;
+  color: #8cc7f3;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.tennis-court {
+  position: relative;
+  height: 260px;
+  margin: 38px 0 25px;
+  border: 2px solid rgba(130,205,255,.55);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 70% 35%,rgba(85,182,255,.22),transparent 35%),
+    linear-gradient(130deg,#102f53,#0b1c37 65%,#132a4b);
+  overflow: hidden;
+}
+
+.tennis-court::before {
+  content: "";
+  position: absolute;
+  inset: 24px 8%;
+  border: 2px solid rgba(181,220,255,.48);
+}
+
+.tennis-court::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 24px;
+  bottom: 24px;
+  width: 2px;
+  background: rgba(181,220,255,.5);
+}
+
+.tennis-court-line {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 50%;
+  height: 2px;
+  background: rgba(181,220,255,.5);
+}
+
+.tennis-ball {
+  position: absolute;
+  z-index: 2;
+  top: 38%;
+  left: 25%;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #c5f46c;
+  box-shadow: 0 0 35px rgba(197,244,108,.65);
+  animation: tennisFloat 5s ease-in-out infinite alternate;
+}
+
+@keyframes tennisFloat {
+  from { transform: translate(0,0); }
+  to { transform: translate(170px,-35px); }
+}
+
+.tennis-court-label {
+  position: absolute;
+  z-index: 3;
+  bottom: 20px;
+  left: 24px;
+  padding: 9px 13px;
+  border-radius: 8px;
+  background: rgba(5,15,30,.8);
+  color: #a9d9ff;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.tennis-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 35px 0 65px;
+}
+
+.tennis-nav a {
+  padding: 10px 14px;
+  border-radius: 30px;
+  border: 1px solid rgba(110,180,250,.3);
+  color: #a9d9ff;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.tennis-nav a:hover {
+  background: rgba(85,160,235,.16);
+}
+
+.tennis-body {
+  max-width: 930px;
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+.tennis-section {
+  margin-bottom: 32px;
+  padding: clamp(23px,4vw,44px);
+  border-radius: 21px;
+  border: 1px solid rgba(112,180,250,.2);
+  background: linear-gradient(
+    145deg,
+    rgba(23,46,76,.87),
+    rgba(9,22,40,.93)
+  );
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity .7s ease,transform .7s ease;
+}
+
+.tennis-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tennis-kicker {
+  display: block;
+  margin-bottom: 18px;
+  color: #7bcaff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.tennis-section h2 {
+  margin: 0 0 23px;
+  font-size: clamp(25px,3.4vw,37px);
+  color: #f5f9ff;
+  line-height: 1.25;
+}
+
+.tennis-section h3 {
+  margin: 28px 0 15px;
+  color: #a2dcff;
+  font-size: 21px;
+}
+
+.tennis-section p,
+.tennis-section li {
+  color: #c3d2e5;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.tennis-section p { margin: 0 0 19px; }
+.tennis-section ul { padding-left: 23px; }
+.tennis-section li { margin-bottom: 10px; }
+.tennis-section strong { color: #f2f8ff; }
+
+.tennis-highlight {
+  margin: 25px 0;
+  padding: 23px;
+  border-left: 3px solid #74c9ff;
+  border-radius: 0 13px 13px 0;
+  background: rgba(64,145,235,.12);
+}
+
+.tennis-highlight p { margin: 0; }
+
+.tennis-framework {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 14px;
+  margin: 30px 0;
+}
+
+.tennis-component {
+  padding: 22px;
+  border-radius: 16px;
+  border: 1px solid rgba(120,190,255,.27);
+  background: rgba(26,61,103,.4);
+}
+
+.tennis-component:nth-child(2) {
+  border-color: rgba(180,150,255,.4);
+}
+
+.tennis-component:nth-child(3) {
+  border-color: rgba(91,221,201,.4);
+}
+
+.tennis-component:nth-child(4) {
+  border-color: rgba(246,190,116,.4);
+}
+
+.tennis-component span {
+  color: #85ceff;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.tennis-component h3 {
+  margin: 13px 0;
+  color: #f0f7ff;
+  font-size: 19px;
+}
+
+.tennis-component p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.tennis-equation {
+  overflow-x: auto;
+  margin: 22px 0;
+  padding: 22px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(108,183,250,.25);
+  background: #071323;
+  color: #9edaff;
+  text-align: center;
+  font-family: Georgia,serif;
+  font-size: 17px;
+  line-height: 2;
+}
+
+.tennis-small {
+  color: #95abc4 !important;
+  font-size: 12px !important;
+}
+
+.tennis-reference {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(128,185,240,.15);
+  font-size: 12px !important;
+}
+
+.tennis-ending {
+  padding: 35px 0 70px;
+  text-align: center;
+  color: #a9bfd8;
+}
+
+@media(max-width:700px) {
+  .tennis-framework {
+    grid-template-columns: 1fr;
+  }
+
+  .tennis-court {
+    height: 190px;
+  }
+
+  .tennis-ball {
+    animation: none;
+  }
+
+  .tennis-section {
+    padding: 24px 19px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior: auto; }
+
+  .tennis-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .tennis-ball {
+    animation: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="ambient" aria-hidden="true"></div>
+<div class="tennis-progress" id="tennisProgress"></div>
+
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Home">
+    AUY<span class="brand-dot">.</span>
+    <span class="brand-caption"> ECONOMICS / RESEARCH</span>
+  </a>
+
+  <button
+    class="menu-toggle"
+    type="button"
+    aria-controls="primary-nav"
+    aria-expanded="false">
+    Menu <span aria-hidden="true">☰</span>
+  </button>
+
+  <nav class="nav" id="primary-nav" aria-label="Main navigation">
+    <a href="research-v2.html">Work</a>
+    <a href="about-v2.html">About</a>
+    <a href="writing-v2.html">Writing</a>
+    <a href="contact-v2.html">Contact</a>
+  </nav>
+
+  <a class="header-cta" href="contact-v2.html">
+    Let's connect ↗
+  </a>
+</header>
+
+<main class="article-shell section-wrap tennis-page">
+
+<a class="back-link" href="research-v2.html">
+  ← Back to selected work
+</a>
+
+<div class="tennis-hero">
+  <div class="section-kicker">
+    03 / BEHAVIOURAL ECONOMICS
+  </div>
+
+  <h1>
+    The Psychology of
+    <em>Momentum in Tennis.</em>
+  </h1>
+
+  <p class="tennis-lead">
+    A Behavioural-Economic Synthesis
+  </p>
+
+  <p class="tennis-lead">
+    Exploring how belief updating, strategic incentives,
+    loss aversion, pressure and machine-learning
+    evidence help explain momentum in competitive tennis.
+  </p>
+
+  <div class="tennis-meta">
+    <span>ASLI UMAY YARDIMCI</span>
+    <span>DECEMBER 23, 2025</span>
+    <span>BEHAVIOURAL ECONOMICS / SPORTS ANALYTICS</span>
+  </div>
+</div>
+
+<div class="tennis-court" aria-hidden="true">
+  <div class="tennis-court-line"></div>
+  <div class="tennis-ball"></div>
+  <span class="tennis-court-label">
+    BELIEFS × INCENTIVES × BEHAVIOUR
+  </span>
+</div>
+
+<nav class="tennis-nav" aria-label="Article sections">
+  <a href="#introduction">Introduction</a>
+  <a href="#literature">Literature</a>
+  <a href="#framework">Framework</a>
+  <a href="#evidence">Evidence</a>
+  <a href="#conclusion">Conclusion</a>
+  <a href="#references">References</a>
+</nav>
+
+<div class="tennis-body">
+
+<section class="tennis-section" id="introduction">
+  <span class="tennis-kicker">01 / INTRODUCTION</span>
+
+  <h2>Is momentum more than a feeling?</h2>
+
+  <p>
+    Momentum is one of the most cited concepts in
+    competitive tennis. Players, commentators and
+    coaches routinely describe matches as shifting,
+    swinging or turning, implying that recent success
+    alters future performance.
+  </p>
+
+  <p>
+    While early psychological theories framed momentum
+    as a subjective feeling of being "on a roll,"
+    recent advances in behavioural economics,
+    sports analytics and machine learning have
+    transformed momentum into a measurable and
+    theoretically grounded construct.
+  </p>
+
+  <div class="tennis-highlight">
+    <p>
+      <strong>Central research question:</strong>
+      What mechanisms generate momentum, how can
+      it be quantified, and how does it influence
+      performance under risk and pressure?
+    </p>
+  </div>
+
+  <p>
+    This paper develops a theoretical synthesis
+    integrating belief updating, loss aversion,
+    overconfidence and pressure-induced performance
+    shifts with empirical evidence from econometrics
+    and machine learning.
+  </p>
+
+  <p>
+    Building on research that distinguishes strategic
+    momentum from psychological momentum, the study
+    proposes an integrated behavioural-economic
+    framework explaining how these mechanisms interact.
+  </p>
+</section>
+
+<section class="tennis-section" id="literature">
+  <span class="tennis-kicker">02 / LITERATURE REVIEW</span>
+
+  <h2>What does the research tell us?</h2>
+
+  <h3>2.1 Psychological Momentum and Belief Updating</h3>
+
+  <p>
+    Psychological momentum refers to changes in
+    performance following recent success that are
+    driven by confidence, expectations and perceived
+    control. Early research described momentum as
+    a self-reinforcing internal state.
+  </p>
+
+  <p>
+    Klaassen and Magnus (2001) applied a dynamic
+    binary panel data model to professional tennis
+    and rejected the hypothesis that points are
+    independently and identically distributed.
+    Their findings established an important
+    statistical basis for investigating momentum.
+  </p>
+
+  <p>
+    Meier et al. (2020) used exogenous interruptions,
+    including medical timeouts and weather delays,
+    to distinguish psychological from strategic
+    momentum. They found that the performance boost
+    following a converted break point disappears
+    after an interruption.
+  </p>
+
+  <p>
+    Because these interruptions do not change
+    the score or strategic incentives, the result
+    supports a psychological mechanism involving
+    confidence and belief updating.
+  </p>
+
+  <h3>2.2 Strategic Momentum and Rational Effort</h3>
+
+  <p>
+    Strategic momentum can arise from optimal
+    effort allocation under tennis scoring rules.
+    Gauriot and Page (2019) show that players
+    respond to point importance by adjusting effort.
+  </p>
+
+  <p>
+    High-leverage situations such as deuce and
+    break points may therefore generate clusters
+    of strong performance without requiring
+    a psychological explanation.
+  </p>
+
+  <p>
+    Depken et al. (2022) further examine
+    strategic and psychological components
+    of momentum.
+  </p>
+
+  <h3>2.3 Loss Aversion, Overconfidence and Pressure</h3>
+
+  <p>
+    Behavioural biases can change how players
+    respond to competitive situations.
+    Loss aversion may encourage conservative
+    decisions when facing potential losses.
+  </p>
+
+  <p>
+    Anbarci et al. (2018) document safer serving
+    strategies in critical situations, consistent
+    with loss-averse behaviour.
+  </p>
+
+  <p>
+    Overconfidence can lead to excessive risk-taking
+    after a sequence of successes. Conversely,
+    pressure-induced choking can reduce execution
+    quality when the stakes rise.
+  </p>
+
+  <p>
+    Research by Krumer et al. (2018) and
+    Meffert et al. (2018) examines differences
+    in performance under pressure.
+  </p>
+
+  <h3>2.4 Machine-Learning Approaches</h3>
+
+  <p>
+    Momentum is not directly observable. It must
+    be inferred from indicators such as scoring
+    sequences, serve quality, rally characteristics
+    and error patterns.
+  </p>
+
+  <p>
+    Machine-learning methods can detect nonlinear
+    relationships and interactions that are difficult
+    to represent using simpler statistical models.
+  </p>
+
+  <p>
+    Zhong et al. (2024) combine logistic regression
+    with a sparse ARMAX framework. Other studies
+    examine random forests and XGBoost for
+    momentum measurement and prediction.
+  </p>
+
+  <h3>Understanding ARMAX</h3>
+
+  <p>
+    ARMAX stands for Autoregressive Moving Average
+    with Exogenous Variables. The approach models
+    a variable using its past values, previous
+    shocks and external predictors.
+  </p>
+
+  <div class="tennis-equation">
+    M<sub>t</sub> =
+    AR(past momentum)
+    + MA(past shocks)
+    + X(external factors)
+  </div>
+
+  <p class="tennis-small">
+    Conceptual illustration of ARMAX components,
+    not the exact estimated equation from
+    the cited study.
+  </p>
+
+  <ul>
+    <li>
+      <strong>Autoregressive component:</strong>
+      Momentum depends on its own previous values.
+    </li>
+    <li>
+      <strong>Moving-average component:</strong>
+      Previous unexpected shocks influence the
+      current state.
+    </li>
+    <li>
+      <strong>Exogenous component:</strong>
+      Serve advantage, score differences,
+      fatigue and opponent errors may contribute.
+    </li>
+  </ul>
+
+  <p>
+    LASSO regularisation can help select influential
+    predictors and reduce overfitting when many
+    correlated variables are available.
+  </p>
+</section>
+
+<section class="tennis-section" id="framework">
+  <span class="tennis-kicker">03 / THEORETICAL FRAMEWORK</span>
+
+  <h2>Four components. One dynamic system.</h2>
+
+  <p>
+    The proposed framework views each player
+    as a dynamic decision-maker whose point-level
+    performance emerges from interacting
+    psychological, strategic and behavioural
+    processes.
+  </p>
+
+  <div class="tennis-framework">
+
+    <div class="tennis-component">
+      <span>COMPONENT A</span>
+      <h3>Psychological Momentum</h3>
+      <p>
+        Recent outcomes update beliefs,
+        confidence and perceived control.
+      </p>
+    </div>
+
+    <div class="tennis-component">
+      <span>COMPONENT B</span>
+      <h3>Strategic Incentives</h3>
+      <p>
+        Players adjust effort and actions
+        according to the importance of points.
+      </p>
+    </div>
+
+    <div class="tennis-component">
+      <span>COMPONENT C</span>
+      <h3>Behavioural Biases</h3>
+      <p>
+        Loss aversion, overconfidence and
+        pressure influence decision quality.
+      </p>
+    </div>
+
+    <div class="tennis-component">
+      <span>COMPONENT D</span>
+      <h3>Observable Momentum</h3>
+      <p>
+        Interacting mechanisms generate a
+        latent momentum state that can be
+        inferred from performance data.
+      </p>
+    </div>
+
+  </div>
+
+  <h3>Component A: Belief-Based Momentum</h3>
+
+  <p>
+    A player's subjective probability of winning
+    can change after psychologically important
+    events, such as converting a break point.
+  </p>
+
+  <div class="tennis-equation">
+    π<sub>t+1</sub> =
+    f(π<sub>t</sub>, recent outcomes,
+    point importance)
+  </div>
+
+  <p>
+    Positive belief revisions may increase confidence
+    and perceived control. This mechanism does not
+    require changes in physical ability or
+    strategic incentives.
+  </p>
+
+  <p>
+    Because it relies on a continuous cognitive
+    and emotional sequence, belief-based momentum
+    can be disrupted by unexpected interruptions.
+  </p>
+
+  <h3>Component B: Strategic Incentives</h3>
+
+  <p>
+    Rational players choose actions by considering
+    expected benefits and costs. When the value
+    of winning a point rises, greater effort
+    may become optimal.
+  </p>
+
+  <div class="tennis-equation">
+    Expected utility =
+    expected benefit − action cost
+  </div>
+
+  <p class="tennis-small">
+    Simplified conceptual representation of
+    the decision problem.
+  </p>
+
+  <p>
+    As a result, strong performance can cluster
+    around important points even without
+    psychological momentum.
+  </p>
+
+  <h3>Component C: Behavioural Biases</h3>
+
+  <p>
+    Loss aversion can induce overly conservative
+    decisions. Pressure may reduce execution
+    quality, while overconfidence may encourage
+    excessive risk-taking.
+  </p>
+
+  <p>
+    These biases explain why two players facing
+    similar scores and incentives may respond
+    differently.
+  </p>
+
+  <h3>Component D: The Latent Momentum State</h3>
+
+  <p>
+    Momentum is conceptualised as an unobserved
+    state emerging from the interaction of
+    beliefs, incentives and behavioural biases.
+  </p>
+
+  <div class="tennis-equation">
+    M<sub>t</sub> =
+    αM<sub>t−1</sub>
+    + β<sub>1</sub>S<sub>t</sub>
+    + β<sub>2</sub>P<sub>t</sub>
+    + β<sub>3</sub>B<sub>t</sub>
+    + ε<sub>t</sub>
+  </div>
+
+  <p class="tennis-small">
+    S = strategic factors,
+    P = psychological shocks,
+    B = behavioural-bias triggers.
+    This is a reconstructed conceptual notation
+    because the pasted original equation
+    contains corrupted symbols.
+  </p>
+
+  <p>
+    This representation connects the theoretical
+    framework to dynamic statistical approaches
+    such as ARMAX.
+  </p>
+</section>
+
+<section class="tennis-section" id="evidence">
+  <span class="tennis-kicker">04 / EVIDENCE SYNTHESIS</span>
+
+  <h2>How does the evidence fit together?</h2>
+
+  <h3>4.1 Evidence for Psychological Momentum</h3>
+
+  <p>
+    Meier et al. (2020) provide evidence that
+    a performance boost following break-point
+    conversion disappears after an exogenous
+    interruption. This finding is consistent
+    with the belief-based mechanism described
+    in Component A.
+  </p>
+
+  <h3>4.2 Evidence for Strategic Momentum</h3>
+
+  <p>
+    Gauriot and Page (2019), together with
+    Depken et al. (2022), examine how scoring
+    incentives and effort allocation generate
+    momentum-like patterns.
+  </p>
+
+  <p>
+    These findings indicate that not every
+    successful sequence should be interpreted
+    as a psychological hot hand.
+  </p>
+
+  <h3>4.3 Evidence for Behavioural Biases</h3>
+
+  <p>
+    Research on loss aversion, choking and
+    clutch performance suggests that players
+    do not always behave as fully rational
+    score maximisers.
+  </p>
+
+  <p>
+    Pressure sensitivity can moderate the
+    relationship between positive momentum
+    and actual performance.
+  </p>
+
+  <h3>4.4 Evidence from Machine Learning</h3>
+
+  <p>
+    Machine-learning studies use point histories,
+    opponent errors and serve-related variables
+    to infer momentum patterns.
+  </p>
+
+  <p>
+    Such models provide predictive evidence
+    for the usefulness of momentum-related
+    information, although prediction alone
+    does not identify a specific psychological
+    or causal mechanism.
+  </p>
+
+  <div class="tennis-highlight">
+    <p>
+      <strong>Integrated interpretation:</strong>
+      Momentum-like performance patterns may
+      reflect psychological belief updating,
+      rational effort allocation and behavioural
+      biases operating simultaneously.
+    </p>
+  </div>
+</section>
+
+<section class="tennis-section" id="conclusion">
+  <span class="tennis-kicker">05 / CONCLUSION</span>
+
+  <h2>Momentum as an emergent phenomenon.</h2>
+
+  <p>
+    This paper develops a unified behavioural-economic
+    framework for understanding momentum in tennis.
+    Rather than treating momentum as either entirely
+    psychological or entirely strategic, it considers
+    the interaction of three systems:
+  </p>
+
+  <ul>
+    <li>
+      A psychological system of confidence
+      and belief updating.
+    </li>
+    <li>
+      A strategic system of incentive-driven
+      effort allocation.
+    </li>
+    <li>
+      A behavioural system in which biases
+      and pressure affect decisions.
+    </li>
+  </ul>
+
+  <p>
+    The resulting momentum state can be studied
+    through econometric methods and machine-learning
+    approaches, each contributing different
+    kinds of evidence.
+  </p>
+
+  <p>
+    The main contribution of this synthesis
+    is to organise findings from psychology,
+    economics and data science within a
+    coherent conceptual structure.
+  </p>
+
+  <h3>Future Research</h3>
+
+  <p>
+    Future work could jointly estimate belief
+    states, incentive responses and behavioural
+    bias parameters using structural econometric
+    models or theory-informed machine-learning
+    methods.
+  </p>
+
+  <p>
+    Separating point-importance variables from
+    recent-success indicators would help
+    researchers distinguish strategic effects
+    from psychological mechanisms.
+  </p>
+
+  <div class="tennis-highlight">
+    <p>
+      Momentum is not simply a winning streak.
+      It is a dynamic interaction between what
+      players believe, what the scoring system
+      rewards, and how they respond under pressure.
+    </p>
+  </div>
+</section>
+
+<section class="tennis-section" id="references">
+  <span class="tennis-kicker">06 / BIBLIOGRAPHY</span>
+
+  <h2>References</h2>
+
+  <p class="tennis-small">
+    Bibliographic entries are reproduced from
+    the supplied manuscript. Publication details
+    have not been independently verified.
+  </p>
+
+  <p class="tennis-reference">
+    Anbarci, N., Sun, C., &amp; Ulker, A. (2018).
+    Loss aversion and effort: Evidence from
+    professional tennis.
+    Journal of Economic Behavior &amp; Organization,
+    150, 224–241.
+  </p>
+
+  <p class="tennis-reference">
+    Apesteguia, J., &amp; Palacios-Huerta, I. (2010).
+    Psychological pressure in competitive environments:
+    Evidence from a randomized natural experiment.
+    American Economic Review, 100, 2548–2564.
+  </p>
+
+  <p class="tennis-reference">
+    Cao, Z., Price, J., &amp; Stone, D. F. (2011).
+    Performance under pressure in the NBA.
+    Journal of Sports Economics, 12, 231–252.
+  </p>
+
+  <p class="tennis-reference">
+    Crust, L., &amp; Nesti, M. (2006).
+    A review of psychological momentum in sports:
+    Why qualitative research is needed.
+    Journal of Sports Science &amp; Medicine,
+    8(1), 1–10.
+  </p>
+
+  <p class="tennis-reference">
+    Depken, C. A., Wilson, D. P., &amp; Zhang, Y. (2022).
+    Momentum in tennis: A decomposition of
+    psychological and strategic components.
+    Journal of Sports Economics, 23, 567–589.
+  </p>
+
+  <p class="tennis-reference">
+    Dietl, H., &amp; Nesseler, C. (2017).
+    Momentum in tennis: Controlling the match.
+    UZH Business Working Paper Series.
+  </p>
+
+  <p class="tennis-reference">
+    García, J. A. M. (2024).
+    Evidence of good and bad player momentum
+    between games in basketball.
+    Cuadernos de Psicología del Deporte,
+    24, 228–241.
+  </p>
+
+  <p class="tennis-reference">
+    Gauriot, R., &amp; Page, L. (2019).
+    Does success breed success? Evidence from tennis.
+    Journal of Economic Behavior &amp; Organization,
+    158, 511–529.
+  </p>
+
+  <p class="tennis-reference">
+    Iso-Ahola, S. E., &amp; Dotson, C. O. (2014).
+    Psychological momentum: Why success breeds success.
+    Review of General Psychology, 18, 19–33.
+  </p>
+
+  <p class="tennis-reference">
+    Iso-Ahola, S. E., &amp; Dotson, C. O. (2017).
+    Momentum and elite performance.
+    J. Nature Sci., 3, e325.
+  </p>
+
+  <p class="tennis-reference">
+    Johnson, D. D. P., &amp; Fowler, J. H. (2011).
+    The evolution of overconfidence.
+    Nature, 477, 317–320.
+  </p>
+
+  <p class="tennis-reference">
+    Klaassen, F., &amp; Magnus, J. (2001).
+    Are points in tennis independent and identically
+    distributed? Evidence from a dynamic binary
+    panel data model.
+    Journal of the American Statistical Association,
+    96, 500–509.
+  </p>
+
+  <p class="tennis-reference">
+    Krumer, A., Megidish, R., &amp; Sela, A. (2018).
+    Choking under pressure and gender:
+    Evidence from professional tennis.
+    Journal of Economic Psychology, 67, 36–53.
+  </p>
+
+  <p class="tennis-reference">
+    Markman, K. D., &amp; Guenther, C. L. (2007).
+    Psychological momentum: Intuitive physics
+    and naïve beliefs.
+    Personality and Social Psychology Bulletin,
+    33, 800–812.
+  </p>
+
+  <p class="tennis-reference">
+    Meffert, D., et al. (2018).
+    Pressure and performance in tennis:
+    Second-serve effectiveness under stress.
+    Frontiers in Psychology, 9, 339060.
+  </p>
+
+  <p class="tennis-reference">
+    Meier, P., Flepp, R., Ruedisser, M.,
+    &amp; Franck, E. (2020).
+    Separating psychological momentum from strategic
+    momentum: Evidence from men's professional tennis.
+    Journal of Economic Psychology, 78, 102269.
+  </p>
+
+  <p class="tennis-reference">
+    Morgulev, E., &amp; Avugos, S. (2023).
+    Beyond heuristics, biases and misperceptions:
+    The biological foundations of momentum (hot hand).
+    International Review of Sport and Exercise
+    Psychology, 16, 155–175.
+  </p>
+
+  <p class="tennis-reference">
+    Morgulev, E., Azar, O. H., &amp; Bar-Eli, M. (2020).
+    Searching for momentum in NBA triplets of free throws.
+    Journal of Sports Sciences, 38, 390–398.
+  </p>
+
+  <p class="tennis-reference">
+    Noel, J. T. P., Prado da Fonseca, V.,
+    &amp; Soares, A. (2024).
+    A comprehensive data pipeline for comparing
+    the effects of momentum on sports leagues.
+    Data, 9, 29.
+  </p>
+
+  <p class="tennis-reference">
+    Pope, D. G., &amp; Schweitzer, M. E. (2011).
+    Is Tiger Woods loss averse?
+    Persistent bias in the face of experience,
+    competition, and high stakes.
+    American Economic Review, 101, 129–157.
+  </p>
+
+  <p class="tennis-reference">
+    Scarf, P. A., &amp; Shi, X. (2008).
+    The importance of a match in a tournament.
+    Computers &amp; Operations Research, 35, 2406–2418.
+  </p>
+
+  <p class="tennis-reference">
+    Szymanski, S. (2003).
+    The economic design of sporting contests.
+    Journal of Economic Literature, 41, 1137–1187.
+  </p>
+
+  <p class="tennis-reference">
+    Tibshirani, R. (1996).
+    Regression shrinkage and selection via the LASSO.
+    Journal of the Royal Statistical Society:
+    Series B, 58, 267–288.
+  </p>
+
+  <p class="tennis-reference">
+    Zhong, M., Liu, Z., Liu, P., &amp; Zhai, M. (2024).
+    Searching for the effects of momentum in tennis
+    and its applications.
+    Procedia Computer Science, 242, 192–199.
+  </p>
+
+  <p class="tennis-reference">
+    Xia, Y., Li, Z., &amp; Zhang, M. (2025).
+    Quantifying and predicting momentum in tennis
+    via machine learning.
+    International Journal of Racket Sports Science,
+    7, 46–58.
+  </p>
+
+</section>
+
+<div class="tennis-ending">
+  <p>✦</p>
+  <p>BEHAVIOURAL ECONOMICS / TENNIS / DATA SCIENCE</p>
+
+  <a class="back-link" href="research-v2.html">
+    ← Explore other research
+  </a>
+</div>
+
+</div>
+</main>
+
+<footer class="footer section-wrap">
+  <span>
+    © <span id="year">2026</span>
+    ASLI UMAY YARDIMCI
+  </span>
+
+  <span>ECONOMICS / RESEARCH / IDEAS</span>
+
+  <a href="index.html#home">
+    BACK TO HOME ↑
+  </a>
+</footer>
+
+<script>
+(function () {
+  const bar = document.getElementById("tennisProgress");
+
+  function updateProgress() {
+    const doc = document.documentElement;
+    const total = doc.scrollHeight - doc.clientHeight;
+    const value = total > 0
+      ? Math.max(0, Math.min(100, doc.scrollTop / total * 100))
+      : 0;
+
+    bar.style.width = value + "%";
+  }
+
+  window.addEventListener("scroll", updateProgress, {
+    passive: true
+  });
+
+  window.addEventListener("resize", updateProgress);
+  updateProgress();
+
+  const sections = document.querySelectorAll(".tennis-section");
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    sections.forEach(function (section) {
+      section.classList.add("visible");
+    });
+  } else {
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.06 });
+
+    sections.forEach(function (section) {
+      observer.observe(section);
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
