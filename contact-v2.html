@@ -684,5 +684,20 @@ button:focus-visible {
 })();
 </script>
 
+  
+<script>
+(function () {
+  const menuButton = document.querySelector(".menu-toggle");
+  const nav = document.getElementById("primary-nav");
+
+  if (!menuButton || !nav) return;
+
+  menuButton.addEventListener("click", function () {
+    const isOpen = nav.classList.toggle("is-open");
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+  });
+})();
+</script>
+
 </body>
 </html>
