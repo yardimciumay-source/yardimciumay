@@ -521,6 +521,16 @@ button:focus-visible {
   flex-direction: row; align-items: center; justify-content: initial;
   gap: 34px; background: transparent; border: 0;
 }
+/* Center navigation independently of logo and CTA widths */
+@media (min-width: 901px) {
+  .site-header .nav {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+  }
+}
 .site-header .nav a {
   color: #c6d9ed; font-size: 12px; font-weight: 600;
   letter-spacing: normal; line-height: normal; white-space: nowrap;
